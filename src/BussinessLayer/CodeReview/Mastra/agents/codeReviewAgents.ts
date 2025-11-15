@@ -11,8 +11,8 @@ const PARAMS = {
 
 export const codeReviewAgentFactory = () => {
     const openai = createOpenAI({
-        baseURL: 'https://idealab.alibaba-inc.com/api/openai/v1',
-        apiKey: '0df43be045c860540270303846a2605b',
+        baseURL: '',
+        apiKey: '',
         name: 'idealab',
     });
     return new Agent({

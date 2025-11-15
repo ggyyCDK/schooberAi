@@ -219,3 +219,29 @@
 2025-11-16 00:39:52.832 INFO 24244 [egg-security] use dta middleware
 2025-11-16 00:39:52.832 INFO 24244 [egg-security] compose 5 middlewares into one security middleware
 2025-11-16 00:39:52.860 INFO 24244 [egg:core] dump config after ready, 1ms
+2025-11-16 01:12:29.762 INFO 58527 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-16 01:12:29.763 INFO 58527 [egg:core] dump config after load, 2ms
+2025-11-16 01:12:29.775 INFO 58527 [egg:core] dump config after ready, 2ms
+2025-11-16 01:12:29.784 INFO 58527 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-16 01:12:29.784 INFO 58527 [egg:core] dump config after load, 2ms
+2025-11-16 01:12:29.826 WARN 58527 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-16 01:12:29.827 INFO 58527 [egg-security] use methodnoallow middleware
+2025-11-16 01:12:29.827 INFO 58527 [egg-security] use noopen middleware
+2025-11-16 01:12:29.828 INFO 58527 [egg-security] use nosniff middleware
+2025-11-16 01:12:29.828 INFO 58527 [egg-security] use xssProtection middleware
+2025-11-16 01:12:29.828 INFO 58527 [egg-security] use dta middleware
+2025-11-16 01:12:29.828 INFO 58527 [egg-security] compose 5 middlewares into one security middleware
+2025-11-16 01:12:29.856 INFO 58527 [egg:core] dump config after ready, 1ms
+2025-11-16 01:12:31.970 INFO 58570 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-16 01:12:31.971 INFO 58570 [egg:core] dump config after load, 2ms
+2025-11-16 01:12:31.979 INFO 58570 [egg:core] dump config after ready, 2ms
+2025-11-16 01:12:31.987 INFO 58570 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-16 01:12:31.987 INFO 58570 [egg:core] dump config after load, 4ms
+2025-11-16 01:12:32.011 WARN 58570 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-16 01:12:32.011 INFO 58570 [egg-security] use methodnoallow middleware
+2025-11-16 01:12:32.011 INFO 58570 [egg-security] use noopen middleware
+2025-11-16 01:12:32.015 INFO 58570 [egg-security] use nosniff middleware
+2025-11-16 01:12:32.015 INFO 58570 [egg-security] use xssProtection middleware
+2025-11-16 01:12:32.015 INFO 58570 [egg-security] use dta middleware
+2025-11-16 01:12:32.015 INFO 58570 [egg-security] compose 5 middlewares into one security middleware
+2025-11-16 01:12:32.035 INFO 58570 [egg:core] dump config after ready, 1ms
