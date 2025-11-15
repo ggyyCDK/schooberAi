@@ -1,0 +1,179 @@
+import type { RuntimeContext } from '@mastra/core/runtime-context';
+import type { Context } from '../types.js';
+interface NetworkContext extends Context {
+    networkId?: string;
+    runtimeContext: RuntimeContext;
+}
+export declare function getVNextNetworksHandler({ mastra, runtimeContext, }: Pick<NetworkContext, 'mastra' | 'runtimeContext'>): Promise<{
+    id: string;
+    name: string;
+    instructions: string;
+    tools: {
+        id: string;
+        description: string;
+    }[];
+    agents: {
+        name: string;
+        provider: string;
+        modelId: string;
+    }[];
+    workflows: {
+        name: string | undefined;
+        description: string | undefined;
+        inputSchema: string | undefined;
+        outputSchema: string | undefined;
+    }[];
+    routingModel: {
+        provider: string;
+        modelId: string;
+    };
+}[]>;
+export declare function getVNextNetworkByIdHandler({ mastra, networkId, runtimeContext, }: Pick<NetworkContext, 'mastra' | 'networkId' | 'runtimeContext'>): Promise<{
+    id: string;
+    name: string;
+    instructions: string;
+    agents: {
+        name: string;
+        provider: string;
+        modelId: string;
+    }[];
+    workflows: {
+        name: string | undefined;
+        description: string | undefined;
+        inputSchema: string | undefined;
+        outputSchema: string | undefined;
+    }[];
+    tools: {
+        id: string;
+        description: string;
+    }[];
+    routingModel: {
+        provider: string;
+        modelId: string;
+    };
+}>;
+export declare function generateVNextNetworkHandler({ mastra, runtimeContext, networkId, body, }: NetworkContext & {
+    runtimeContext: RuntimeContext;
+    body: {
+        message: string;
+        threadId?: string;
+        resourceId?: string;
+    };
+}): Promise<{
+    task: string;
+    result: string;
+    resourceId: string;
+    resourceType: "none" | "tool" | "workflow" | "agent";
+}>;
+export declare function streamGenerateVNextNetworkHandler({ mastra, networkId, body, runtimeContext, }: NetworkContext & {
+    runtimeContext: RuntimeContext;
+    body: {
+        message: string;
+        threadId?: string;
+        resourceId?: string;
+    };
+}): Promise<{
+    stream: import("stream/web").ReadableStream<import("@mastra/core").StreamEvent>;
+    getWorkflowState: () => Promise<import("@mastra/core").WorkflowResult<import("zod").ZodObject<{
+        task: import("zod").ZodString;
+        resourceId: import("zod").ZodString;
+        resourceType: import("zod").ZodEnum<["agent", "workflow", "none", "tool", "none"]>;
+        prompt: import("zod").ZodString;
+        result: import("zod").ZodString;
+        isComplete: import("zod").ZodOptional<import("zod").ZodBoolean>;
+        completionReason: import("zod").ZodOptional<import("zod").ZodString>;
+        iteration: import("zod").ZodNumber;
+        threadId: import("zod").ZodOptional<import("zod").ZodString>;
+        threadResourceId: import("zod").ZodOptional<import("zod").ZodString>;
+        isOneOff: import("zod").ZodBoolean;
+    }, "strip", import("zod").ZodTypeAny, {
+        resourceId: string;
+        result: string;
+        prompt: string;
+        task: string;
+        resourceType: "none" | "tool" | "workflow" | "agent";
+        iteration: number;
+        isOneOff: boolean;
+        threadId?: string | undefined;
+        threadResourceId?: string | undefined;
+        isComplete?: boolean | undefined;
+        completionReason?: string | undefined;
+    }, {
+        resourceId: string;
+        result: string;
+        prompt: string;
+        task: string;
+        resourceType: "none" | "tool" | "workflow" | "agent";
+        iteration: number;
+        isOneOff: boolean;
+        threadId?: string | undefined;
+        threadResourceId?: string | undefined;
+        isComplete?: boolean | undefined;
+        completionReason?: string | undefined;
+    }>, import("@mastra/core").Step<string, any, any, any, any, import("@mastra/core").DefaultEngineType>[]>>;
+}>;
+export declare function loopVNextNetworkHandler({ mastra, networkId, body, runtimeContext, }: NetworkContext & {
+    runtimeContext: RuntimeContext;
+    body: {
+        message: string;
+    };
+}): Promise<{
+    status: "success";
+    result: {
+        resourceId: string;
+        result: string;
+        prompt: string;
+        task: string;
+        resourceType: "none" | "tool" | "workflow" | "agent";
+        iteration: number;
+        isOneOff: boolean;
+        threadId?: string | undefined;
+        threadResourceId?: string | undefined;
+        isComplete?: boolean | undefined;
+        completionReason?: string | undefined;
+    };
+    steps: {
+        [x: string]: import("@mastra/core").StepResult<any, any, any, any> | import("@mastra/core").StepResult<unknown, unknown, unknown, unknown>;
+    };
+}>;
+export declare function loopStreamVNextNetworkHandler({ mastra, networkId, body, runtimeContext, }: NetworkContext & {
+    runtimeContext: RuntimeContext;
+    body: {
+        message: string;
+        threadId?: string;
+        resourceId?: string;
+        maxIterations?: number;
+    };
+}): Promise<{
+    stream: import("stream/web").ReadableStream<import("@mastra/core").StreamEvent>;
+    getWorkflowState: () => Promise<import("@mastra/core").WorkflowResult<import("zod").ZodObject<{
+        task: import("zod").ZodString;
+        resourceId: import("zod").ZodString;
+        resourceType: import("zod").ZodEnum<["agent", "workflow", "none", "tool", "none"]>;
+        prompt: import("zod").ZodString;
+        result: import("zod").ZodString;
+        isComplete: import("zod").ZodOptional<import("zod").ZodBoolean>;
+        completionReason: import("zod").ZodOptional<import("zod").ZodString>;
+        iteration: import("zod").ZodNumber;
+    }, "strip", import("zod").ZodTypeAny, {
+        resourceId: string;
+        result: string;
+        prompt: string;
+        task: string;
+        resourceType: "none" | "tool" | "workflow" | "agent";
+        iteration: number;
+        isComplete?: boolean | undefined;
+        completionReason?: string | undefined;
+    }, {
+        resourceId: string;
+        result: string;
+        prompt: string;
+        task: string;
+        resourceType: "none" | "tool" | "workflow" | "agent";
+        iteration: number;
+        isComplete?: boolean | undefined;
+        completionReason?: string | undefined;
+    }>, import("@mastra/core").Step<string, any, any, any, any, import("@mastra/core").DefaultEngineType>[]>>;
+}>;
+export {};
+//# sourceMappingURL=vNextNetwork.d.ts.map

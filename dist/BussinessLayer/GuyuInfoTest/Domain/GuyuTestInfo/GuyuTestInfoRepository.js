@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GUYU_TEST_INFO = void 0;
+exports.GUYU_TEST_INFO = `GUYU_TEST_INFO`;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR3V5dVRlc3RJbmZvUmVwb3NpdG9yeS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9CdXNzaW5lc3NMYXllci9HdXl1SW5mb1Rlc3QvRG9tYWluL0d1eXVUZXN0SW5mby9HdXl1VGVzdEluZm9SZXBvc2l0b3J5LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUdhLFFBQUEsY0FBYyxHQUFHLGdCQUFnQixDQUFDIn0=

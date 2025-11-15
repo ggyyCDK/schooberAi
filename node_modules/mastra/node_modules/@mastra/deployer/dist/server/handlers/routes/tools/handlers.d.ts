@@ -1,0 +1,6 @@
+import type { Context } from 'hono';
+export declare function getToolsHandler(c: Context): Promise<Response>;
+export declare function getToolByIdHandler(c: Context): Promise<Response>;
+export declare function executeToolHandler(tools: Record<string, any>): (c: Context) => Promise<Response>;
+export declare function executeAgentToolHandler(c: Context): Promise<Response>;
+//# sourceMappingURL=handlers.d.ts.map

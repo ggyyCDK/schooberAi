@@ -1,0 +1,468 @@
+2025-11-14 12:30:54.923 ERROR 67482 [-/127.0.0.1/-/95ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C112B598FDC0B43F0FE75430B016',
+    'Active',
+    2025-11-14T04:30:54.876Z,
+    null,
+    'guyutest',
+    'UserInput',
+    '[{"role":"system","content":"你的名字叫小Q，你是一位医疗专家"},{"role":"user","content":"你是谁，你能为我做些什么"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C112B598FDC0B43F0FE75430B016\', \'Active\', 1, \'2025-11-14 12:30:54.876\', DEFAULT, NULL, \'guyutest\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁，你能为我做些什么\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C112B598FDC0B43F0FE75430B016\', \'Active\', 1, \'2025-11-14 12:30:54.876\', DEFAULT, NULL, \'guyutest\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁，你能为我做些什么\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-14 12:30:54.925 ERROR 67482 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 12:30:54.925 ERROR 67482 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 13:03:44.281 ERROR 1212 [-/127.0.0.1/-/89ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C1174B6C9060BFEC79AA1000FFE3',
+    'Active',
+    2025-11-14T05:03:44.230Z,
+    null,
+    'guyutest',
+    'UserInput',
+    '[{"role":"system","content":"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q"},{"role":"user","content":"你是谁，你能为我做些什么"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C1174B6C9060BFEC79AA1000FFE3\', \'Active\', 1, \'2025-11-14 13:03:44.230\', DEFAULT, NULL, \'guyutest\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁，你能为我做些什么\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C1174B6C9060BFEC79AA1000FFE3\', \'Active\', 1, \'2025-11-14 13:03:44.230\', DEFAULT, NULL, \'guyutest\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁，你能为我做些什么\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-14 13:03:44.283 ERROR 1212 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 13:03:44.283 ERROR 1212 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 14:52:03.555 ERROR 63215 [-/127.0.0.1/-/114ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C1266D4A28A08200AB324F1CD44E',
+    'Active',
+    2025-11-14T06:52:03.498Z,
+    null,
+    'que',
+    'UserInput',
+    '[{"role":"system","content":"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q"},{"role":"user","content":"你是谁"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C1266D4A28A08200AB324F1CD44E\', \'Active\', 1, \'2025-11-14 14:52:03.498\', DEFAULT, NULL, \'que\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C1266D4A28A08200AB324F1CD44E\', \'Active\', 1, \'2025-11-14 14:52:03.498\', DEFAULT, NULL, \'que\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-14 14:52:03.557 ERROR 63215 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 14:52:03.557 ERROR 63215 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 14:52:05.966 ERROR 63215 [-/127.0.0.1/-/2525ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C1266EC1FB908200AB324F1CD44E',
+    'Active',
+    2025-11-14T06:52:05.961Z,
+    null,
+    'que',
+    'LLMResponse',
+    '[{"role":"assistant","content":"undefinedundefinedundefined你undefined好！我是小Q，undefined一位医疗专家。很undefined高兴认识你！有undefined什么健康方undefined面的问题需undefined要咨询吗？undefined我会尽力为你undefined提供专undefined业的医疗建议和undefined帮助。undefinedundefinedundefinedundefined"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C1266EC1FB908200AB324F1CD44E\', \'Active\', 1, \'2025-11-14 14:52:05.961\', DEFAULT, NULL, \'que\', \'LLMResponse\', \'[{\\"role\\":\\"assistant\\",\\"content\\":\\"undefinedundefinedundefined你undefined好！我是小Q，undefined一位医疗专家。很undefined高兴认识你！有undefined什么健康方undefined面的问题需undefined要咨询吗？undefined我会尽力为你undefined提供专undefined业的医疗建议和undefined帮助。undefinedundefinedundefinedundefined\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C1266EC1FB908200AB324F1CD44E\', \'Active\', 1, \'2025-11-14 14:52:05.961\', DEFAULT, NULL, \'que\', \'LLMResponse\', \'[{\\"role\\":\\"assistant\\",\\"content\\":\\"undefinedundefinedundefined你undefined好！我是小Q，undefined一位医疗专家。很undefined高兴认识你！有undefined什么健康方undefined面的问题需undefined要咨询吗？undefined我会尽力为你undefined提供专undefined业的医疗建议和undefined帮助。undefinedundefinedundefinedundefined\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-14 14:52:05.967 ERROR 63215 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 14:52:05.967 ERROR 63215 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 14:53:41.203 ERROR 65436 [-/127.0.0.1/-/91ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C126A77F9640A683D946B1CAB729',
+    'Active',
+    2025-11-14T06:53:41.156Z,
+    null,
+    'que',
+    'UserInput',
+    '[{"role":"system","content":"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q"},{"role":"user","content":"你是谁"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C126A77F9640A683D946B1CAB729\', \'Active\', 1, \'2025-11-14 14:53:41.156\', DEFAULT, NULL, \'que\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C126A77F9640A683D946B1CAB729\', \'Active\', 1, \'2025-11-14 14:53:41.156\', DEFAULT, NULL, \'que\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-14 14:53:41.205 ERROR 65436 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 14:53:41.205 ERROR 65436 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 14:53:44.570 ERROR 65436 [-/127.0.0.1/-/3458ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C126A9874D20A683D946B1CAB729',
+    'Active',
+    2025-11-14T06:53:44.562Z,
+    null,
+    'que',
+    'LLMResponse',
+    '[{"role":"assistant","content":"您好！我是小Q，一位医疗专家。很高兴认识您！如果您有任何健康或医疗方面的问题，我很乐意为您提供专业的建议和帮助。请问有什么可以为您服务的吗？"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C126A9874D20A683D946B1CAB729\', \'Active\', 1, \'2025-11-14 14:53:44.562\', DEFAULT, NULL, \'que\', \'LLMResponse\', \'[{\\"role\\":\\"assistant\\",\\"content\\":\\"您好！我是小Q，一位医疗专家。很高兴认识您！如果您有任何健康或医疗方面的问题，我很乐意为您提供专业的建议和帮助。请问有什么可以为您服务的吗？\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C126A9874D20A683D946B1CAB729\', \'Active\', 1, \'2025-11-14 14:53:44.562\', DEFAULT, NULL, \'que\', \'LLMResponse\', \'[{\\"role\\":\\"assistant\\",\\"content\\":\\"您好！我是小Q，一位医疗专家。很高兴认识您！如果您有任何健康或医疗方面的问题，我很乐意为您提供专业的建议和帮助。请问有什么可以为您服务的吗？\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-14 14:53:44.573 ERROR 65436 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 14:53:44.574 ERROR 65436 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 17:56:33.909 ERROR 72039 [-/127.0.0.1/-/153ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C14033BB838098F31BC25FDD5399',
+    'Active',
+    2025-11-14T09:56:33.848Z,
+    null,
+    'qwe',
+    'UserInput',
+    '[{"role":"system","content":"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q"},{"role":"user","content":"你是谁"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C14033BB838098F31BC25FDD5399\', \'Active\', 1, \'2025-11-14 17:56:33.848\', DEFAULT, NULL, \'qwe\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C14033BB838098F31BC25FDD5399\', \'Active\', 1, \'2025-11-14 17:56:33.848\', DEFAULT, NULL, \'qwe\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-14 17:56:33.912 ERROR 72039 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 17:56:33.912 ERROR 72039 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 17:56:36.424 ERROR 72039 [-/127.0.0.1/-/2668ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C14035441F5098F31BC25FDD5399',
+    'Active',
+    2025-11-14T09:56:36.421Z,
+    null,
+    'qwe',
+    'LLMResponse',
+    '[{"role":"assistant","content":"你好！我是小Q，一位医疗专家。很高兴认识你！如果你有任何健康相关的问题或需要医疗建议，我很乐意为你提供帮助。请问今天有什么我可以为你做的吗？"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C14035441F5098F31BC25FDD5399\', \'Active\', 1, \'2025-11-14 17:56:36.421\', DEFAULT, NULL, \'qwe\', \'LLMResponse\', \'[{\\"role\\":\\"assistant\\",\\"content\\":\\"你好！我是小Q，一位医疗专家。很高兴认识你！如果你有任何健康相关的问题或需要医疗建议，我很乐意为你提供帮助。请问今天有什么我可以为你做的吗？\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C14035441F5098F31BC25FDD5399\', \'Active\', 1, \'2025-11-14 17:56:36.421\', DEFAULT, NULL, \'qwe\', \'LLMResponse\', \'[{\\"role\\":\\"assistant\\",\\"content\\":\\"你好！我是小Q，一位医疗专家。很高兴认识你！如果你有任何健康相关的问题或需要医疗建议，我很乐意为你提供帮助。请问今天有什么我可以为你做的吗？\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-14 17:56:36.424 ERROR 72039 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 17:56:36.424 ERROR 72039 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 18:00:38.662 ERROR 47185 [-/127.0.0.1/-/93ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C140C59EC5F0B95E594DB3F3BE20',
+    'Active',
+    2025-11-14T10:00:38.607Z,
+    null,
+    'qwe',
+    'UserInput',
+    '[{"role":"system","content":"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q"},{"role":"user","content":"你是谁"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C140C59EC5F0B95E594DB3F3BE20\', \'Active\', 1, \'2025-11-14 18:00:38.607\', DEFAULT, NULL, \'qwe\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C140C59EC5F0B95E594DB3F3BE20\', \'Active\', 1, \'2025-11-14 18:00:38.607\', DEFAULT, NULL, \'qwe\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-14 18:00:38.663 ERROR 47185 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-14 18:00:38.663 ERROR 47185 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)

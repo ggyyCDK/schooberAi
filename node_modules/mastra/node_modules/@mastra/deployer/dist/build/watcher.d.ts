@@ -1,0 +1,7 @@
+import type { InputOptions, OutputOptions } from 'rollup';
+export declare function getInputOptions(entryFile: string, platform: 'node' | 'browser', env?: Record<string, string>, { sourcemap, transpilePackages }?: {
+    sourcemap?: boolean;
+    transpilePackages?: string[];
+}): Promise<InputOptions>;
+export declare function createWatcher(inputOptions: InputOptions, outputOptions: OutputOptions): Promise<import("rollup").RollupWatcher>;
+//# sourceMappingURL=watcher.d.ts.map

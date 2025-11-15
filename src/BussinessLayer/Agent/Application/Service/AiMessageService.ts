@@ -1,0 +1,130 @@
+import { Inject, Provide } from "@midwayjs/core";
+import { Context } from "@midwayjs/web";
+import { AiMessageModel } from "../../Domain/Agent/AiMessage";
+import { AI_MESSAGE, IAiMessageRepository } from "../../Domain/Agent/AiMessageRepository";
+import { AiPrompt } from "@/Helper/Types/agent";
+
+@Provide()
+export class AiMessageService {
+    @Inject()
+    ctx: Context;
+
+    @Inject(AI_MESSAGE)
+    aiMessageRepository: IAiMessageRepository;
+
+    /**
+     * 创建消息
+     */
+    async createAiMessage(command: {
+        sessionId?: string;
+        fromType?: string;
+        messageContent?: AiPrompt[];
+        workerId?: string;
+        ext?: any;
+        llmConfig?: any;
+    }): Promise<AiMessageModel> {
+        try {
+            const message = new AiMessageModel({
+                sessionId: command.sessionId,
+                fromType: command.fromType,
+                messageContent: command.messageContent,
+                workerId: command.workerId,
+                ext: command.ext,
+                llmConfig: command.llmConfig,
+            });
+
+            const result = await this.aiMessageRepository.save(message);
+            this.ctx.logger.info(`创建消息成功: ${result?.id}`);
+            return result!;
+        } catch (error) {
+            this.ctx.logger.error(`创建消息失败: ${error.message}`, error);
+            throw new Error(`创建消息失败: ${error.message}`);
+        }
+    }
+
+    /**
+     * 更新消息
+     */
+    async updateAiMessage(command: Partial<{
+        id: string;
+        sessionId?: string;
+        fromType?: string;
+        messageContent?: AiPrompt[];
+        workerId?: string;
+        ext?: any;
+        llmConfig?: any;
+    }>): Promise<AiMessageModel | null> {
+        const { id } = command;
+        if (!id) {
+            throw new Error('更新消息必须提供 id');
+        }
+
+        try {
+            const existMessage = await this.aiMessageRepository.findById(id);
+            if (!existMessage) {
+                this.ctx.logger.warn(`未找到 ID 为 ${id} 的消息，无法更新`);
+                return null;
+            }
+
+            if (command.sessionId !== undefined) existMessage.sessionId = command.sessionId;
+            if (command.fromType !== undefined) existMessage.fromType = command.fromType;
+            if (command.messageContent !== undefined) existMessage.messageContent = command.messageContent;
+            if (command.workerId !== undefined) existMessage.workerId = command.workerId;
+            if (command.ext !== undefined) existMessage.ext = command.ext;
+            if (command.llmConfig !== undefined) existMessage.llmConfig = command.llmConfig;
+
+            const result = await this.aiMessageRepository.save(existMessage);
+            this.ctx.logger.info(`更新消息成功: ${id}`);
+            return result!;
+        } catch (error) {
+            this.ctx.logger.error(`更新消息失败: ${error.message}`, error);
+            throw new Error(`更新消息失败: ${error.message}`);
+        }
+    }
+
+    /**
+     * 根据 ID 查询消息
+     */
+    async findById(id: string): Promise<AiMessageModel | null> {
+        try {
+            const result = await this.aiMessageRepository.findById(id);
+            if (!result) {
+                this.ctx.logger.warn(`未找到 ID 为 ${id} 的消息`);
+                return null;
+            }
+            this.ctx.logger.info(`查询消息成功: ${id}`);
+            return result;
+        } catch (error) {
+            this.ctx.logger.error(`查询消息失败: ${error.message}`, error);
+            throw new Error(`查询消息失败: ${error.message}`);
+        }
+    }
+
+    /**
+     * 根据 sessionId 查询消息列表
+     */
+    async listBySessionId(sessionId: string): Promise<AiMessageModel[]> {
+        try {
+            const result = await this.aiMessageRepository.listBySessionId(sessionId);
+            this.ctx.logger.info(`查询 sessionId 为 ${sessionId} 的消息，共 ${result.length} 条`);
+            return result;
+        } catch (error) {
+            this.ctx.logger.error(`查询消息列表失败: ${error.message}`, error);
+            throw new Error(`查询消息列表失败: ${error.message}`);
+        }
+    }
+
+    /**
+     * 根据 sessionId 删除消息
+     */
+    async deleteMessageBySessionId(sessionId: string): Promise<boolean> {
+        try {
+            const deleted = await this.aiMessageRepository.deleteMessageBySessionId(sessionId);
+            this.ctx.logger.info(`删除 sessionId 为 ${sessionId} 的消息结果: ${deleted}`);
+            return deleted;
+        } catch (error) {
+            this.ctx.logger.error(`删除消息失败: ${error.message}`, error);
+            throw new Error(`删除消息失败: ${error.message}`);
+        }
+    }
+}

@@ -1,0 +1,258 @@
+2025-11-15 23:13:25.719 INFO 31721 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:13:25.720 INFO 31721 [egg:core] dump config after load, 3ms
+2025-11-15 23:13:25.734 INFO 31721 [egg:core] dump config after ready, 2ms
+2025-11-15 23:13:25.743 INFO 31721 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:13:25.743 INFO 31721 [egg:core] dump config after load, 5ms
+2025-11-15 23:13:25.790 WARN 31721 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:13:25.791 INFO 31721 [egg-security] use methodnoallow middleware
+2025-11-15 23:13:25.791 INFO 31721 [egg-security] use noopen middleware
+2025-11-15 23:13:25.791 INFO 31721 [egg-security] use nosniff middleware
+2025-11-15 23:13:25.792 INFO 31721 [egg-security] use xssProtection middleware
+2025-11-15 23:13:25.792 INFO 31721 [egg-security] use dta middleware
+2025-11-15 23:13:25.792 INFO 31721 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:13:25.820 INFO 31721 [egg:core] dump config after ready, 1ms
+2025-11-15 23:14:00.764 INFO 32310 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:14:00.765 INFO 32310 [egg:core] dump config after load, 2ms
+2025-11-15 23:14:00.777 INFO 32310 [egg:core] dump config after ready, 2ms
+2025-11-15 23:14:00.782 INFO 32310 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:14:00.782 INFO 32310 [egg:core] dump config after load, 2ms
+2025-11-15 23:14:00.824 WARN 32310 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:14:00.825 INFO 32310 [egg-security] use methodnoallow middleware
+2025-11-15 23:14:00.825 INFO 32310 [egg-security] use noopen middleware
+2025-11-15 23:14:00.826 INFO 32310 [egg-security] use nosniff middleware
+2025-11-15 23:14:00.826 INFO 32310 [egg-security] use xssProtection middleware
+2025-11-15 23:14:00.826 INFO 32310 [egg-security] use dta middleware
+2025-11-15 23:14:00.826 INFO 32310 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:14:00.854 INFO 32310 [egg:core] dump config after ready, 1ms
+2025-11-15 23:18:02.601 INFO 36274 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:18:02.602 INFO 36274 [egg:core] dump config after load, 4ms
+2025-11-15 23:18:02.616 INFO 36274 [egg:core] dump config after ready, 2ms
+2025-11-15 23:18:02.620 INFO 36274 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:18:02.620 INFO 36274 [egg:core] dump config after load, 1ms
+2025-11-15 23:18:02.670 WARN 36274 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:18:02.671 INFO 36274 [egg-security] use methodnoallow middleware
+2025-11-15 23:18:02.671 INFO 36274 [egg-security] use noopen middleware
+2025-11-15 23:18:02.672 INFO 36274 [egg-security] use nosniff middleware
+2025-11-15 23:18:02.672 INFO 36274 [egg-security] use xssProtection middleware
+2025-11-15 23:18:02.672 INFO 36274 [egg-security] use dta middleware
+2025-11-15 23:18:02.672 INFO 36274 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:18:02.703 INFO 36274 [egg:core] dump config after ready, 1ms
+2025-11-15 23:23:47.781 INFO 41927 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:23:47.781 INFO 41927 [egg:core] dump config after load, 3ms
+2025-11-15 23:23:47.796 INFO 41927 [egg:core] dump config after ready, 2ms
+2025-11-15 23:23:47.806 INFO 41927 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:23:47.806 INFO 41927 [egg:core] dump config after load, 2ms
+2025-11-15 23:23:47.851 WARN 41927 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:23:47.852 INFO 41927 [egg-security] use methodnoallow middleware
+2025-11-15 23:23:47.852 INFO 41927 [egg-security] use noopen middleware
+2025-11-15 23:23:47.853 INFO 41927 [egg-security] use nosniff middleware
+2025-11-15 23:23:47.853 INFO 41927 [egg-security] use xssProtection middleware
+2025-11-15 23:23:47.853 INFO 41927 [egg-security] use dta middleware
+2025-11-15 23:23:47.853 INFO 41927 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:23:47.882 INFO 41927 [egg:core] dump config after ready, 1ms
+2025-11-15 23:26:31.865 INFO 44626 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:26:31.866 INFO 44626 [egg:core] dump config after load, 3ms
+2025-11-15 23:26:31.882 INFO 44626 [egg:core] dump config after ready, 4ms
+2025-11-15 23:26:31.890 INFO 44626 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:26:31.890 INFO 44626 [egg:core] dump config after load, 2ms
+2025-11-15 23:26:31.936 WARN 44626 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:26:31.937 INFO 44626 [egg-security] use methodnoallow middleware
+2025-11-15 23:26:31.937 INFO 44626 [egg-security] use noopen middleware
+2025-11-15 23:26:31.937 INFO 44626 [egg-security] use nosniff middleware
+2025-11-15 23:26:31.938 INFO 44626 [egg-security] use xssProtection middleware
+2025-11-15 23:26:31.938 INFO 44626 [egg-security] use dta middleware
+2025-11-15 23:26:31.938 INFO 44626 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:26:31.967 INFO 44626 [egg:core] dump config after ready, 1ms
+2025-11-15 23:26:38.938 INFO 44763 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:26:38.939 INFO 44763 [egg:core] dump config after load, 2ms
+2025-11-15 23:26:38.954 INFO 44763 [egg:core] dump config after ready, 1ms
+2025-11-15 23:26:38.957 INFO 44763 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:26:38.957 INFO 44763 [egg:core] dump config after load, 0ms
+2025-11-15 23:26:38.995 WARN 44763 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:26:38.996 INFO 44763 [egg-security] use methodnoallow middleware
+2025-11-15 23:26:38.996 INFO 44763 [egg-security] use noopen middleware
+2025-11-15 23:26:38.997 INFO 44763 [egg-security] use nosniff middleware
+2025-11-15 23:26:38.997 INFO 44763 [egg-security] use xssProtection middleware
+2025-11-15 23:26:38.997 INFO 44763 [egg-security] use dta middleware
+2025-11-15 23:26:38.997 INFO 44763 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:26:39.022 INFO 44763 [egg:core] dump config after ready, 1ms
+2025-11-15 23:27:02.518 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:27:02.520 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:27:13.681 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:27:13.681 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:31:09.551 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Data too long for column 'id' at row 1
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:31:09.551 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Data too long for column 'id' at row 1
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:31:22.216 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Data too long for column 'id' at row 1
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:31:22.216 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Data too long for column 'id' at row 1
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:38:41.479 INFO 56635 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:38:41.479 INFO 56635 [egg:core] dump config after load, 2ms
+2025-11-15 23:38:41.493 INFO 56635 [egg:core] dump config after ready, 2ms
+2025-11-15 23:38:41.501 INFO 56635 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:38:41.501 INFO 56635 [egg:core] dump config after load, 4ms
+2025-11-15 23:38:41.548 WARN 56635 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:38:41.548 INFO 56635 [egg-security] use methodnoallow middleware
+2025-11-15 23:38:41.548 INFO 56635 [egg-security] use noopen middleware
+2025-11-15 23:38:41.549 INFO 56635 [egg-security] use nosniff middleware
+2025-11-15 23:38:41.550 INFO 56635 [egg-security] use xssProtection middleware
+2025-11-15 23:38:41.550 INFO 56635 [egg-security] use dta middleware
+2025-11-15 23:38:41.550 INFO 56635 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:38:41.577 INFO 56635 [egg:core] dump config after ready, 1ms
+2025-11-15 23:38:46.720 INFO 56738 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:38:46.721 INFO 56738 [egg:core] dump config after load, 2ms
+2025-11-15 23:38:46.728 INFO 56738 [egg:core] dump config after ready, 2ms
+2025-11-15 23:38:46.735 INFO 56738 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:38:46.735 INFO 56738 [egg:core] dump config after load, 3ms
+2025-11-15 23:38:46.760 WARN 56738 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:38:46.760 INFO 56738 [egg-security] use methodnoallow middleware
+2025-11-15 23:38:46.760 INFO 56738 [egg-security] use noopen middleware
+2025-11-15 23:38:46.761 INFO 56738 [egg-security] use nosniff middleware
+2025-11-15 23:38:46.761 INFO 56738 [egg-security] use xssProtection middleware
+2025-11-15 23:38:46.761 INFO 56738 [egg-security] use dta middleware
+2025-11-15 23:38:46.761 INFO 56738 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:38:46.780 INFO 56738 [egg:core] dump config after ready, 1ms
+2025-11-15 23:38:48.535 INFO 56769 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:38:48.536 INFO 56769 [egg:core] dump config after load, 2ms
+2025-11-15 23:38:48.543 INFO 56769 [egg:core] dump config after ready, 2ms
+2025-11-15 23:38:48.548 INFO 56769 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:38:48.549 INFO 56769 [egg:core] dump config after load, 1ms
+2025-11-15 23:38:48.575 WARN 56769 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:38:48.575 INFO 56769 [egg-security] use methodnoallow middleware
+2025-11-15 23:38:48.575 INFO 56769 [egg-security] use noopen middleware
+2025-11-15 23:38:48.575 INFO 56769 [egg-security] use nosniff middleware
+2025-11-15 23:38:48.576 INFO 56769 [egg-security] use xssProtection middleware
+2025-11-15 23:38:48.576 INFO 56769 [egg-security] use dta middleware
+2025-11-15 23:38:48.576 INFO 56769 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:38:48.594 INFO 56769 [egg:core] dump config after ready, 1ms
+2025-11-15 23:42:45.047 INFO 60661 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:42:45.047 INFO 60661 [egg:core] dump config after load, 2ms
+2025-11-15 23:42:45.061 INFO 60661 [egg:core] dump config after ready, 1ms
+2025-11-15 23:42:45.071 INFO 60661 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:42:45.071 INFO 60661 [egg:core] dump config after load, 5ms
+2025-11-15 23:42:45.123 WARN 60661 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:42:45.124 INFO 60661 [egg-security] use methodnoallow middleware
+2025-11-15 23:42:45.124 INFO 60661 [egg-security] use noopen middleware
+2025-11-15 23:42:45.125 INFO 60661 [egg-security] use nosniff middleware
+2025-11-15 23:42:45.125 INFO 60661 [egg-security] use xssProtection middleware
+2025-11-15 23:42:45.125 INFO 60661 [egg-security] use dta middleware
+2025-11-15 23:42:45.125 INFO 60661 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:42:45.153 INFO 60661 [egg:core] dump config after ready, 2ms
+2025-11-15 23:44:49.056 INFO 62697 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:44:49.056 INFO 62697 [egg:core] dump config after load, 2ms
+2025-11-15 23:44:49.070 INFO 62697 [egg:core] dump config after ready, 2ms
+2025-11-15 23:44:49.081 INFO 62697 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:44:49.081 INFO 62697 [egg:core] dump config after load, 7ms
+2025-11-15 23:44:49.127 WARN 62697 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:44:49.127 INFO 62697 [egg-security] use methodnoallow middleware
+2025-11-15 23:44:49.128 INFO 62697 [egg-security] use noopen middleware
+2025-11-15 23:44:49.128 INFO 62697 [egg-security] use nosniff middleware
+2025-11-15 23:44:49.129 INFO 62697 [egg-security] use xssProtection middleware
+2025-11-15 23:44:49.129 INFO 62697 [egg-security] use dta middleware
+2025-11-15 23:44:49.129 INFO 62697 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:44:49.157 INFO 62697 [egg:core] dump config after ready, 1ms
+2025-11-15 23:45:48.184 INFO 63682 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:45:48.184 INFO 63682 [egg:core] dump config after load, 2ms
+2025-11-15 23:45:48.198 INFO 63682 [egg:core] dump config after ready, 2ms
+2025-11-15 23:45:48.204 INFO 63682 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:45:48.204 INFO 63682 [egg:core] dump config after load, 2ms
+2025-11-15 23:45:48.256 WARN 63682 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:45:48.256 INFO 63682 [egg-security] use methodnoallow middleware
+2025-11-15 23:45:48.257 INFO 63682 [egg-security] use noopen middleware
+2025-11-15 23:45:48.257 INFO 63682 [egg-security] use nosniff middleware
+2025-11-15 23:45:48.258 INFO 63682 [egg-security] use xssProtection middleware
+2025-11-15 23:45:48.258 INFO 63682 [egg-security] use dta middleware
+2025-11-15 23:45:48.258 INFO 63682 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:45:48.286 INFO 63682 [egg:core] dump config after ready, 1ms
+2025-11-15 23:46:10.203 INFO 64049 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:46:10.204 INFO 64049 [egg:core] dump config after load, 2ms
+2025-11-15 23:46:10.216 INFO 64049 [egg:core] dump config after ready, 1ms
+2025-11-15 23:46:10.222 INFO 64049 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:46:10.222 INFO 64049 [egg:core] dump config after load, 3ms
+2025-11-15 23:46:10.264 WARN 64049 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:46:10.265 INFO 64049 [egg-security] use methodnoallow middleware
+2025-11-15 23:46:10.265 INFO 64049 [egg-security] use noopen middleware
+2025-11-15 23:46:10.266 INFO 64049 [egg-security] use nosniff middleware
+2025-11-15 23:46:10.266 INFO 64049 [egg-security] use xssProtection middleware
+2025-11-15 23:46:10.266 INFO 64049 [egg-security] use dta middleware
+2025-11-15 23:46:10.266 INFO 64049 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:46:10.292 INFO 64049 [egg:core] dump config after ready, 1ms
+2025-11-15 23:46:16.432 INFO 64166 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:46:16.432 INFO 64166 [egg:core] dump config after load, 2ms
+2025-11-15 23:46:16.443 INFO 64166 [egg:core] dump config after ready, 1ms
+2025-11-15 23:46:16.448 INFO 64166 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:46:16.448 INFO 64166 [egg:core] dump config after load, 1ms
+2025-11-15 23:46:16.493 WARN 64166 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:46:16.494 INFO 64166 [egg-security] use methodnoallow middleware
+2025-11-15 23:46:16.494 INFO 64166 [egg-security] use noopen middleware
+2025-11-15 23:46:16.494 INFO 64166 [egg-security] use nosniff middleware
+2025-11-15 23:46:16.495 INFO 64166 [egg-security] use xssProtection middleware
+2025-11-15 23:46:16.495 INFO 64166 [egg-security] use dta middleware
+2025-11-15 23:46:16.495 INFO 64166 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:46:16.521 INFO 64166 [egg:core] dump config after ready, 1ms
+2025-11-15 23:47:21.306 INFO 65231 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:47:21.306 INFO 65231 [egg:core] dump config after load, 2ms
+2025-11-15 23:47:21.320 INFO 65231 [egg:core] dump config after ready, 2ms
+2025-11-15 23:47:21.326 INFO 65231 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:47:21.327 INFO 65231 [egg:core] dump config after load, 3ms
+2025-11-15 23:47:21.382 WARN 65231 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:47:21.383 INFO 65231 [egg-security] use methodnoallow middleware
+2025-11-15 23:47:21.383 INFO 65231 [egg-security] use noopen middleware
+2025-11-15 23:47:21.384 INFO 65231 [egg-security] use nosniff middleware
+2025-11-15 23:47:21.384 INFO 65231 [egg-security] use xssProtection middleware
+2025-11-15 23:47:21.384 INFO 65231 [egg-security] use dta middleware
+2025-11-15 23:47:21.384 INFO 65231 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:47:21.412 INFO 65231 [egg:core] dump config after ready, 1ms
+2025-11-15 23:47:49.891 INFO 65714 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:47:49.891 INFO 65714 [egg:core] dump config after load, 2ms
+2025-11-15 23:47:49.904 INFO 65714 [egg:core] dump config after ready, 2ms
+2025-11-15 23:47:49.911 INFO 65714 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:47:49.911 INFO 65714 [egg:core] dump config after load, 2ms
+2025-11-15 23:47:49.958 WARN 65714 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:47:49.959 INFO 65714 [egg-security] use methodnoallow middleware
+2025-11-15 23:47:49.959 INFO 65714 [egg-security] use noopen middleware
+2025-11-15 23:47:49.960 INFO 65714 [egg-security] use nosniff middleware
+2025-11-15 23:47:49.960 INFO 65714 [egg-security] use xssProtection middleware
+2025-11-15 23:47:49.960 INFO 65714 [egg-security] use dta middleware
+2025-11-15 23:47:49.960 INFO 65714 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:47:49.989 INFO 65714 [egg:core] dump config after ready, 1ms
+2025-11-15 23:51:07.673 INFO 68958 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:51:07.673 INFO 68958 [egg:core] dump config after load, 2ms
+2025-11-15 23:51:07.686 INFO 68958 [egg:core] dump config after ready, 2ms
+2025-11-15 23:51:07.694 INFO 68958 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:51:07.694 INFO 68958 [egg:core] dump config after load, 3ms
+2025-11-15 23:51:07.743 WARN 68958 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:51:07.744 INFO 68958 [egg-security] use methodnoallow middleware
+2025-11-15 23:51:07.744 INFO 68958 [egg-security] use noopen middleware
+2025-11-15 23:51:07.744 INFO 68958 [egg-security] use nosniff middleware
+2025-11-15 23:51:07.745 INFO 68958 [egg-security] use xssProtection middleware
+2025-11-15 23:51:07.745 INFO 68958 [egg-security] use dta middleware
+2025-11-15 23:51:07.745 INFO 68958 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:51:07.773 INFO 68958 [egg:core] dump config after ready, 1ms
+2025-11-15 23:53:51.123 INFO 71644 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:53:51.123 INFO 71644 [egg:core] dump config after load, 2ms
+2025-11-15 23:53:51.138 INFO 71644 [egg:core] dump config after ready, 2ms
+2025-11-15 23:53:51.143 INFO 71644 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-15 23:53:51.144 INFO 71644 [egg:core] dump config after load, 2ms
+2025-11-15 23:53:51.192 WARN 71644 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-15 23:53:51.192 INFO 71644 [egg-security] use methodnoallow middleware
+2025-11-15 23:53:51.192 INFO 71644 [egg-security] use noopen middleware
+2025-11-15 23:53:51.193 INFO 71644 [egg-security] use nosniff middleware
+2025-11-15 23:53:51.193 INFO 71644 [egg-security] use xssProtection middleware
+2025-11-15 23:53:51.193 INFO 71644 [egg-security] use dta middleware
+2025-11-15 23:53:51.193 INFO 71644 [egg-security] compose 5 middlewares into one security middleware
+2025-11-15 23:53:51.239 INFO 71644 [egg:core] dump config after ready, 1ms

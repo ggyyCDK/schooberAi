@@ -1,0 +1,50 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 7
+  },
+  "auditLog": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project/.audit/.b8e76989e3997cb157c12d01b755453a824afdd7-audit.json",
+  "files": [
+    {
+      "date": 1762697947143,
+      "name": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project/midway-web.log.2025-11-09",
+      "hash": "c760bc5fa0f3c95b8284df2875c79962"
+    },
+    {
+      "date": 1762704160241,
+      "name": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project/midway-web.log.2025-11-10",
+      "hash": "d175b2d335e78ba501ad7a7e7af9db96"
+    },
+    {
+      "date": 1762870123240,
+      "name": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project/midway-web.log.2025-11-11",
+      "hash": "0b1b15c21d35dfee9802ed86b431d4c8"
+    },
+    {
+      "date": 1762932853335,
+      "name": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project/midway-web.log.2025-11-12",
+      "hash": "bc7d88f807455bf6c6145cc96d3ba3be"
+    },
+    {
+      "date": 1763037818401,
+      "name": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project/midway-web.log.2025-11-13",
+      "hash": "0ffe53b284aa3dcad13ce5995b9a391a"
+    },
+    {
+      "date": 1763094618740,
+      "name": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project/midway-web.log.2025-11-14",
+      "hash": "873981ea7ddb09120a92e4f2bf4ea813"
+    },
+    {
+      "date": 1763219605700,
+      "name": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project/midway-web.log.2025-11-15",
+      "hash": "b6fdfa724df8aa0deb53e3460d973f3c"
+    },
+    {
+      "date": 1763223025475,
+      "name": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project/midway-web.log.2025-11-16",
+      "hash": "13e261991e3a79151a810476c697bc56"
+    }
+  ],
+  "hashType": "md5"
+}

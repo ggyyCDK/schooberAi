@@ -1,0 +1,641 @@
+{
+  "config": {
+    "midwayLogger": {
+      "default": {
+        "fileLogName": "midway-app.log",
+        "errorLogName": "common-error.log",
+        "dir": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project",
+        "auditFileDir": ".audit",
+        "transports": {
+          "console": {
+            "autoColors": true
+          },
+          "file": {
+            "bufferWrite": false
+          },
+          "error": {
+            "bufferWrite": false
+          }
+        },
+        "level": "info"
+      },
+      "clients": {
+        "coreLogger": {
+          "fileLogName": "midway-core.log",
+          "level": "info"
+        },
+        "appLogger": {
+          "fileLogName": "midway-web.log",
+          "aliasName": "logger"
+        },
+        "agentLogger": {
+          "fileLogName": "midway-agent.log"
+        }
+      }
+    },
+    "session": {
+      "maxAge": 86400000,
+      "key": "EGG_SESS",
+      "httpOnly": true,
+      "encrypt": true,
+      "logValue": true
+    },
+    "security": {
+      "domainWhiteList": [],
+      "protocolWhiteList": [],
+      "defaultMiddleware": "csrf,hsts,methodnoallow,noopen,nosniff,csp,xssProtection,xframe,dta",
+      "csrf": false,
+      "xframe": {
+        "enable": false,
+        "value": "SAMEORIGIN"
+      },
+      "hsts": {
+        "enable": false,
+        "maxAge": 31536000,
+        "includeSubdomains": false
+      },
+      "dta": {
+        "enable": true
+      },
+      "methodnoallow": {
+        "enable": true
+      },
+      "noopen": {
+        "enable": true
+      },
+      "nosniff": {
+        "enable": true
+      },
+      "referrerPolicy": {
+        "enable": false,
+        "value": "no-referrer-when-downgrade"
+      },
+      "xssProtection": {
+        "enable": true,
+        "value": "1; mode=block"
+      },
+      "csp": {
+        "enable": false,
+        "policy": {}
+      },
+      "ssrf": {
+        "ipBlackList": null,
+        "ipExceptionList": null,
+        "checkAddress": null
+      },
+      "_protocolWhiteListSet": "<Set>"
+    },
+    "helper": {
+      "shtml": {}
+    },
+    "jsonp": {
+      "limit": 512,
+      "callback": "jsonp",
+      "csrf": false
+    },
+    "onerror": {
+      "errorPageUrl": "",
+      "appErrorFilter": null,
+      "templatePath": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-onerror/lib/onerror_page.mustache"
+    },
+    "env": "local",
+    "name": "my-midway-project",
+    "keys": "<String len: 18>",
+    "cookies": {},
+    "proxy": false,
+    "maxIpsCount": 0,
+    "maxProxyCount": 0,
+    "protocolHeaders": "x-forwarded-proto",
+    "ipHeaders": "x-forwarded-for",
+    "hostHeaders": "",
+    "pkg": {
+      "name": "my-midway-project",
+      "version": "1.0.0",
+      "description": "",
+      "private": true,
+      "scripts": {
+        "start": "NODE_ENV=production node ./bootstrap.js",
+        "dev": "cross-env NODE_ENV=local mwtsc --watch --run @midwayjs/mock/app.js",
+        "test": "cross-env NODE_ENV=unittest jest",
+        "cov": "jest --coverage",
+        "lint": "mwts check",
+        "lint:fix": "mwts fix",
+        "ci": "npm run cov",
+        "build": "mwtsc --cleanOutDir"
+      },
+      "dependencies": {
+        "@ai-sdk/openai": "^1.3.22",
+        "@babel/core": "^7.25.2",
+        "@mastergo/plugin-typings": "^2.5.0",
+        "@mastra/core": "0.13.1",
+        "@mastra/libsql": "0.13.1",
+        "@mastra/loggers": "0.10.6",
+        "@mastra/memory": "0.12.1",
+        "@midwayjs/bootstrap": "^3.12.0",
+        "@midwayjs/core": "^3.12.0",
+        "@midwayjs/cross-domain": "^3.16.5",
+        "@midwayjs/koa": "^3.20.16",
+        "@midwayjs/logger": "^3.1.0",
+        "@midwayjs/swagger": "^3.16.5",
+        "@midwayjs/web": "^3.12.0",
+        "@sevenryze/ruid": "^1.5.0",
+        "@types/string-similarity": "^4.0.2",
+        "ali-oss": "^6.20.0",
+        "async-sema": "^3.1.1",
+        "axios": "^1.7.2",
+        "chalk": "^4.1.2",
+        "class-transformer": "^0.5.1",
+        "class-transformer-validator": "^0.9.1",
+        "class-validator": "^0.14.1",
+        "diff": "^8.0.2",
+        "egg": "^2.0.0",
+        "egg-view": "^2.1.4",
+        "egg-view-xtpl": "^1.2.0",
+        "fast-xml-parser": "^5.2.5",
+        "glob": "^11.0.2",
+        "js-base64": "^3.7.7",
+        "jsx2css": "^1.0.8",
+        "lodash": "^4.17.21",
+        "markdown-it": "^14.1.0",
+        "mdast-util-from-markdown": "^2.0.1",
+        "mysql": "^2.18.1",
+        "parse-diff": "^0.11.1",
+        "parse-jsx-to-css": "^1.0.6",
+        "postcss": "^8.4.39",
+        "postcss-scss": "^4.0.9",
+        "prettier": "^2.8.3",
+        "query-string": "^7.1.3",
+        "reflect-metadata": "^0.2.2",
+        "semver": "^7.6.3",
+        "simple-git": "^3.28.0",
+        "string-similarity": "^4.0.4",
+        "tailwindcss": "^3.4.6",
+        "typeorm": "^0.2.45",
+        "unist-util-remove": "^4.0.0",
+        "unist-util-visit-parents": "^6.0.1",
+        "unocss": "^0.58.9",
+        "uuid": "^10.0.0",
+        "validator": "^13.12.0",
+        "zod": "^3.25.57"
+      },
+      "devDependencies": {
+        "@midwayjs/egg-ts-helper": "^1.0.1",
+        "@midwayjs/mock": "^3.12.0",
+        "@midwayjs/typeorm": "^3.16.5",
+        "@types/jest": "^29.2.0",
+        "@types/lodash": "^4.17.7",
+        "@types/minimatch": "3.0.5",
+        "@types/query-string": "^6.3.0",
+        "cross-env": "^6.0.0",
+        "egg-mock": "^3.26.0",
+        "jest": "^29.2.2",
+        "mastra": "^0.10.20",
+        "mwts": "^1.3.0",
+        "mwtsc": "^1.4.0",
+        "swagger-ui-dist": "^5.17.14",
+        "ts-jest": "^29.0.3",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.8.3"
+      },
+      "engines": {
+        "node": ">=12.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": ""
+      },
+      "author": "anonymous",
+      "license": "MIT"
+    },
+    "baseDir": "/Users/guyumac/Documents/my-midway/midway-project/dist",
+    "HOME": "/Users/guyumac",
+    "rundir": "/Users/guyumac/Documents/my-midway/midway-project/run",
+    "dump": {
+      "ignore": "<Set>"
+    },
+    "confusedConfigurations": {
+      "bodyparser": "bodyParser",
+      "notFound": "notfound",
+      "sitefile": "siteFile",
+      "middlewares": "middleware",
+      "httpClient": "httpclient"
+    },
+    "notfound": {
+      "pageUrl": ""
+    },
+    "siteFile": {
+      "/favicon.ico": "<Buffer len: 6463>",
+      "cacheControl": "public, max-age=2592000"
+    },
+    "bodyParser": {
+      "enable": true,
+      "encoding": "utf8",
+      "formLimit": "1mb",
+      "jsonLimit": "1mb",
+      "textLimit": "1mb",
+      "strict": true,
+      "queryString": {
+        "arrayLimit": 100,
+        "depth": 5,
+        "parameterLimit": 1000
+      },
+      "onerror": "<Function onerror>"
+    },
+    "logger": {
+      "dir": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project",
+      "encoding": "utf8",
+      "env": "local",
+      "level": "INFO",
+      "consoleLevel": "INFO",
+      "disableConsoleAfterReady": false,
+      "outputJSON": false,
+      "buffer": true,
+      "appLogName": "my-midway-project-web.log",
+      "coreLogName": "egg-web.log",
+      "agentLogName": "egg-agent.log",
+      "errorLogName": "common-error.log",
+      "coreLogger": {
+        "consoleLevel": "WARN"
+      },
+      "allowDebugAtProd": false,
+      "enablePerformanceTimer": false
+    },
+    "httpclient": {
+      "enableDNSCache": false,
+      "dnsCacheLookupInterval": 10000,
+      "dnsCacheMaxLength": 1000,
+      "request": {
+        "timeout": 5000
+      },
+      "httpAgent": {
+        "keepAlive": true,
+        "freeSocketTimeout": 4000,
+        "maxSockets": 9007199254740991,
+        "maxFreeSockets": 256
+      },
+      "httpsAgent": {
+        "keepAlive": true,
+        "freeSocketTimeout": 4000,
+        "maxSockets": 9007199254740991,
+        "maxFreeSockets": 256
+      }
+    },
+    "meta": {
+      "enable": true,
+      "logging": false
+    },
+    "coreMiddleware": [
+      "meta",
+      "siteFile",
+      "notfound",
+      "bodyParser",
+      "overrideMethod"
+    ],
+    "workerStartTimeout": 600000,
+    "serverTimeout": null,
+    "cluster": {
+      "listen": {
+        "path": "",
+        "port": 7001,
+        "hostname": ""
+      }
+    },
+    "clusterClient": {
+      "maxWaitTime": 60000,
+      "responseTimeout": 60000
+    },
+    "onClientError": null,
+    "egg": {
+      "dumpConfig": true,
+      "contextLoggerFormat": "<Function contextLoggerFormat>",
+      "queryParseMode": "extended",
+      "port": 7001,
+      "plugins": {
+        "egg-mock": {
+          "enable": true,
+          "package": "egg-mock",
+          "name": "egg-mock",
+          "dependencies": [],
+          "optionalDependencies": [],
+          "env": []
+        }
+      }
+    },
+    "pluginOverwrite": false,
+    "alinode": {
+      "logdir": "/tmp",
+      "error_log": [
+        "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project/common-error.log",
+        "/Users/guyumac/Documents/my-midway/midway-project/logs/stderr.log"
+      ],
+      "packages": [
+        "/Users/guyumac/Documents/my-midway/midway-project/package.json"
+      ]
+    },
+    "cors": {
+      "origin": "*",
+      "allowMethods": "GET,POST,PUT,DELETE,OPTIONS",
+      "credentials": true
+    },
+    "swagger": {
+      "title": "代码审查API",
+      "description": "代码审查API",
+      "version": "1.0.0",
+      "swaggerPath": "/swagger-ui",
+      "swaggerUIRender": "<Function renderSwaggerUIDist>",
+      "swaggerUIRenderOptions": {},
+      "isGenerateTagForController": true
+    },
+    "httpProxy": {
+      "enable": true,
+      "default": {
+        "target": "https://idealab.alibaba-inc.com/api/openai/v1/$1",
+        "ingoreHeaders": {
+          "origin": true,
+          "Origin": true
+        },
+        "strategy": {}
+      }
+    },
+    "coreMiddlewares": "~config~coreMiddleware",
+    "appMiddlewares": [],
+    "appMiddleware": "~config~appMiddlewares",
+    "core": {
+      "healthCheckTimeout": 1000
+    },
+    "asyncContextManager": {
+      "enable": false
+    },
+    "debug": {
+      "recordConfigMergeOrder": true
+    }
+  },
+  "plugins": {
+    "onerror": {
+      "enable": true,
+      "package": "egg-onerror",
+      "name": "onerror",
+      "dependencies": [],
+      "optionalDependencies": [
+        "jsonp"
+      ],
+      "env": [],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-onerror",
+      "version": "2.4.0"
+    },
+    "session": {
+      "enable": true,
+      "package": "egg-session",
+      "name": "session",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-session",
+      "version": "3.3.0"
+    },
+    "i18n": {
+      "enable": false,
+      "package": "egg-i18n",
+      "name": "i18n",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-i18n",
+      "version": "2.1.1"
+    },
+    "watcher": {
+      "enable": false,
+      "package": "egg-watcher",
+      "name": "watcher",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-watcher",
+      "version": "3.1.1"
+    },
+    "multipart": {
+      "enable": false,
+      "package": "egg-multipart",
+      "name": "multipart",
+      "dependencies": [],
+      "optionalDependencies": [
+        "schedule"
+      ],
+      "env": [],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-multipart",
+      "version": "2.13.1"
+    },
+    "security": {
+      "enable": true,
+      "package": "egg-security",
+      "name": "security",
+      "dependencies": [],
+      "optionalDependencies": [
+        "session"
+      ],
+      "env": [],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security",
+      "version": "2.11.0"
+    },
+    "development": {
+      "enable": false,
+      "package": "egg-development",
+      "name": "development",
+      "dependencies": [
+        "watcher"
+      ],
+      "optionalDependencies": [],
+      "env": [
+        "local"
+      ],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-development",
+      "version": "2.7.0"
+    },
+    "logrotator": {
+      "enable": false,
+      "package": "egg-logrotator",
+      "name": "logrotator",
+      "dependencies": [
+        "schedule"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-logrotator",
+      "version": "3.2.0"
+    },
+    "schedule": {
+      "enable": false,
+      "package": "egg-schedule",
+      "name": "schedule",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-schedule",
+      "version": "3.7.0"
+    },
+    "static": {
+      "enable": false,
+      "package": "egg-static",
+      "name": "static",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-static",
+      "version": "2.3.1"
+    },
+    "jsonp": {
+      "enable": true,
+      "package": "egg-jsonp",
+      "name": "jsonp",
+      "dependencies": [],
+      "optionalDependencies": [
+        "security"
+      ],
+      "env": [],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-jsonp",
+      "version": "2.0.0"
+    },
+    "view": {
+      "enable": false,
+      "package": "egg-view",
+      "name": "view",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-view",
+      "version": "2.1.4"
+    },
+    "egg-mock": {
+      "enable": true,
+      "package": "egg-mock",
+      "name": "egg-mock",
+      "dependencies": "~config~egg~plugins~egg-mock~dependencies",
+      "optionalDependencies": "~config~egg~plugins~egg-mock~optionalDependencies",
+      "env": "~config~egg~plugins~egg-mock~env",
+      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-mock",
+      "version": "3.26.0"
+    }
+  },
+  "appInfo": {
+    "name": "my-midway-project",
+    "baseDir": "/Users/guyumac/Documents/my-midway/midway-project/dist",
+    "env": "local",
+    "scope": "",
+    "HOME": "/Users/guyumac",
+    "pkg": {
+      "name": "my-midway-project",
+      "version": "1.0.0",
+      "description": "",
+      "private": true,
+      "scripts": {
+        "start": "NODE_ENV=production node ./bootstrap.js",
+        "dev": "cross-env NODE_ENV=local mwtsc --watch --run @midwayjs/mock/app.js",
+        "test": "cross-env NODE_ENV=unittest jest",
+        "cov": "jest --coverage",
+        "lint": "mwts check",
+        "lint:fix": "mwts fix",
+        "ci": "npm run cov",
+        "build": "mwtsc --cleanOutDir"
+      },
+      "dependencies": {
+        "@ai-sdk/openai": "^1.3.22",
+        "@babel/core": "^7.25.2",
+        "@mastergo/plugin-typings": "^2.5.0",
+        "@mastra/core": "0.13.1",
+        "@mastra/libsql": "0.13.1",
+        "@mastra/loggers": "0.10.6",
+        "@mastra/memory": "0.12.1",
+        "@midwayjs/bootstrap": "^3.12.0",
+        "@midwayjs/core": "^3.12.0",
+        "@midwayjs/cross-domain": "^3.16.5",
+        "@midwayjs/koa": "^3.20.16",
+        "@midwayjs/logger": "^3.1.0",
+        "@midwayjs/swagger": "^3.16.5",
+        "@midwayjs/web": "^3.12.0",
+        "@sevenryze/ruid": "^1.5.0",
+        "@types/string-similarity": "^4.0.2",
+        "ali-oss": "^6.20.0",
+        "async-sema": "^3.1.1",
+        "axios": "^1.7.2",
+        "chalk": "^4.1.2",
+        "class-transformer": "^0.5.1",
+        "class-transformer-validator": "^0.9.1",
+        "class-validator": "^0.14.1",
+        "diff": "^8.0.2",
+        "egg": "^2.0.0",
+        "egg-view": "^2.1.4",
+        "egg-view-xtpl": "^1.2.0",
+        "fast-xml-parser": "^5.2.5",
+        "glob": "^11.0.2",
+        "js-base64": "^3.7.7",
+        "jsx2css": "^1.0.8",
+        "lodash": "^4.17.21",
+        "markdown-it": "^14.1.0",
+        "mdast-util-from-markdown": "^2.0.1",
+        "mysql": "^2.18.1",
+        "parse-diff": "^0.11.1",
+        "parse-jsx-to-css": "^1.0.6",
+        "postcss": "^8.4.39",
+        "postcss-scss": "^4.0.9",
+        "prettier": "^2.8.3",
+        "query-string": "^7.1.3",
+        "reflect-metadata": "^0.2.2",
+        "semver": "^7.6.3",
+        "simple-git": "^3.28.0",
+        "string-similarity": "^4.0.4",
+        "tailwindcss": "^3.4.6",
+        "typeorm": "^0.2.45",
+        "unist-util-remove": "^4.0.0",
+        "unist-util-visit-parents": "^6.0.1",
+        "unocss": "^0.58.9",
+        "uuid": "^10.0.0",
+        "validator": "^13.12.0",
+        "zod": "^3.25.57"
+      },
+      "devDependencies": {
+        "@midwayjs/egg-ts-helper": "^1.0.1",
+        "@midwayjs/mock": "^3.12.0",
+        "@midwayjs/typeorm": "^3.16.5",
+        "@types/jest": "^29.2.0",
+        "@types/lodash": "^4.17.7",
+        "@types/minimatch": "3.0.5",
+        "@types/query-string": "^6.3.0",
+        "cross-env": "^6.0.0",
+        "egg-mock": "^3.26.0",
+        "jest": "^29.2.2",
+        "mastra": "^0.10.20",
+        "mwts": "^1.3.0",
+        "mwtsc": "^1.4.0",
+        "swagger-ui-dist": "^5.17.14",
+        "ts-jest": "^29.0.3",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.8.3"
+      },
+      "engines": {
+        "node": ">=12.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": ""
+      },
+      "author": "anonymous",
+      "license": "MIT"
+    },
+    "root": "/Users/guyumac/Documents/my-midway/midway-project",
+    "appDir": "/Users/guyumac/Documents/my-midway/midway-project"
+  }
+}

@@ -1,0 +1,258 @@
+[
+  {
+    "name": "Process Start",
+    "start": 1762699267248,
+    "end": 1762699267865,
+    "duration": 617,
+    "pid": 64999,
+    "index": 0
+  },
+  {
+    "name": "Application Start",
+    "start": 1762699267865,
+    "end": 1762699267890,
+    "duration": 25,
+    "pid": 64999,
+    "index": 1
+  },
+  {
+    "name": "Load Plugin",
+    "start": 1762699267873,
+    "end": 1762699267876,
+    "duration": 3,
+    "pid": 64999,
+    "index": 2
+  },
+  {
+    "name": "Load Config",
+    "start": 1762699267876,
+    "end": 1762699267879,
+    "duration": 3,
+    "pid": 64999,
+    "index": 3
+  },
+  {
+    "name": "Require(0) config/config.default.js",
+    "start": 1762699267876,
+    "end": 1762699267876,
+    "duration": 0,
+    "pid": 64999,
+    "index": 4
+  },
+  {
+    "name": "Require(1) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-session/config/config.default.js",
+    "start": 1762699267876,
+    "end": 1762699267876,
+    "duration": 0,
+    "pid": 64999,
+    "index": 5
+  },
+  {
+    "name": "Require(2) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/config/config.default.js",
+    "start": 1762699267876,
+    "end": 1762699267876,
+    "duration": 0,
+    "pid": 64999,
+    "index": 6
+  },
+  {
+    "name": "Require(3) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-jsonp/config/config.default.js",
+    "start": 1762699267876,
+    "end": 1762699267877,
+    "duration": 1,
+    "pid": 64999,
+    "index": 7
+  },
+  {
+    "name": "Require(4) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-onerror/config/config.default.js",
+    "start": 1762699267877,
+    "end": 1762699267877,
+    "duration": 0,
+    "pid": 64999,
+    "index": 8
+  },
+  {
+    "name": "Require(5) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg/config/config.default.js",
+    "start": 1762699267877,
+    "end": 1762699267877,
+    "duration": 0,
+    "pid": 64999,
+    "index": 9
+  },
+  {
+    "name": "Require(6) /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/config/config.default.js",
+    "start": 1762699267878,
+    "end": 1762699267878,
+    "duration": 0,
+    "pid": 64999,
+    "index": 10
+  },
+  {
+    "name": "Require(7) config/config.default.js",
+    "start": 1762699267878,
+    "end": 1762699267878,
+    "duration": 0,
+    "pid": 64999,
+    "index": 11
+  },
+  {
+    "name": "Require(8) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/config/config.local.js",
+    "start": 1762699267878,
+    "end": 1762699267878,
+    "duration": 0,
+    "pid": 64999,
+    "index": 12
+  },
+  {
+    "name": "Require(9) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg/config/config.local.js",
+    "start": 1762699267878,
+    "end": 1762699267879,
+    "duration": 1,
+    "pid": 64999,
+    "index": 13
+  },
+  {
+    "name": "Require(10) /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/config/config.local.js",
+    "start": 1762699267879,
+    "end": 1762699267879,
+    "duration": 0,
+    "pid": 64999,
+    "index": 14
+  },
+  {
+    "name": "Before Start in node_modules/@midwayjs/web/dist/base.js:236:22",
+    "start": 1762699267879,
+    "end": 1762699267889,
+    "duration": 10,
+    "pid": 64999,
+    "index": 15
+  },
+  {
+    "name": "Load extend/agent.js",
+    "start": 1762699267882,
+    "end": 1762699267884,
+    "duration": 2,
+    "pid": 64999,
+    "index": 16
+  },
+  {
+    "name": "Require(11) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/app/extend/agent.js",
+    "start": 1762699267882,
+    "end": 1762699267882,
+    "duration": 0,
+    "pid": 64999,
+    "index": 17
+  },
+  {
+    "name": "Require(12) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-mock/app/extend/agent.js",
+    "start": 1762699267882,
+    "end": 1762699267884,
+    "duration": 2,
+    "pid": 64999,
+    "index": 18
+  },
+  {
+    "name": "Require(13) /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/app/extend/agent.js",
+    "start": 1762699267884,
+    "end": 1762699267884,
+    "duration": 0,
+    "pid": 64999,
+    "index": 19
+  },
+  {
+    "name": "Load extend/context.js",
+    "start": 1762699267884,
+    "end": 1762699267888,
+    "duration": 4,
+    "pid": 64999,
+    "index": 20
+  },
+  {
+    "name": "Require(14) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/app/extend/context.js",
+    "start": 1762699267884,
+    "end": 1762699267887,
+    "duration": 3,
+    "pid": 64999,
+    "index": 21
+  },
+  {
+    "name": "Require(15) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-jsonp/app/extend/context.js",
+    "start": 1762699267887,
+    "end": 1762699267887,
+    "duration": 0,
+    "pid": 64999,
+    "index": 22
+  },
+  {
+    "name": "Require(16) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg/app/extend/context.js",
+    "start": 1762699267887,
+    "end": 1762699267888,
+    "duration": 1,
+    "pid": 64999,
+    "index": 23
+  },
+  {
+    "name": "Require(17) /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/app/extend/context.js",
+    "start": 1762699267888,
+    "end": 1762699267888,
+    "duration": 0,
+    "pid": 64999,
+    "index": 24
+  },
+  {
+    "name": "Load agent.js",
+    "start": 1762699267888,
+    "end": 1762699267889,
+    "duration": 1,
+    "pid": 64999,
+    "index": 25
+  },
+  {
+    "name": "Require(18) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/agent.js",
+    "start": 1762699267888,
+    "end": 1762699267889,
+    "duration": 1,
+    "pid": 64999,
+    "index": 26
+  },
+  {
+    "name": "Require(19) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-onerror/agent.js",
+    "start": 1762699267889,
+    "end": 1762699267889,
+    "duration": 0,
+    "pid": 64999,
+    "index": 27
+  },
+  {
+    "name": "Require(20) /Users/guyumac/Documents/my-midway/midway-project/node_modules/egg/agent.js",
+    "start": 1762699267889,
+    "end": 1762699267889,
+    "duration": 0,
+    "pid": 64999,
+    "index": 28
+  },
+  {
+    "name": "Require(21) /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/agent.js",
+    "start": 1762699267889,
+    "end": 1762699267889,
+    "duration": 0,
+    "pid": 64999,
+    "index": 29
+  },
+  {
+    "name": "Did Load in /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/agent.js:didLoad",
+    "start": 1762699267889,
+    "end": 1762699267890,
+    "duration": 1,
+    "pid": 64999,
+    "index": 30
+  },
+  {
+    "name": "Will Ready in /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/agent.js:willReady",
+    "start": 1762699267890,
+    "end": 1762699267890,
+    "duration": 0,
+    "pid": 64999,
+    "index": 31
+  }
+]

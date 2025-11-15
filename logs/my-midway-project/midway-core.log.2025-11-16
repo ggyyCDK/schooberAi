@@ -1,0 +1,13 @@
+2025-11-16 00:10:25.501 INFO 88072 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-16 00:10:25.502 INFO 88072 [egg:core] dump config after load, 3ms
+2025-11-16 00:10:25.517 INFO 88072 [egg:core] dump config after ready, 1ms
+2025-11-16 00:10:25.522 INFO 88072 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-16 00:10:25.522 INFO 88072 [egg:core] dump config after load, 2ms
+2025-11-16 00:10:25.572 WARN 88072 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-16 00:10:25.573 INFO 88072 [egg-security] use methodnoallow middleware
+2025-11-16 00:10:25.573 INFO 88072 [egg-security] use noopen middleware
+2025-11-16 00:10:25.574 INFO 88072 [egg-security] use nosniff middleware
+2025-11-16 00:10:25.574 INFO 88072 [egg-security] use xssProtection middleware
+2025-11-16 00:10:25.574 INFO 88072 [egg-security] use dta middleware
+2025-11-16 00:10:25.574 INFO 88072 [egg-security] compose 5 middlewares into one security middleware
+2025-11-16 00:10:25.604 INFO 88072 [egg:core] dump config after ready, 1ms
