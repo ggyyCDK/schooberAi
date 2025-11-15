@@ -1,0 +1,26 @@
+2025-11-16 00:31:49.950 ERROR 15676 [-/127.0.0.1/-/108ms POST /api/v1/agent/run] Error: ak is required
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:40:19)
+    at AgentService.multiRoundChat (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:207:34)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:99:17)
+    at AgentController.run (/Users/guyumac/Documents/schooberAi/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
+  headerSent: true
+}
+2025-11-16 00:47:30.868 ERROR 24244 [-/127.0.0.1/-/77ms POST /api/v1/agent/run] Error: ak is required
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:40:19)
+    at AgentService.multiRoundChat (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:208:34)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:100:17)
+    at AgentController.run (/Users/guyumac/Documents/schooberAi/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:33:20)
+    at xssProtection (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
+  headerSent: true
+}

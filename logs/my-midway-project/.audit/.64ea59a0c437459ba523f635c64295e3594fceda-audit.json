@@ -1,0 +1,15 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 7
+  },
+  "auditLog": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/.audit/.64ea59a0c437459ba523f635c64295e3594fceda-audit.json",
+  "files": [
+    {
+      "date": 1763224050840,
+      "name": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/midway-app.log.2025-11-16",
+      "hash": "9fc469ccd5610e845c7b98385489f40b"
+    }
+  ],
+  "hashType": "md5"
+}

@@ -4,7 +4,7 @@
       "default": {
         "fileLogName": "midway-app.log",
         "errorLogName": "common-error.log",
-        "dir": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project",
+        "dir": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project",
         "auditFileDir": ".audit",
         "transports": {
           "console": {
@@ -107,7 +107,7 @@
     "onerror": {
       "errorPageUrl": "",
       "appErrorFilter": null,
-      "templatePath": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-onerror/lib/onerror_page.mustache"
+      "templatePath": "/Users/guyumac/Documents/schooberAi/node_modules/egg-onerror/lib/onerror_page.mustache"
     },
     "env": "local",
     "name": "my-midway-project",
@@ -219,9 +219,9 @@
       "author": "anonymous",
       "license": "MIT"
     },
-    "baseDir": "/Users/guyumac/Documents/my-midway/midway-project/dist",
+    "baseDir": "/Users/guyumac/Documents/schooberAi/dist",
     "HOME": "/Users/guyumac",
-    "rundir": "/Users/guyumac/Documents/my-midway/midway-project/run",
+    "rundir": "/Users/guyumac/Documents/schooberAi/run",
     "dump": {
       "ignore": "<Set>"
     },
@@ -254,7 +254,7 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project",
+      "dir": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project",
       "encoding": "utf8",
       "env": "local",
       "level": "INFO",
@@ -331,11 +331,11 @@
     "alinode": {
       "logdir": "/tmp",
       "error_log": [
-        "/Users/guyumac/Documents/my-midway/midway-project/logs/my-midway-project/common-error.log",
-        "/Users/guyumac/Documents/my-midway/midway-project/logs/stderr.log"
+        "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/common-error.log",
+        "/Users/guyumac/Documents/schooberAi/logs/stderr.log"
       ],
       "packages": [
-        "/Users/guyumac/Documents/my-midway/midway-project/package.json"
+        "/Users/guyumac/Documents/schooberAi/package.json"
       ]
     },
     "cors": {
@@ -395,8 +395,8 @@
         "jsonp"
       ],
       "env": [],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-onerror",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-onerror",
       "version": "2.4.0"
     },
     "session": {
@@ -406,8 +406,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-session",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/egg/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-session",
       "version": "3.3.0"
     },
     "i18n": {
@@ -417,8 +417,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-i18n",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-i18n",
       "version": "2.1.1"
     },
     "watcher": {
@@ -428,8 +428,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-watcher",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-watcher",
       "version": "3.1.1"
     },
     "multipart": {
@@ -441,8 +441,8 @@
         "schedule"
       ],
       "env": [],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-multipart",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-multipart",
       "version": "2.13.1"
     },
     "security": {
@@ -454,8 +454,8 @@
         "session"
       ],
       "env": [],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-security",
       "version": "2.11.0"
     },
     "development": {
@@ -469,8 +469,8 @@
       "env": [
         "local"
       ],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-development",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-development",
       "version": "2.7.0"
     },
     "logrotator": {
@@ -482,8 +482,8 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-logrotator",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-logrotator",
       "version": "3.2.0"
     },
     "schedule": {
@@ -493,8 +493,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-schedule",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-schedule",
       "version": "3.7.0"
     },
     "static": {
@@ -504,8 +504,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-static",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-static",
       "version": "2.3.1"
     },
     "jsonp": {
@@ -517,8 +517,8 @@
         "security"
       ],
       "env": [],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-jsonp",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/egg/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-jsonp",
       "version": "2.0.0"
     },
     "view": {
@@ -528,8 +528,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/config/plugin.js",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-view",
+      "from": "/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/config/plugin.js",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-view",
       "version": "2.1.4"
     },
     "egg-mock": {
@@ -539,13 +539,13 @@
       "dependencies": "~config~egg~plugins~egg-mock~dependencies",
       "optionalDependencies": "~config~egg~plugins~egg-mock~optionalDependencies",
       "env": "~config~egg~plugins~egg-mock~env",
-      "path": "/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-mock",
+      "path": "/Users/guyumac/Documents/schooberAi/node_modules/egg-mock",
       "version": "3.26.0"
     }
   },
   "appInfo": {
     "name": "my-midway-project",
-    "baseDir": "/Users/guyumac/Documents/my-midway/midway-project/dist",
+    "baseDir": "/Users/guyumac/Documents/schooberAi/dist",
     "env": "local",
     "scope": "",
     "HOME": "/Users/guyumac",
@@ -649,7 +649,7 @@
       "author": "anonymous",
       "license": "MIT"
     },
-    "root": "/Users/guyumac/Documents/my-midway/midway-project",
-    "appDir": "/Users/guyumac/Documents/my-midway/midway-project"
+    "root": "/Users/guyumac/Documents/schooberAi",
+    "appDir": "/Users/guyumac/Documents/schooberAi"
   }
 }

@@ -26,7 +26,7 @@ export class AgentRunRequestDTO {
         description: '变量映射',
         example: {
             llmConfig: {
-                workDir: '/',
+                cwdFormatted: '/',
                 model: 'claude_sonnet4',
                 ak: '',
                 ApiUrl: ''

@@ -6,7 +6,7 @@ import { AiMessageService } from "./AiMessageService";
 import { AiChatService } from "./AiChatService";
 import { AiSessionModel } from "../../Domain/Agent/AiSession";
 import { AiMessageModel } from "../../Domain/Agent/AiMessage";
-
+import { basicSystemPrompt } from '@/Helper/prompt/basePrompt/systemPrompt/systemPrompt'
 @Provide()
 export class AgentService {
     @Inject()
@@ -33,10 +33,11 @@ export class AgentService {
         businessType?: string;
         variableMaps: Record<string, any>,
         question: AiPrompt[]
+
     }): Promise<void> {
         const { sessionId, workerId, businessType, variableMaps, question } = command;
         const LLMConfigParam = variableMaps.llmConfig ?? {} //获取大模型配置
-        const { ak, ApiUrl } = LLMConfigParam
+        const { ak, ApiUrl, cwdFormatted } = LLMConfigParam
         let isHistory = false; // 是否有历史记录，及是否是记忆模式
         let isFirstRound = false; // 是否是第一次对话
         let currentSession: AiSessionModel | null = null;
@@ -83,7 +84,7 @@ export class AgentService {
         }
         //下面都为首轮对话逻辑
         //构建系统提示词
-        const systemPrompt = '你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q'
+        const systemPrompt = basicSystemPrompt(cwdFormatted)
 
         let finalPromptList: AiPrompt[] = [{ role: 'system', content: systemPrompt }]
         //格式兼容

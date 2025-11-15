@@ -3,10 +3,11 @@ import { Context } from '@midwayjs/web';
 import { ApiTags, ApiOperation, ApiResponse } from '@midwayjs/swagger';
 import { AgentRunRequestDTO } from './RequestDTO/AgentRunRequestDTO';
 import { AgentService } from '@/BussinessLayer/Agent/Application/Service/AgentService'
-
+import * as os from 'os'
 @ApiTags(['Agent服务'])
 @Controller('/api/v1/agent')
 export class AgentController {
+
   @Inject()
   ctx: Context;
 
@@ -20,6 +21,8 @@ export class AgentController {
   })
   @Post('/run')
   async run(@Body() body: AgentRunRequestDTO) {
+    console.log('os is:', os)
+
     const { variableMaps, sessionId, question, workerId } = body;
     const { res } = this.ctx;
     // 设置SSE响应头
