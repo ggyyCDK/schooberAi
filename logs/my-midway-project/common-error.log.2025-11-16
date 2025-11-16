@@ -24,3 +24,68 @@
     at nosniff (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
   headerSent: true
 }
+2025-11-16 17:50:44.030 ERROR 96421 [-/127.0.0.1/-/77ms POST /api/v1/agent/run] Error: ak is required
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:40:19)
+    at AgentService.multiRoundChat (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:208:34)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:100:17)
+    at AgentController.run (/Users/guyumac/Documents/schooberAi/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
+  headerSent: true
+}
+2025-11-16 19:15:51.734 ERROR 83637 [-/127.0.0.1/-/788ms POST /api/v1/agent/run] Error: 大模型流式调用失败:Error: 404 "Not Found"
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:62:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.multiRoundChat (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:208:9)
+    at AgentService.run (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:100:17)
+    at AgentController.run (/Users/guyumac/Documents/schooberAi/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
+  headerSent: true
+}
+2025-11-16 19:16:18.217 ERROR 83637 [-/127.0.0.1/-/557ms POST /api/v1/agent/run] TypeError: Cannot read properties of undefined (reading 'Symbol(Symbol.asyncIterator)')
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:66:35)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.multiRoundChat (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:208:9)
+    at AgentService.run (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:100:17)
+    at AgentController.run (/Users/guyumac/Documents/schooberAi/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
+  headerSent: true
+}
+2025-11-16 19:18:04.504 ERROR 86889 [-/127.0.0.1/-/688ms POST /api/v1/agent/run] Error: 大模型流式调用失败:Error: 404 "Not Found"
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:62:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.multiRoundChat (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:208:9)
+    at AgentService.run (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:100:17)
+    at AgentController.run (/Users/guyumac/Documents/schooberAi/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
+  headerSent: true
+}
+2025-11-16 19:18:18.780 ERROR 86889 [-/127.0.0.1/-/475ms POST /api/v1/agent/run] TypeError: Cannot read properties of undefined (reading 'Symbol(Symbol.asyncIterator)')
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:66:35)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.multiRoundChat (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:208:9)
+    at AgentService.run (/Users/guyumac/Documents/schooberAi/src/BussinessLayer/Agent/Application/Service/AgentService.ts:100:17)
+    at AgentController.run (/Users/guyumac/Documents/schooberAi/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/schooberAi/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
+  headerSent: true
+}
