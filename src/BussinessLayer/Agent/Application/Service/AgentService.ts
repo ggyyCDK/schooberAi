@@ -129,7 +129,7 @@ export class AgentService {
             stream: true,
             onMessage: message => {
                 responseContent += message.content
-                this.ctx.res.write('data: ' + JSON.stringify(message) + '\n\n');
+                this.ctx.res.write(JSON.stringify(message) + '\n\n');
             },
             onCompleted: message => {
                 //完成时，记录ai完整回复
@@ -214,7 +214,7 @@ export class AgentService {
             stream: true,
             onMessage: message => {
                 responseContent += message.content
-                this.ctx.res.write('data: ' + JSON.stringify(message) + '\n\n');
+                this.ctx.res.write(JSON.stringify(message) + '\n\n');
             },
             onCompleted: message => {
                 //完成时，记录ai完整回复
