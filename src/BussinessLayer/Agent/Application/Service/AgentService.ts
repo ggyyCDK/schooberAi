@@ -114,7 +114,9 @@ export class AgentService {
                 fromType: AimessageType.UserInput,
                 messageContent: finalPromptList,
                 workerId: 'guyu',
-                llmConfig: LLMConfigParam
+                llmConfig: {
+                    ApiUrl, cwdFormatted
+                }
             })
         }
 
@@ -139,7 +141,9 @@ export class AgentService {
                         fromType: AimessageType.LLMResponse,
                         messageContent: [{ role: 'assistant', content: responseContent }],
                         workerId: 'guyu',
-                        llmConfig: LLMConfigParam
+                        llmConfig: {
+                            ApiUrl, cwdFormatted
+                        }
                     })
                 }
             }
@@ -164,7 +168,7 @@ export class AgentService {
     }): Promise<void> {
         const { sessionId, workerId = 'guyu', messages, variableMaps } = command;
         const LLMConfigParam = variableMaps.llmConfig ?? {} //获取大模型配置
-        const { ak, ApiUrl } = LLMConfigParam
+        const { ak, ApiUrl, cwdFormatted } = LLMConfigParam
         //首先查找session,因为进到这里的肯定是有历史会话的，肯定有session，没有则抛出错误
         const session = await this.aiSessionService.findById(sessionId);
         if (!session) {
@@ -194,6 +198,7 @@ export class AgentService {
 
         //step 4 （构建回复内容）
         let responseContent = '';
+        let talkUsage: any = null
 
         //step 5 （先保存用户输入信息）
         await this.aiMessageService.createAiMessage({
@@ -201,7 +206,7 @@ export class AgentService {
             fromType: AimessageType.UserInput,
             messageContent: messages,
             workerId,
-            llmConfig: LLMConfigParam
+            llmConfig: { ApiUrl, cwdFormatted }
         })
 
         //step 6 （调用Ai服务进行流式对话）
@@ -216,6 +221,9 @@ export class AgentService {
                 responseContent += message.content
                 this.ctx.res.write(JSON.stringify(message) + '\n\n');
             },
+            onUsage: (usage => {
+                talkUsage = usage.content;
+            }),
             onCompleted: message => {
                 //完成时，记录ai完整回复
                 if (sessionId) {
@@ -224,7 +232,7 @@ export class AgentService {
                         fromType: AimessageType.LLMResponse,
                         messageContent: [{ role: 'assistant', content: responseContent }],
                         workerId: 'guyu',
-                        llmConfig: LLMConfigParam
+                        llmConfig: { ApiUrl, cwdFormatted, talkUsage }
                     })
                 }
             }

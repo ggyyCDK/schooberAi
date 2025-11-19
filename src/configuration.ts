@@ -27,9 +27,9 @@ export class MainConfiguration {
 const initConnection = async (app: IMidwayApplication) => {
   return await createConnection({
     type: 'mysql',
-    host: 'localhost',
+    host: 'rm-bp1854x0z3445ng13zo.mysql.rds.aliyuncs.com',
     port: 3306,
-    username: 'root',
+    username: 'dms_user_47051c5',
     password: 'woshiGY3011',
     database: 'ai_mutil_message',
     charset: 'utf8mb4',

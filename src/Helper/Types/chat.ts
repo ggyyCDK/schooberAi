@@ -17,6 +17,7 @@ export interface AiStreamChatInputCommand extends AiChatInputCommand {
     onMessage?: (message: ParseResult) => void;
     onError?: (error: Error) => void;
     onCompleted?: (message: ParseResult) => void;
+    onUsage?: (usage: any) => void;
 }
 
 export interface AiChatResponse {

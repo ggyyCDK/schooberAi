@@ -1,0 +1,394 @@
+[
+  {
+    "name": "Process Start",
+    "start": 1763536735583,
+    "end": 1763536736313,
+    "duration": 730,
+    "pid": 92534,
+    "index": 0
+  },
+  {
+    "name": "Application Start",
+    "start": 1763536736313,
+    "end": 1763536736387,
+    "duration": 74,
+    "pid": 92534,
+    "index": 1
+  },
+  {
+    "name": "Load Plugin",
+    "start": 1763536736314,
+    "end": 1763536736314,
+    "duration": 0,
+    "pid": 92534,
+    "index": 2
+  },
+  {
+    "name": "Load Config",
+    "start": 1763536736314,
+    "end": 1763536736316,
+    "duration": 2,
+    "pid": 92534,
+    "index": 3
+  },
+  {
+    "name": "Require(0) config/config.default.js",
+    "start": 1763536736314,
+    "end": 1763536736315,
+    "duration": 1,
+    "pid": 92534,
+    "index": 4
+  },
+  {
+    "name": "Require(1) /Users/guyumac/Documents/schooberAi/node_modules/egg-session/config/config.default.js",
+    "start": 1763536736315,
+    "end": 1763536736315,
+    "duration": 0,
+    "pid": 92534,
+    "index": 5
+  },
+  {
+    "name": "Require(2) /Users/guyumac/Documents/schooberAi/node_modules/egg-security/config/config.default.js",
+    "start": 1763536736315,
+    "end": 1763536736315,
+    "duration": 0,
+    "pid": 92534,
+    "index": 6
+  },
+  {
+    "name": "Require(3) /Users/guyumac/Documents/schooberAi/node_modules/egg-jsonp/config/config.default.js",
+    "start": 1763536736315,
+    "end": 1763536736315,
+    "duration": 0,
+    "pid": 92534,
+    "index": 7
+  },
+  {
+    "name": "Require(4) /Users/guyumac/Documents/schooberAi/node_modules/egg-onerror/config/config.default.js",
+    "start": 1763536736315,
+    "end": 1763536736315,
+    "duration": 0,
+    "pid": 92534,
+    "index": 8
+  },
+  {
+    "name": "Require(5) /Users/guyumac/Documents/schooberAi/node_modules/egg/config/config.default.js",
+    "start": 1763536736315,
+    "end": 1763536736315,
+    "duration": 0,
+    "pid": 92534,
+    "index": 9
+  },
+  {
+    "name": "Require(6) /Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/dist/config/config.default.js",
+    "start": 1763536736315,
+    "end": 1763536736315,
+    "duration": 0,
+    "pid": 92534,
+    "index": 10
+  },
+  {
+    "name": "Require(7) config/config.default.js",
+    "start": 1763536736315,
+    "end": 1763536736315,
+    "duration": 0,
+    "pid": 92534,
+    "index": 11
+  },
+  {
+    "name": "Require(8) /Users/guyumac/Documents/schooberAi/node_modules/egg-security/config/config.local.js",
+    "start": 1763536736315,
+    "end": 1763536736315,
+    "duration": 0,
+    "pid": 92534,
+    "index": 12
+  },
+  {
+    "name": "Require(9) /Users/guyumac/Documents/schooberAi/node_modules/egg/config/config.local.js",
+    "start": 1763536736315,
+    "end": 1763536736315,
+    "duration": 0,
+    "pid": 92534,
+    "index": 13
+  },
+  {
+    "name": "Require(10) /Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/dist/config/config.local.js",
+    "start": 1763536736316,
+    "end": 1763536736316,
+    "duration": 0,
+    "pid": 92534,
+    "index": 14
+  },
+  {
+    "name": "Load extend/application.js",
+    "start": 1763536736318,
+    "end": 1763536736332,
+    "duration": 14,
+    "pid": 92534,
+    "index": 15
+  },
+  {
+    "name": "Require(11) /Users/guyumac/Documents/schooberAi/node_modules/egg-session/app/extend/application.js",
+    "start": 1763536736318,
+    "end": 1763536736321,
+    "duration": 3,
+    "pid": 92534,
+    "index": 16
+  },
+  {
+    "name": "Require(12) /Users/guyumac/Documents/schooberAi/node_modules/egg-security/app/extend/application.js",
+    "start": 1763536736321,
+    "end": 1763536736321,
+    "duration": 0,
+    "pid": 92534,
+    "index": 17
+  },
+  {
+    "name": "Require(13) /Users/guyumac/Documents/schooberAi/node_modules/egg-jsonp/app/extend/application.js",
+    "start": 1763536736321,
+    "end": 1763536736322,
+    "duration": 1,
+    "pid": 92534,
+    "index": 18
+  },
+  {
+    "name": "Require(14) /Users/guyumac/Documents/schooberAi/node_modules/egg-mock/app/extend/application.js",
+    "start": 1763536736322,
+    "end": 1763536736332,
+    "duration": 10,
+    "pid": 92534,
+    "index": 19
+  },
+  {
+    "name": "Require(15) /Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/app/extend/application.js",
+    "start": 1763536736332,
+    "end": 1763536736332,
+    "duration": 0,
+    "pid": 92534,
+    "index": 20
+  },
+  {
+    "name": "Load extend/request.js",
+    "start": 1763536736332,
+    "end": 1763536736333,
+    "duration": 1,
+    "pid": 92534,
+    "index": 21
+  },
+  {
+    "name": "Require(16) /Users/guyumac/Documents/schooberAi/node_modules/egg/app/extend/request.js",
+    "start": 1763536736333,
+    "end": 1763536736333,
+    "duration": 0,
+    "pid": 92534,
+    "index": 22
+  },
+  {
+    "name": "Require(17) /Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/app/extend/request.js",
+    "start": 1763536736333,
+    "end": 1763536736333,
+    "duration": 0,
+    "pid": 92534,
+    "index": 23
+  },
+  {
+    "name": "Load extend/response.js",
+    "start": 1763536736333,
+    "end": 1763536736334,
+    "duration": 1,
+    "pid": 92534,
+    "index": 24
+  },
+  {
+    "name": "Require(18) /Users/guyumac/Documents/schooberAi/node_modules/egg/app/extend/response.js",
+    "start": 1763536736333,
+    "end": 1763536736334,
+    "duration": 1,
+    "pid": 92534,
+    "index": 25
+  },
+  {
+    "name": "Load extend/context.js",
+    "start": 1763536736334,
+    "end": 1763536736334,
+    "duration": 0,
+    "pid": 92534,
+    "index": 26
+  },
+  {
+    "name": "Require(19) /Users/guyumac/Documents/schooberAi/node_modules/egg-security/app/extend/context.js",
+    "start": 1763536736334,
+    "end": 1763536736334,
+    "duration": 0,
+    "pid": 92534,
+    "index": 27
+  },
+  {
+    "name": "Require(20) /Users/guyumac/Documents/schooberAi/node_modules/egg-jsonp/app/extend/context.js",
+    "start": 1763536736334,
+    "end": 1763536736334,
+    "duration": 0,
+    "pid": 92534,
+    "index": 28
+  },
+  {
+    "name": "Require(21) /Users/guyumac/Documents/schooberAi/node_modules/egg/app/extend/context.js",
+    "start": 1763536736334,
+    "end": 1763536736334,
+    "duration": 0,
+    "pid": 92534,
+    "index": 29
+  },
+  {
+    "name": "Require(22) /Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/app/extend/context.js",
+    "start": 1763536736334,
+    "end": 1763536736334,
+    "duration": 0,
+    "pid": 92534,
+    "index": 30
+  },
+  {
+    "name": "Load extend/helper.js",
+    "start": 1763536736334,
+    "end": 1763536736339,
+    "duration": 5,
+    "pid": 92534,
+    "index": 31
+  },
+  {
+    "name": "Require(23) /Users/guyumac/Documents/schooberAi/node_modules/egg-security/app/extend/helper.js",
+    "start": 1763536736334,
+    "end": 1763536736338,
+    "duration": 4,
+    "pid": 92534,
+    "index": 32
+  },
+  {
+    "name": "Require(24) /Users/guyumac/Documents/schooberAi/node_modules/egg/app/extend/helper.js",
+    "start": 1763536736338,
+    "end": 1763536736339,
+    "duration": 1,
+    "pid": 92534,
+    "index": 33
+  },
+  {
+    "name": "Load app.js",
+    "start": 1763536736339,
+    "end": 1763536736342,
+    "duration": 3,
+    "pid": 92534,
+    "index": 34
+  },
+  {
+    "name": "Require(25) /Users/guyumac/Documents/schooberAi/node_modules/egg-session/app.js",
+    "start": 1763536736339,
+    "end": 1763536736339,
+    "duration": 0,
+    "pid": 92534,
+    "index": 35
+  },
+  {
+    "name": "Require(26) /Users/guyumac/Documents/schooberAi/node_modules/egg-security/app.js",
+    "start": 1763536736339,
+    "end": 1763536736339,
+    "duration": 0,
+    "pid": 92534,
+    "index": 36
+  },
+  {
+    "name": "Require(27) /Users/guyumac/Documents/schooberAi/node_modules/egg-onerror/app.js",
+    "start": 1763536736339,
+    "end": 1763536736342,
+    "duration": 3,
+    "pid": 92534,
+    "index": 37
+  },
+  {
+    "name": "Require(28) /Users/guyumac/Documents/schooberAi/node_modules/egg-mock/app.js",
+    "start": 1763536736342,
+    "end": 1763536736342,
+    "duration": 0,
+    "pid": 92534,
+    "index": 38
+  },
+  {
+    "name": "Require(29) /Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/app.js",
+    "start": 1763536736342,
+    "end": 1763536736342,
+    "duration": 0,
+    "pid": 92534,
+    "index": 39
+  },
+  {
+    "name": "Did Load in /Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/app.js:didLoad",
+    "start": 1763536736343,
+    "end": 1763536736359,
+    "duration": 16,
+    "pid": 92534,
+    "index": 40
+  },
+  {
+    "name": "Load Service",
+    "start": 1763536736343,
+    "end": 1763536736346,
+    "duration": 3,
+    "pid": 92534,
+    "index": 41
+  },
+  {
+    "name": "Load \"service\" to Context",
+    "start": 1763536736343,
+    "end": 1763536736346,
+    "duration": 3,
+    "pid": 92534,
+    "index": 42
+  },
+  {
+    "name": "Load Middleware",
+    "start": 1763536736346,
+    "end": 1763536736359,
+    "duration": 13,
+    "pid": 92534,
+    "index": 43
+  },
+  {
+    "name": "Load \"middlewares\" to Application",
+    "start": 1763536736346,
+    "end": 1763536736359,
+    "duration": 13,
+    "pid": 92534,
+    "index": 44
+  },
+  {
+    "name": "Load Controller",
+    "start": 1763536736359,
+    "end": 1763536736359,
+    "duration": 0,
+    "pid": 92534,
+    "index": 45
+  },
+  {
+    "name": "Load \"controller\" to Application",
+    "start": 1763536736359,
+    "end": 1763536736359,
+    "duration": 0,
+    "pid": 92534,
+    "index": 46
+  },
+  {
+    "name": "Load Router",
+    "start": 1763536736359,
+    "end": 1763536736359,
+    "duration": 0,
+    "pid": 92534,
+    "index": 47
+  },
+  {
+    "name": "Will Ready in /Users/guyumac/Documents/schooberAi/node_modules/@midwayjs/web/app.js:willReady",
+    "start": 1763536736359,
+    "end": 1763536736363,
+    "duration": 4,
+    "pid": 92534,
+    "index": 48
+  }
+]

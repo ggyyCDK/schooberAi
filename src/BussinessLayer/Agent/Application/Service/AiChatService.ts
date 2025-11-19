@@ -66,17 +66,19 @@ export class AiChatService {
         const stream = response.data;
 
         for await (const chunk of stream) {
-
             const onChunk = getLines(
                 getMessages(
                     msg => {
                         const parseResult = parseSreamResponse(msg);
-
+                        console.log('parseResult', parseResult)
                         if (parseResult.eventType === EventType.Complete) {
                             command?.onCompleted && command?.onCompleted(parseResult)
                         }
                         if (parseResult.eventType === EventType.Message) {
                             command?.onMessage && command?.onMessage(parseResult)
+                        }
+                        if (parseResult.eventType === EventType.Usage) {
+                            command?.onUsage && command?.onUsage(parseResult)
                         }
                     }
                 )
