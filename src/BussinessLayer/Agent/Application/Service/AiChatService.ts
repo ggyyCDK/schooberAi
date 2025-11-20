@@ -36,6 +36,7 @@ export class AiChatService {
         )
 
         let ak: string = command.ak ?? '';
+        const ApiUrl: string = command.ApiUrl ?? '';
         if (!ak) {
             throw new Error('ak is required');
         }
@@ -49,7 +50,7 @@ export class AiChatService {
         let response;
         try {
             response = await axios.post(
-                'https://idealab.alibaba-inc.com/api/openai/v1/chat/completions',
+                ApiUrl,
                 requestParams, {
                 timeout: command.timeout ?? 5 * 60 * 1000,
                 headers: {
