@@ -1,1 +1,0 @@
-export declare const mockDemo = "\nimport React from 'react';\nimport { View, Text } from 'react-native';\n\nconst App = () => {\n    return (\n        <View>\n            <Text>Hello World</Text>\n        </View>\n    );\n};\n\nexport default App;\n";
