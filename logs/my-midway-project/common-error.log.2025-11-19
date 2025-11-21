@@ -1,0 +1,234 @@
+2025-11-19 13:30:45.461 ERROR 19367 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 13:30:45.462 ERROR 19367 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 13:31:37.295 ERROR 20391 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 13:31:37.295 ERROR 20391 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 13:36:13.487 ERROR 25175 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 13:36:13.488 ERROR 25175 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 13:38:59.579 ERROR 28069 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 13:38:59.579 ERROR 28069 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:08:50.292 ERROR 81228 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:08:50.292 ERROR 81228 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:10:12.330 ERROR 82774 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:10:12.331 ERROR 82774 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:11:07.632 ERROR 83859 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:11:07.633 ERROR 83859 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:11:47.886 ERROR 84665 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:11:47.886 ERROR 84665 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:13:22.744 ERROR 86430 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:13:22.745 ERROR 86430 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:16:17.111 ERROR 89298 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:16:17.112 ERROR 89298 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:16:32.228 ERROR 89739 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 15:16:32.228 ERROR 89739 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 18:59:53.307 ERROR 56759 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 18:59:53.308 ERROR 56759 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 21:55:29.897 ERROR 2582 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-19 21:55:29.897 ERROR 2582 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}

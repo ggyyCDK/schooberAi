@@ -1,0 +1,15 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 7
+  },
+  "auditLog": "/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project/.audit/.2c01e0a4669f67aaa3f27c06cd29638a7a78f2ce-audit.json",
+  "files": [
+    {
+      "date": 1763614118949,
+      "name": "/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project/common-error.log.2025-11-20",
+      "hash": "ffd60ee37fd20ea8187d6946e313bf41"
+    }
+  ],
+  "hashType": "md5"
+}

@@ -1,0 +1,968 @@
+2025-11-13 21:41:29.642 ERROR 35218 [-/127.0.0.1/-/98ms POST /api/v1/agent/run] 查询会话失败: Unknown column 'AiSessionModel.sessionId' in 'field list' QueryFailedError: Unknown column 'AiSessionModel.sessionId' in 'field list'
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`sessionId` AS `AiSessionModel_sessionId`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = ? LIMIT 1',
+  parameters: [ 'GUYUTEST1' ],
+  driverError: Error: Unknown column 'AiSessionModel.sessionId' in 'field list'
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_BAD_FIELD_ERROR',
+    errno: 1054,
+    sqlState: '42S22',
+    sqlMessage: "Unknown column 'AiSessionModel.sessionId' in 'field list'",
+    sql: "SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`sessionId` AS `AiSessionModel_sessionId`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = 'GUYUTEST1' LIMIT 1"
+  },
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'AiSessionModel.sessionId' in 'field list'",
+  sql: "SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`sessionId` AS `AiSessionModel_sessionId`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = 'GUYUTEST1' LIMIT 1"
+}
+2025-11-13 21:41:29.647 ERROR 35218 [-/127.0.0.1/-/103ms POST /api/v1/agent/run] Agent 运行失败: 查询会话失败: Unknown column 'AiSessionModel.sessionId' in 'field list' Error: 查询会话失败: Unknown column 'AiSessionModel.sessionId' in 'field list'
+    at AiSessionService.findById (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiSessionService.ts:67:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:46:34)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:33:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5)
+2025-11-13 21:41:29.648 ERROR 35218 [-/127.0.0.1/-/104ms POST /api/v1/agent/run] Error: Agent 运行失败: 查询会话失败: Unknown column 'AiSessionModel.sessionId' in 'field list'
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:80:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:33:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5)
+    at session (/Users/guyumac/Documents/my-midway/midway-project/node_modules/koa-session/index.js:41:7) {
+  headerSent: true
+}
+2025-11-13 21:46:25.333 ERROR 964 [-/127.0.0.1/-/51ms POST /api/v1/agent/run] 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list' QueryFailedError: Unknown column 'AiSessionModel.workerId' in 'field list'
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = ? LIMIT 1',
+  parameters: [ 'GUYUTEST1' ],
+  driverError: Error: Unknown column 'AiSessionModel.workerId' in 'field list'
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_BAD_FIELD_ERROR',
+    errno: 1054,
+    sqlState: '42S22',
+    sqlMessage: "Unknown column 'AiSessionModel.workerId' in 'field list'",
+    sql: "SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = 'GUYUTEST1' LIMIT 1"
+  },
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'AiSessionModel.workerId' in 'field list'",
+  sql: "SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = 'GUYUTEST1' LIMIT 1"
+}
+2025-11-13 21:46:25.338 ERROR 964 [-/127.0.0.1/-/56ms POST /api/v1/agent/run] Agent 运行失败: 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list' Error: 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list'
+    at AiSessionService.findById (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiSessionService.ts:67:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:46:34)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:33:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5)
+2025-11-13 21:46:25.339 ERROR 964 [-/127.0.0.1/-/57ms POST /api/v1/agent/run] Error: Agent 运行失败: 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list'
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:80:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:33:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5)
+    at session (/Users/guyumac/Documents/my-midway/midway-project/node_modules/koa-session/index.js:41:7) {
+  headerSent: true
+}
+2025-11-13 21:49:06.709 ERROR 3357 [-/127.0.0.1/-/65ms POST /api/v1/agent/run] 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list' QueryFailedError: Unknown column 'AiSessionModel.workerId' in 'field list'
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = ? LIMIT 1',
+  parameters: [ 'guyutest1' ],
+  driverError: Error: Unknown column 'AiSessionModel.workerId' in 'field list'
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_BAD_FIELD_ERROR',
+    errno: 1054,
+    sqlState: '42S22',
+    sqlMessage: "Unknown column 'AiSessionModel.workerId' in 'field list'",
+    sql: "SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = 'guyutest1' LIMIT 1"
+  },
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'AiSessionModel.workerId' in 'field list'",
+  sql: "SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = 'guyutest1' LIMIT 1"
+}
+2025-11-13 21:49:06.714 ERROR 3357 [-/127.0.0.1/-/70ms POST /api/v1/agent/run] Agent 运行失败: 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list' Error: 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list'
+    at AiSessionService.findById (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiSessionService.ts:67:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:46:34)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5)
+2025-11-13 21:49:06.716 ERROR 3357 [-/127.0.0.1/-/72ms POST /api/v1/agent/run] Error: Agent 运行失败: 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list'
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:80:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5)
+    at session (/Users/guyumac/Documents/my-midway/midway-project/node_modules/koa-session/index.js:41:7) {
+  headerSent: true
+}
+2025-11-13 21:50:08.939 ERROR 3357 [-/127.0.0.1/-/14ms POST /api/v1/agent/run] 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list' QueryFailedError: Unknown column 'AiSessionModel.workerId' in 'field list'
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = ? LIMIT 1',
+  parameters: [ 'guyutest1' ],
+  driverError: Error: Unknown column 'AiSessionModel.workerId' in 'field list'
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_BAD_FIELD_ERROR',
+    errno: 1054,
+    sqlState: '42S22',
+    sqlMessage: "Unknown column 'AiSessionModel.workerId' in 'field list'",
+    sql: "SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = 'guyutest1' LIMIT 1"
+  },
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'AiSessionModel.workerId' in 'field list'",
+  sql: "SELECT `AiSessionModel`.`db_id` AS `AiSessionModel_db_id`, `AiSessionModel`.`id` AS `AiSessionModel_id`, `AiSessionModel`.`status` AS `AiSessionModel_status`, `AiSessionModel`.`version` AS `AiSessionModel_version`, `AiSessionModel`.`create_date` AS `AiSessionModel_create_date`, `AiSessionModel`.`update_date` AS `AiSessionModel_update_date`, `AiSessionModel`.`removed_date` AS `AiSessionModel_removed_date`, `AiSessionModel`.`workerId` AS `AiSessionModel_workerId`, `AiSessionModel`.`businessType` AS `AiSessionModel_businessType`, `AiSessionModel`.`name` AS `AiSessionModel_name`, `AiSessionModel`.`ext` AS `AiSessionModel_ext` FROM `ai_session` `AiSessionModel` WHERE `AiSessionModel`.`id` = 'guyutest1' LIMIT 1"
+}
+2025-11-13 21:50:08.942 ERROR 3357 [-/127.0.0.1/-/17ms POST /api/v1/agent/run] Agent 运行失败: 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list' Error: 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list'
+    at AiSessionService.findById (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiSessionService.ts:67:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:46:34)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5)
+2025-11-13 21:50:08.945 ERROR 3357 [-/127.0.0.1/-/20ms POST /api/v1/agent/run] Error: Agent 运行失败: 查询会话失败: Unknown column 'AiSessionModel.workerId' in 'field list'
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:80:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5)
+    at session (/Users/guyumac/Documents/my-midway/midway-project/node_modules/koa-session/index.js:41:7) {
+  headerSent: true
+}
+2025-11-13 22:11:47.299 ERROR 25103 [-/127.0.0.1/-/108ms POST /api/v1/agent/run] Error: 大模型流式调用失败
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:59:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:121:9)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5) {
+  headerSent: true
+}
+2025-11-13 22:11:47.313 ERROR 25103 [-/127.0.0.1/-/122ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09AB0D1A0308B11C99898DC3C2F',
+    'Active',
+    2025-11-13T14:11:47.251Z,
+    null,
+    'guyutest1',
+    'UserInput',
+    '[{"role":"system","content":"you are GUYUAI , a highly skilled software engineer "},{"role":"user","content":"你现在是谁"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09AB0D1A0308B11C99898DC3C2F\', \'Active\', 1, \'2025-11-13 22:11:47.251\', DEFAULT, NULL, \'guyutest1\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"你现在是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09AB0D1A0308B11C99898DC3C2F\', \'Active\', 1, \'2025-11-13 22:11:47.251\', DEFAULT, NULL, \'guyutest1\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"你现在是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:11:47.314 ERROR 25103 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:11:47.314 ERROR 25103 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:17:25.956 ERROR 30460 [-/127.0.0.1/-/75ms POST /api/v1/agent/run] TypeError: Cannot read properties of undefined (reading 'llmConfig')
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:114:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5)
+    at session (/Users/guyumac/Documents/my-midway/midway-project/node_modules/koa-session/index.js:41:7) {
+  headerSent: true
+}
+2025-11-13 22:18:04.251 ERROR 30460 [-/127.0.0.1/-/65ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09B917FC8A086CBAB3919DB6483',
+    'Active',
+    2025-11-13T14:18:04.202Z,
+    null,
+    'guyutest',
+    'UserInput',
+    '[{"role":"system","content":"you are GUYUAI , a highly skilled software engineer "},{"role":"user","content":"你是谁"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09B917FC8A086CBAB3919DB6483\', \'Active\', 1, \'2025-11-13 22:18:04.202\', DEFAULT, NULL, \'guyutest\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09B917FC8A086CBAB3919DB6483\', \'Active\', 1, \'2025-11-13 22:18:04.202\', DEFAULT, NULL, \'guyutest\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"你是谁\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:18:04.252 ERROR 30460 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:18:04.253 ERROR 30460 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:18:04.431 ERROR 30460 [-/127.0.0.1/-/245ms POST /api/v1/agent/run] Error: 大模型流式调用失败
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:59:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:121:9)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5) {
+  headerSent: true
+}
+2025-11-13 22:20:16.147 ERROR 35324 [-/127.0.0.1/-/84ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09BE01E95908BAF771B70134626',
+    'Active',
+    2025-11-13T14:20:16.105Z,
+    null,
+    '11',
+    'UserInput',
+    '[{"role":"system","content":"you are GUYUAI , a highly skilled software engineer "},{"role":"user","content":"who are you"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09BE01E95908BAF771B70134626\', \'Active\', 1, \'2025-11-13 22:20:16.105\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09BE01E95908BAF771B70134626\', \'Active\', 1, \'2025-11-13 22:20:16.105\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:20:16.149 ERROR 35324 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:20:16.149 ERROR 35324 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:20:16.322 ERROR 35324 [-/127.0.0.1/-/259ms POST /api/v1/agent/run] Error: 大模型流式调用失败
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:59:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:121:9)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5) {
+  headerSent: true
+}
+2025-11-13 22:20:40.063 ERROR 35324 [-/127.0.0.1/-/32ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09BEE655E908BAF771B70134626',
+    'Active',
+    2025-11-13T14:20:40.057Z,
+    null,
+    '11',
+    'UserInput',
+    '[{"role":"system","content":"you are GUYUAI , a highly skilled software engineer "},{"role":"user","content":"who are you"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09BEE655E908BAF771B70134626\', \'Active\', 1, \'2025-11-13 22:20:40.057\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09BEE655E908BAF771B70134626\', \'Active\', 1, \'2025-11-13 22:20:40.057\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:20:40.064 ERROR 35324 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:20:40.064 ERROR 35324 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:20:40.252 ERROR 35324 [-/127.0.0.1/-/221ms POST /api/v1/agent/run] Error: 大模型流式调用失败
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:59:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:121:9)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5) {
+  headerSent: true
+}
+2025-11-13 22:21:53.628 ERROR 37370 [-/127.0.0.1/-/92ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09C1A3816C082153B26770CF8C2',
+    'Active',
+    2025-11-13T14:21:53.580Z,
+    null,
+    '11',
+    'UserInput',
+    '[{"role":"system","content":"you are GUYUAI , a highly skilled software engineer "},{"role":"user","content":"who are you"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09C1A3816C082153B26770CF8C2\', \'Active\', 1, \'2025-11-13 22:21:53.580\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09C1A3816C082153B26770CF8C2\', \'Active\', 1, \'2025-11-13 22:21:53.580\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:21:53.630 ERROR 37370 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:21:53.630 ERROR 37370 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:21:53.801 ERROR 37370 [-/127.0.0.1/-/265ms POST /api/v1/agent/run] Error: 大模型流式调用失败
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:61:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:121:9)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5) {
+  headerSent: true
+}
+2025-11-13 22:22:34.295 ERROR 37982 [-/127.0.0.1/-/101ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09C32758880B5A2A33795830524',
+    'Active',
+    2025-11-13T14:22:34.248Z,
+    null,
+    '11',
+    'UserInput',
+    '[{"role":"system","content":"you are GUYUAI , a highly skilled software engineer "},{"role":"user","content":"who are you"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09C32758880B5A2A33795830524\', \'Active\', 1, \'2025-11-13 22:22:34.248\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09C32758880B5A2A33795830524\', \'Active\', 1, \'2025-11-13 22:22:34.248\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:22:34.296 ERROR 37982 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:22:34.297 ERROR 37982 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:22:34.428 ERROR 37982 [-/127.0.0.1/-/234ms POST /api/v1/agent/run] Error: 大模型流式调用失败
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:61:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:121:9)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5) {
+  headerSent: true
+}
+2025-11-13 22:23:14.960 ERROR 38730 [-/127.0.0.1/-/87ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09C4AB1E8D096FECB7FEF1F4B2A',
+    'Active',
+    2025-11-13T14:23:14.909Z,
+    null,
+    '11',
+    'UserInput',
+    '[{"role":"system","content":"you are GUYUAI , a highly skilled software engineer "},{"role":"user","content":"who are you"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09C4AB1E8D096FECB7FEF1F4B2A\', \'Active\', 1, \'2025-11-13 22:23:14.909\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09C4AB1E8D096FECB7FEF1F4B2A\', \'Active\', 1, \'2025-11-13 22:23:14.909\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:23:14.961 ERROR 38730 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:23:14.961 ERROR 38730 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:23:15.113 ERROR 38730 [-/127.0.0.1/-/240ms POST /api/v1/agent/run] Error: 大模型流式调用失败:Error: 失败原因:AxiosError: Request failed with status code 404
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:61:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:121:9)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5)
+    at noopen (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/noopen.js:8:5) {
+  headerSent: true
+}
+2025-11-13 22:24:56.655 ERROR 40244 [-/127.0.0.1/-/93ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09C87506730951E81E4FCAF3A2C',
+    'Active',
+    2025-11-13T14:24:56.611Z,
+    null,
+    '11',
+    'UserInput',
+    '[{"role":"system","content":"you are GUYUAI , a highly skilled software engineer "},{"role":"user","content":"who are you"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09C87506730951E81E4FCAF3A2C\', \'Active\', 1, \'2025-11-13 22:24:56.611\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09C87506730951E81E4FCAF3A2C\', \'Active\', 1, \'2025-11-13 22:24:56.611\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:24:56.656 ERROR 40244 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:24:56.657 ERROR 40244 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:28:04.762 ERROR 43568 [-/127.0.0.1/-/89ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09CF76F40E08F6B9F301BD3839B',
+    'Active',
+    2025-11-13T14:28:04.718Z,
+    null,
+    '11',
+    'UserInput',
+    '[{"role":"system","content":"you are GUYUAI , a highly skilled software engineer "},{"role":"user","content":"who are you"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09CF76F40E08F6B9F301BD3839B\', \'Active\', 1, \'2025-11-13 22:28:04.718\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09CF76F40E08F6B9F301BD3839B\', \'Active\', 1, \'2025-11-13 22:28:04.718\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:28:04.765 ERROR 43568 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:28:04.765 ERROR 43568 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:30:15.102 ERROR 45809 [-/127.0.0.1/-/97ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09D451DE170A9952DEBB3388498',
+    'Active',
+    2025-11-13T14:30:15.047Z,
+    null,
+    '11',
+    'UserInput',
+    '[{"role":"system","content":"you are GUYUAI , a highly skilled software engineer "},{"role":"user","content":"who are you"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09D451DE170A9952DEBB3388498\', \'Active\', 1, \'2025-11-13 22:30:15.047\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09D451DE170A9952DEBB3388498\', \'Active\', 1, \'2025-11-13 22:30:15.047\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"you are GUYUAI , a highly skilled software engineer \\"},{\\"role\\":\\"user\\",\\"content\\":\\"who are you\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:30:15.103 ERROR 45809 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:30:15.104 ERROR 45809 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:34:58.766 ERROR 49685 [-/127.0.0.1/-/85ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09DEE3207A09A680176E0CF42CC',
+    'Active',
+    2025-11-13T14:34:58.714Z,
+    null,
+    '11',
+    'UserInput',
+    '[{"role":"system","content":"你的名字叫小Q，你是一位医疗专家"},{"role":"user","content":"你可以为我做什么"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09DEE3207A09A680176E0CF42CC\', \'Active\', 1, \'2025-11-13 22:34:58.714\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你可以为我做什么\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09DEE3207A09A680176E0CF42CC\', \'Active\', 1, \'2025-11-13 22:34:58.714\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你可以为我做什么\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:34:58.768 ERROR 49685 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:34:58.768 ERROR 49685 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:35:43.147 ERROR 49685 [-/127.0.0.1/-/32ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C09E08ABFBE09A680176E0CF42CC',
+    'Active',
+    2025-11-13T14:35:43.134Z,
+    null,
+    '11',
+    'UserInput',
+    '[{"role":"system","content":"你的名字叫小Q，你是一位医疗专家"},{"role":"user","content":"你可以为我做什么"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09E08ABFBE09A680176E0CF42CC\', \'Active\', 1, \'2025-11-13 22:35:43.134\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你可以为我做什么\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C09E08ABFBE09A680176E0CF42CC\', \'Active\', 1, \'2025-11-13 22:35:43.134\', DEFAULT, NULL, \'11\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你可以为我做什么\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-13 22:35:43.148 ERROR 49685 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-13 22:35:43.149 ERROR 49685 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)

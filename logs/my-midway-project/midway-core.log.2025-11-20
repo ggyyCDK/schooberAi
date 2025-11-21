@@ -1,0 +1,230 @@
+2025-11-20 12:48:39.014 INFO 14612 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 12:48:39.015 INFO 14612 [egg:core] dump config after load, 6ms
+2025-11-20 12:48:39.057 INFO 14612 [egg:core] dump config after ready, 2ms
+2025-11-20 12:48:39.070 INFO 14612 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 12:48:39.071 INFO 14612 [egg:core] dump config after load, 4ms
+2025-11-20 12:48:39.246 WARN 14612 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-20 12:48:39.248 INFO 14612 [egg-security] use methodnoallow middleware
+2025-11-20 12:48:39.249 INFO 14612 [egg-security] use noopen middleware
+2025-11-20 12:48:39.251 INFO 14612 [egg-security] use nosniff middleware
+2025-11-20 12:48:39.253 INFO 14612 [egg-security] use xssProtection middleware
+2025-11-20 12:48:39.253 INFO 14612 [egg-security] use dta middleware
+2025-11-20 12:48:39.253 INFO 14612 [egg-security] compose 5 middlewares into one security middleware
+2025-11-20 12:48:39.260 ERROR 14612 Error [unhandledRejectionError]: Cannot find module 'mysql2'
+Require stack:
+- /Users/tomc404/Desktop/code/schooberAi/dist/configuration.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/util/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/common/provide.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/context/container.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/creator.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/app.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/mwtsc/lib/wrap.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)
+    at Function.Module._resolveFilename (/Users/tomc404/Desktop/code/schooberAi/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._resolveFilename (/Users/tomc404/Desktop/code/schooberAi/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._load (node:internal/modules/cjs/loader:1074:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Module.require (node:internal/modules/cjs/loader:1339:12)
+    at require (node:internal/modules/helpers:125:16)
+    at initConnection (/Users/tomc404/Desktop/code/schooberAi/src/configuration.ts:36:13)
+    at MainConfiguration.onReady (/Users/tomc404/Desktop/code/schooberAi/src/configuration.ts:22:33) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tomc404/Desktop/code/schooberAi/dist/configuration.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/util/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/common/provide.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/context/container.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/creator.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/app.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/mwtsc/lib/wrap.js'
+  ]
+}
+2025-11-20 12:48:39.267 ERROR 14612 Error [unhandledRejectionError]: Cannot find module 'mysql2'
+Require stack:
+- /Users/tomc404/Desktop/code/schooberAi/dist/configuration.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/util/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/common/provide.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/context/container.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/creator.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/app.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/mwtsc/lib/wrap.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)
+    at Function.Module._resolveFilename (/Users/tomc404/Desktop/code/schooberAi/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._resolveFilename (/Users/tomc404/Desktop/code/schooberAi/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._load (node:internal/modules/cjs/loader:1074:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Module.require (node:internal/modules/cjs/loader:1339:12)
+    at require (node:internal/modules/helpers:125:16)
+    at initConnection (/Users/tomc404/Desktop/code/schooberAi/src/configuration.ts:36:13)
+    at MainConfiguration.onReady (/Users/tomc404/Desktop/code/schooberAi/src/configuration.ts:22:33) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tomc404/Desktop/code/schooberAi/dist/configuration.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/util/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/common/provide.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/context/container.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/creator.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/app.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/mwtsc/lib/wrap.js'
+  ]
+}
+2025-11-20 12:48:39.271 INFO 14612 [egg:core] dump config after ready, 2ms
+2025-11-20 13:06:31.984 INFO 17502 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 13:06:31.985 INFO 17502 [egg:core] dump config after load, 6ms
+2025-11-20 13:06:32.030 INFO 17502 [egg:core] dump config after ready, 3ms
+2025-11-20 13:06:32.045 INFO 17502 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 13:06:32.046 INFO 17502 [egg:core] dump config after load, 5ms
+2025-11-20 13:06:32.202 WARN 17502 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-20 13:06:32.204 INFO 17502 [egg-security] use methodnoallow middleware
+2025-11-20 13:06:32.205 INFO 17502 [egg-security] use noopen middleware
+2025-11-20 13:06:32.207 INFO 17502 [egg-security] use nosniff middleware
+2025-11-20 13:06:32.208 INFO 17502 [egg-security] use xssProtection middleware
+2025-11-20 13:06:32.208 INFO 17502 [egg-security] use dta middleware
+2025-11-20 13:06:32.208 INFO 17502 [egg-security] compose 5 middlewares into one security middleware
+2025-11-20 13:06:32.215 ERROR 17502 Error [unhandledRejectionError]: Cannot find module 'mysql2'
+Require stack:
+- /Users/tomc404/Desktop/code/schooberAi/dist/configuration.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/util/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/common/provide.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/context/container.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/creator.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/app.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/mwtsc/lib/wrap.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)
+    at Function.Module._resolveFilename (/Users/tomc404/Desktop/code/schooberAi/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._resolveFilename (/Users/tomc404/Desktop/code/schooberAi/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._load (node:internal/modules/cjs/loader:1074:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Module.require (node:internal/modules/cjs/loader:1339:12)
+    at require (node:internal/modules/helpers:125:16)
+    at initConnection (/Users/tomc404/Desktop/code/schooberAi/src/configuration.ts:36:13)
+    at MainConfiguration.onReady (/Users/tomc404/Desktop/code/schooberAi/src/configuration.ts:22:33) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tomc404/Desktop/code/schooberAi/dist/configuration.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/util/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/common/provide.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/context/container.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/creator.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/app.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/mwtsc/lib/wrap.js'
+  ]
+}
+2025-11-20 13:06:32.223 ERROR 17502 Error [unhandledRejectionError]: Cannot find module 'mysql2'
+Require stack:
+- /Users/tomc404/Desktop/code/schooberAi/dist/configuration.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/util/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/common/provide.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/context/container.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/creator.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/index.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/app.js
+- /Users/tomc404/Desktop/code/schooberAi/node_modules/mwtsc/lib/wrap.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)
+    at Function.Module._resolveFilename (/Users/tomc404/Desktop/code/schooberAi/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._resolveFilename (/Users/tomc404/Desktop/code/schooberAi/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._load (node:internal/modules/cjs/loader:1074:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Module.require (node:internal/modules/cjs/loader:1339:12)
+    at require (node:internal/modules/helpers:125:16)
+    at initConnection (/Users/tomc404/Desktop/code/schooberAi/src/configuration.ts:36:13)
+    at MainConfiguration.onReady (/Users/tomc404/Desktop/code/schooberAi/src/configuration.ts:22:33) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/tomc404/Desktop/code/schooberAi/dist/configuration.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/util/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/common/provide.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/decorator/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/context/container.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/core/dist/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/creator.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/dist/index.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/@midwayjs/mock/app.js',
+    '/Users/tomc404/Desktop/code/schooberAi/node_modules/mwtsc/lib/wrap.js'
+  ]
+}
+2025-11-20 13:06:32.228 INFO 17502 [egg:core] dump config after ready, 3ms
+2025-11-20 13:09:03.463 INFO 17659 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 13:09:03.465 INFO 17659 [egg:core] dump config after load, 9ms
+2025-11-20 13:09:03.520 INFO 17659 [egg:core] dump config after ready, 4ms
+2025-11-20 13:09:03.539 INFO 17659 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 13:09:03.540 INFO 17659 [egg:core] dump config after load, 7ms
+2025-11-20 13:09:03.721 WARN 17659 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-20 13:09:03.723 INFO 17659 [egg-security] use methodnoallow middleware
+2025-11-20 13:09:03.724 INFO 17659 [egg-security] use noopen middleware
+2025-11-20 13:09:03.726 INFO 17659 [egg-security] use nosniff middleware
+2025-11-20 13:09:03.727 INFO 17659 [egg-security] use xssProtection middleware
+2025-11-20 13:09:03.728 INFO 17659 [egg-security] use dta middleware
+2025-11-20 13:09:03.728 INFO 17659 [egg-security] compose 5 middlewares into one security middleware
+2025-11-20 13:09:03.815 INFO 17659 [egg:core] dump config after ready, 2ms
+2025-11-20 13:12:57.438 INFO 17791 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 13:12:57.439 INFO 17791 [egg:core] dump config after load, 7ms
+2025-11-20 13:12:57.496 INFO 17791 [egg:core] dump config after ready, 5ms
+2025-11-20 13:12:57.512 INFO 17791 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 13:12:57.512 INFO 17791 [egg:core] dump config after load, 6ms
+2025-11-20 13:12:57.663 WARN 17791 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-20 13:12:57.664 INFO 17791 [egg-security] use methodnoallow middleware
+2025-11-20 13:12:57.665 INFO 17791 [egg-security] use noopen middleware
+2025-11-20 13:12:57.667 INFO 17791 [egg-security] use nosniff middleware
+2025-11-20 13:12:57.668 INFO 17791 [egg-security] use xssProtection middleware
+2025-11-20 13:12:57.668 INFO 17791 [egg-security] use dta middleware
+2025-11-20 13:12:57.668 INFO 17791 [egg-security] compose 5 middlewares into one security middleware
+2025-11-20 13:12:57.761 INFO 17791 [egg:core] dump config after ready, 3ms
+2025-11-20 13:25:16.276 INFO 18232 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 13:25:16.277 INFO 18232 [egg:core] dump config after load, 6ms
+2025-11-20 13:25:16.320 INFO 18232 [egg:core] dump config after ready, 3ms
+2025-11-20 13:25:16.341 INFO 18232 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 13:25:16.341 INFO 18232 [egg:core] dump config after load, 11ms
+2025-11-20 13:25:16.492 WARN 18232 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-20 13:25:16.493 INFO 18232 [egg-security] use methodnoallow middleware
+2025-11-20 13:25:16.494 INFO 18232 [egg-security] use noopen middleware
+2025-11-20 13:25:16.495 INFO 18232 [egg-security] use nosniff middleware
+2025-11-20 13:25:16.496 INFO 18232 [egg-security] use xssProtection middleware
+2025-11-20 13:25:16.497 INFO 18232 [egg-security] use dta middleware
+2025-11-20 13:25:16.497 INFO 18232 [egg-security] compose 5 middlewares into one security middleware
+2025-11-20 13:25:16.601 INFO 18232 [egg:core] dump config after ready, 3ms
+2025-11-20 13:25:30.605 INFO 18255 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 13:25:30.607 INFO 18255 [egg:core] dump config after load, 9ms
+2025-11-20 13:25:30.660 INFO 18255 [egg:core] dump config after ready, 4ms
+2025-11-20 13:25:30.678 INFO 18255 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-20 13:25:30.679 INFO 18255 [egg:core] dump config after load, 4ms
+2025-11-20 13:25:30.848 WARN 18255 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-20 13:25:30.849 INFO 18255 [egg-security] use methodnoallow middleware
+2025-11-20 13:25:30.850 INFO 18255 [egg-security] use noopen middleware
+2025-11-20 13:25:30.852 INFO 18255 [egg-security] use nosniff middleware
+2025-11-20 13:25:30.853 INFO 18255 [egg-security] use xssProtection middleware
+2025-11-20 13:25:30.853 INFO 18255 [egg-security] use dta middleware
+2025-11-20 13:25:30.853 INFO 18255 [egg-security] compose 5 middlewares into one security middleware
+2025-11-20 13:25:30.928 INFO 18255 [egg:core] dump config after ready, 3ms

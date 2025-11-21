@@ -1,0 +1,260 @@
+2025-11-15 23:27:02.518 ERROR 44763 [-/127.0.0.1/-/99ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C23788EB57C0844C11720B6F6F27',
+    'Active',
+    2025-11-15T15:27:02.460Z,
+    null,
+    'GUYUTEST1',
+    'UserInput',
+    '[{"role":"system","content":"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q"},{"role":"user","content":"你好，请介绍一下你自己"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C23788EB57C0844C11720B6F6F27\', \'Active\', 1, \'2025-11-15 23:27:02.460\', DEFAULT, NULL, \'GUYUTEST1\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你好，请介绍一下你自己\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C23788EB57C0844C11720B6F6F27\', \'Active\', 1, \'2025-11-15 23:27:02.460\', DEFAULT, NULL, \'GUYUTEST1\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你好，请介绍一下你自己\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-15 23:27:02.520 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:27:02.520 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:27:13.679 ERROR 44763 [-/127.0.0.1/-/11260ms POST /api/v1/agent/run] 创建消息失败: Field 'db_id' doesn't have a default value QueryFailedError: Field 'db_id' doesn't have a default value
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C2378F9AC4C0844C11720B6F6F27',
+    'Active',
+    2025-11-15T15:27:13.676Z,
+    null,
+    'GUYUTEST1',
+    'LLMResponse',
+    '[{"role":"assistant","content":"你好！我是小Q，很高兴认识你！\\n\\n我是一位医疗专家，在医学领域有着专业的知识背景。我可以帮助你了解各种医疗健康相关的问题，包括：\\n\\n- 疾病症状的初步解释\\n- 健康知识的科普\\n- 医疗检查结果的解读\\n- 药物使用的基本指导\\n- 预防保健的建议\\n\\n不过需要特别提醒的是，虽然我具备专业的医疗知识，但我的建议仅供参考，不能替代实际的医生诊断。如果你有具体的健康问题或症状，建议还是要及时就医，由专业医生进行面诊和检查。\\n\\n有什么健康相关的问题需要咨询吗？我很乐意为你提供帮助！"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Field 'db_id' doesn't have a default value
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_NO_DEFAULT_FOR_FIELD',
+    errno: 1364,
+    sqlState: 'HY000',
+    sqlMessage: "Field 'db_id' doesn't have a default value",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C2378F9AC4C0844C11720B6F6F27\', \'Active\', 1, \'2025-11-15 23:27:13.676\', DEFAULT, NULL, \'GUYUTEST1\', \'LLMResponse\', \'[{\\"role\\":\\"assistant\\",\\"content\\":\\"你好！我是小Q，很高兴认识你！\\\\n\\\\n我是一位医疗专家，在医学领域有着专业的知识背景。我可以帮助你了解各种医疗健康相关的问题，包括：\\\\n\\\\n- 疾病症状的初步解释\\\\n- 健康知识的科普\\\\n- 医疗检查结果的解读\\\\n- 药物使用的基本指导\\\\n- 预防保健的建议\\\\n\\\\n不过需要特别提醒的是，虽然我具备专业的医疗知识，但我的建议仅供参考，不能替代实际的医生诊断。如果你有具体的健康问题或症状，建议还是要及时就医，由专业医生进行面诊和检查。\\\\n\\\\n有什么健康相关的问题需要咨询吗？我很乐意为你提供帮助！\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlState: 'HY000',
+  sqlMessage: "Field 'db_id' doesn't have a default value",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C2378F9AC4C0844C11720B6F6F27\', \'Active\', 1, \'2025-11-15 23:27:13.676\', DEFAULT, NULL, \'GUYUTEST1\', \'LLMResponse\', \'[{\\"role\\":\\"assistant\\",\\"content\\":\\"你好！我是小Q，很高兴认识你！\\\\n\\\\n我是一位医疗专家，在医学领域有着专业的知识背景。我可以帮助你了解各种医疗健康相关的问题，包括：\\\\n\\\\n- 疾病症状的初步解释\\\\n- 健康知识的科普\\\\n- 医疗检查结果的解读\\\\n- 药物使用的基本指导\\\\n- 预防保健的建议\\\\n\\\\n不过需要特别提醒的是，虽然我具备专业的医疗知识，但我的建议仅供参考，不能替代实际的医生诊断。如果你有具体的健康问题或症状，建议还是要及时就医，由专业医生进行面诊和检查。\\\\n\\\\n有什么健康相关的问题需要咨询吗？我很乐意为你提供帮助！\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-15 23:27:13.681 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:27:13.681 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Field 'db_id' doesn't have a default value
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:31:09.551 ERROR 44763 [-/127.0.0.1/-/40ms POST /api/v1/agent/run] 创建消息失败: Data too long for column 'id' at row 1 QueryFailedError: Data too long for column 'id' at row 1
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C2381C2F89C0844C11720B6F6F27',
+    'Active',
+    2025-11-15T15:31:09.532Z,
+    null,
+    'GUYUTEST1',
+    'UserInput',
+    '[{"role":"system","content":"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q"},{"role":"user","content":"你好，请介绍一下你自己"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Data too long for column 'id' at row 1
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_DATA_TOO_LONG',
+    errno: 1406,
+    sqlState: '22001',
+    sqlMessage: "Data too long for column 'id' at row 1",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C2381C2F89C0844C11720B6F6F27\', \'Active\', 1, \'2025-11-15 23:31:09.532\', DEFAULT, NULL, \'GUYUTEST1\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你好，请介绍一下你自己\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_DATA_TOO_LONG',
+  errno: 1406,
+  sqlState: '22001',
+  sqlMessage: "Data too long for column 'id' at row 1",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C2381C2F89C0844C11720B6F6F27\', \'Active\', 1, \'2025-11-15 23:31:09.532\', DEFAULT, NULL, \'GUYUTEST1\', \'UserInput\', \'[{\\"role\\":\\"system\\",\\"content\\":\\"你的名字叫小Q，你是一位医疗专家，重要：记住你叫小Q\\"},{\\"role\\":\\"user\\",\\"content\\":\\"你好，请介绍一下你自己\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-15 23:31:09.551 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Data too long for column 'id' at row 1
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:31:09.551 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Data too long for column 'id' at row 1
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:31:22.214 ERROR 44763 [-/127.0.0.1/-/12703ms POST /api/v1/agent/run] 创建消息失败: Data too long for column 'id' at row 1 QueryFailedError: Data too long for column 'id' at row 1
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT, ?)',
+  parameters: [
+    '11F0C23823BD96F0844C11720B6F6F27',
+    'Active',
+    2025-11-15T15:31:22.208Z,
+    null,
+    'GUYUTEST1',
+    'LLMResponse',
+    '[{"role":"assistant","content":"你好！我是小Q，很高兴认识你！\\n\\n作为一位医疗专家，我专注于为大家提供准确、专业的医疗健康信息和建议。我的专长包括：\\n\\n🏥 **临床医学知识** - 涵盖内科、外科、儿科等多个医学领域\\n💊 **药物咨询** - 提供用药指导和药物相互作用信息\\n🔬 **疾病诊断** - 帮助分析症状，提供初步的医学判断\\n🩺 **健康管理** - 给出预防保健和生活方式的专业建议\\n📋 **医学解读** - 解释复杂的医学术语和检查报告\\n\\n不过我要特别提醒的是，虽然我能提供专业的医疗信息，但我的建议不能替代面对面的医生诊断。对于任何严重或持续的健康问题，还是建议你及时就医。\\n\\n有什么健康方面的问题需要咨询吗？我很乐意为你解答！"}]',
+    'guyu',
+    '{}'
+  ],
+  driverError: Error: Data too long for column 'id' at row 1
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_DATA_TOO_LONG',
+    errno: 1406,
+    sqlState: '22001',
+    sqlMessage: "Data too long for column 'id' at row 1",
+    sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C23823BD96F0844C11720B6F6F27\', \'Active\', 1, \'2025-11-15 23:31:22.208\', DEFAULT, NULL, \'GUYUTEST1\', \'LLMResponse\', \'[{\\"role\\":\\"assistant\\",\\"content\\":\\"你好！我是小Q，很高兴认识你！\\\\n\\\\n作为一位医疗专家，我专注于为大家提供准确、专业的医疗健康信息和建议。我的专长包括：\\\\n\\\\n🏥 **临床医学知识** - 涵盖内科、外科、儿科等多个医学领域\\\\n💊 **药物咨询** - 提供用药指导和药物相互作用信息\\\\n🔬 **疾病诊断** - 帮助分析症状，提供初步的医学判断\\\\n🩺 **健康管理** - 给出预防保健和生活方式的专业建议\\\\n📋 **医学解读** - 解释复杂的医学术语和检查报告\\\\n\\\\n不过我要特别提醒的是，虽然我能提供专业的医疗信息，但我的建议不能替代面对面的医生诊断。对于任何严重或持续的健康问题，还是建议你及时就医。\\\\n\\\\n有什么健康方面的问题需要咨询吗？我很乐意为你解答！\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+  },
+  code: 'ER_DATA_TOO_LONG',
+  errno: 1406,
+  sqlState: '22001',
+  sqlMessage: "Data too long for column 'id' at row 1",
+  sql: 'INSERT INTO `ai_message`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `session_id`, `from_type`, `message_content`, `worker_id`, `ext`, `llm_config`) VALUES (DEFAULT, \'11F0C23823BD96F0844C11720B6F6F27\', \'Active\', 1, \'2025-11-15 23:31:22.208\', DEFAULT, NULL, \'GUYUTEST1\', \'LLMResponse\', \'[{\\"role\\":\\"assistant\\",\\"content\\":\\"你好！我是小Q，很高兴认识你！\\\\n\\\\n作为一位医疗专家，我专注于为大家提供准确、专业的医疗健康信息和建议。我的专长包括：\\\\n\\\\n🏥 **临床医学知识** - 涵盖内科、外科、儿科等多个医学领域\\\\n💊 **药物咨询** - 提供用药指导和药物相互作用信息\\\\n🔬 **疾病诊断** - 帮助分析症状，提供初步的医学判断\\\\n🩺 **健康管理** - 给出预防保健和生活方式的专业建议\\\\n📋 **医学解读** - 解释复杂的医学术语和检查报告\\\\n\\\\n不过我要特别提醒的是，虽然我能提供专业的医疗信息，但我的建议不能替代面对面的医生诊断。对于任何严重或持续的健康问题，还是建议你及时就医。\\\\n\\\\n有什么健康方面的问题需要咨询吗？我很乐意为你解答！\\"}]\', \'guyu\', DEFAULT, \'{}\')'
+}
+2025-11-15 23:31:22.216 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Data too long for column 'id' at row 1
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:31:22.216 ERROR 44763 Error [unhandledRejectionError]: 创建消息失败: Data too long for column 'id' at row 1
+    at AiMessageService.createAiMessage (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiMessageService.ts:41:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-15 23:34:33.067 ERROR 44763 [-/127.0.0.1/-/66ms POST /api/v1/agent/run] Error: ak is required
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:40:19)
+    at AgentService.multiRoundChat (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:209:34)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:100:17)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:36:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
+  headerSent: true
+}
+2025-11-15 23:39:45.551 ERROR 56769 [-/127.0.0.1/-/64ms POST /api/v1/agent/run] Error: ak is required
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:40:19)
+    at AgentService.multiRoundChat (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:206:34)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:97:17)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:33:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
+  headerSent: true
+}
+2025-11-15 23:42:55.447 ERROR 60661 [-/127.0.0.1/-/46ms POST /api/v1/agent/run] Error: ak is required
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:40:19)
+    at AgentService.multiRoundChat (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:206:34)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:97:17)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:33:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
+  headerSent: true
+}
+2025-11-15 23:46:37.452 ERROR 64166 [-/127.0.0.1/-/50ms POST /api/v1/agent/run] Error: ak is required
+    at AiChatService.aiChatWithStream (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AiChatService.ts:40:19)
+    at AgentService.multiRoundChat (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:207:34)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AgentService.run (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/Agent/Application/Service/AgentService.ts:99:17)
+    at AgentController.run (/Users/guyumac/Documents/my-midway/midway-project/src/ApiGateway/aiController/AgentController.ts:33:5)
+    at AgentController.Clz.<computed> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/aspectService.js:92:34)
+    at Object.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/common/webGenerator.js:43:26)
+    at CorsMiddleware.compatibleMiddleware (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/cross-domain/dist/middleware/cors.js:94:20)
+    at xssProtection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/xssProtection.js:7:5)
+    at nosniff (/Users/guyumac/Documents/my-midway/midway-project/node_modules/egg-security/lib/middlewares/nosniff.js:8:5) {
+  headerSent: true
+}

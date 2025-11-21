@@ -1,0 +1,1111 @@
+2025-11-09 22:19:07.297 ERROR 42198 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    --------------------
+    at Protocol._enqueue (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1025:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1022:16)
+    at MysqlDriver.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:369:36)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true,
+  name: 'unhandledRejectionError'
+}
+2025-11-09 22:19:07.297 ERROR 42198 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    --------------------
+    at Protocol._enqueue (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1025:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1022:16)
+    at MysqlDriver.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:369:36)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true,
+  name: 'unhandledRejectionError'
+}
+2025-11-09 22:19:14.446 ERROR 42624 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    --------------------
+    at Protocol._enqueue (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1025:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1022:16)
+    at MysqlDriver.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:369:36)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true,
+  name: 'unhandledRejectionError'
+}
+2025-11-09 22:19:14.446 ERROR 42624 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    --------------------
+    at Protocol._enqueue (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1025:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1022:16)
+    at MysqlDriver.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:369:36)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true,
+  name: 'unhandledRejectionError'
+}
+2025-11-09 22:30:12.524 ERROR 53678 Error [unhandledRejectionError]: Cannot find module 'mysql2'
+Require stack:
+- /Users/guyumac/Documents/my-midway/midway-project/dist/configuration.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/util/index.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/common/provide.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/index.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/container.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/index.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/dist/creator.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/dist/index.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/app.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/mwtsc/lib/wrap.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Function.Module._resolveFilename (/Users/guyumac/Documents/my-midway/midway-project/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._resolveFilename (/Users/guyumac/Documents/my-midway/midway-project/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at initConnection (/Users/guyumac/Documents/my-midway/midway-project/src/configuration.ts:37:15)
+    at MainConfiguration.onReady (/Users/guyumac/Documents/my-midway/midway-project/src/configuration.ts:22:33)
+    at MidwayLifeCycleService.runContainerLifeCycle (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/lifeCycleService.js:105:67)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/guyumac/Documents/my-midway/midway-project/dist/configuration.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/util/index.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/common/provide.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/index.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/container.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/index.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/dist/creator.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/dist/index.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/app.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/mwtsc/lib/wrap.js'
+  ]
+}
+2025-11-09 22:30:12.524 ERROR 53678 Error [unhandledRejectionError]: Cannot find module 'mysql2'
+Require stack:
+- /Users/guyumac/Documents/my-midway/midway-project/dist/configuration.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/util/index.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/common/provide.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/index.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/container.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/index.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/dist/creator.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/dist/index.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/app.js
+- /Users/guyumac/Documents/my-midway/midway-project/node_modules/mwtsc/lib/wrap.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Function.Module._resolveFilename (/Users/guyumac/Documents/my-midway/midway-project/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._resolveFilename (/Users/guyumac/Documents/my-midway/midway-project/node_modules/tsconfig-paths/src/register.ts:115:36)
+    at Function.Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at initConnection (/Users/guyumac/Documents/my-midway/midway-project/src/configuration.ts:37:15)
+    at MainConfiguration.onReady (/Users/guyumac/Documents/my-midway/midway-project/src/configuration.ts:22:33)
+    at MidwayLifeCycleService.runContainerLifeCycle (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/lifeCycleService.js:105:67)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/guyumac/Documents/my-midway/midway-project/dist/configuration.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/util/index.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/decoratorManager.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/common/provide.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/decorator/index.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/container.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/index.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/dist/creator.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/dist/index.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/mock/app.js',
+    '/Users/guyumac/Documents/my-midway/midway-project/node_modules/mwtsc/lib/wrap.js'
+  ]
+}
+2025-11-09 22:30:40.739 ERROR 54162 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    --------------------
+    at Protocol._enqueue (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1025:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1022:16)
+    at MysqlDriver.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:369:36)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true,
+  name: 'unhandledRejectionError'
+}
+2025-11-09 22:30:40.739 ERROR 54162 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    --------------------
+    at Protocol._enqueue (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1025:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1022:16)
+    at MysqlDriver.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:369:36)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true,
+  name: 'unhandledRejectionError'
+}
+2025-11-09 22:35:35.613 ERROR 59008 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    --------------------
+    at Protocol._enqueue (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1025:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1022:16)
+    at MysqlDriver.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:369:36)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true,
+  name: 'unhandledRejectionError'
+}
+2025-11-09 22:35:35.614 ERROR 59008 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    --------------------
+    at Protocol._enqueue (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1025:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1022:16)
+    at MysqlDriver.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:369:36)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true,
+  name: 'unhandledRejectionError'
+}
+2025-11-09 22:37:10.512 ERROR 60960 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    --------------------
+    at Protocol._enqueue (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1025:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1022:16)
+    at MysqlDriver.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:369:36)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true,
+  name: 'unhandledRejectionError'
+}
+2025-11-09 22:37:10.512 ERROR 60960 Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    --------------------
+    at Protocol._enqueue (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/guyumac/Documents/my-midway/midway-project/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1025:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:1022:16)
+    at MysqlDriver.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlDriver.ts:369:36)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true,
+  name: 'unhandledRejectionError'
+}
+2025-11-09 22:38:49.050 ERROR 62667 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:38:49.050 ERROR 62667 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:39:17.314 ERROR 63144 Error [unhandledRejectionError]: Unknown database 'guyu_info'
+    at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+    at ClientHandshake.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Socket.Readable.push (node:internal/streams/readable:392:5) {
+  code: 'ER_BAD_DB_ERROR',
+  errno: 1049,
+  sqlState: '42000',
+  sqlMessage: "Unknown database 'guyu_info'",
+  sql: undefined
+}
+2025-11-09 22:39:17.314 ERROR 63144 Error [unhandledRejectionError]: Unknown database 'guyu_info'
+    at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+    at ClientHandshake.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Socket.Readable.push (node:internal/streams/readable:392:5) {
+  code: 'ER_BAD_DB_ERROR',
+  errno: 1049,
+  sqlState: '42000',
+  sqlMessage: "Unknown database 'guyu_info'",
+  sql: undefined
+}
+2025-11-09 22:39:26.625 ERROR 63308 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:39:26.625 ERROR 63308 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:40:38.657 ERROR 64494 Error [unhandledRejectionError]: Unknown database 'guyudatabase'
+    at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+    at ClientHandshake.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Socket.Readable.push (node:internal/streams/readable:392:5) {
+  code: 'ER_BAD_DB_ERROR',
+  errno: 1049,
+  sqlState: '42000',
+  sqlMessage: "Unknown database 'guyudatabase'",
+  sql: undefined
+}
+2025-11-09 22:40:38.657 ERROR 64494 Error [unhandledRejectionError]: Unknown database 'guyudatabase'
+    at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+    at ClientHandshake.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Socket.Readable.push (node:internal/streams/readable:392:5) {
+  code: 'ER_BAD_DB_ERROR',
+  errno: 1049,
+  sqlState: '42000',
+  sqlMessage: "Unknown database 'guyudatabase'",
+  sql: undefined
+}
+2025-11-09 22:41:07.985 ERROR 64999 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:41:07.985 ERROR 64999 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:41:33.998 ERROR 65446 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:41:33.998 ERROR 65446 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:41:35.101 ERROR 65475 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:41:35.101 ERROR 65475 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:42:30.861 ERROR 66411 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:42:30.861 ERROR 66411 TypeError: Cannot read properties of undefined (reading 'name')
+    at new GuyuTestInfoModel (/Users/guyumac/Documents/my-midway/midway-project/src/BussinessLayer/GuyuInfoTest/Domain/GuyuTestInfo/GuyuTestInfoModel.ts:14:29)
+    at EntityMetadata.create (/Users/guyumac/Documents/my-midway/midway-project/src/metadata/EntityMetadata.ts:554:23)
+    at EntityMetadataValidator.validate (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:119:47)
+    at /Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/guyumac/Documents/my-midway/midway-project/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.<anonymous> (/Users/guyumac/Documents/my-midway/midway-project/src/connection/Connection.ts:533:33)
+    at step (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:196:27)
+    at Object.next (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:177:57)
+    at fulfilled (/Users/guyumac/Documents/my-midway/midway-project/node_modules/typeorm/node_modules/tslib/tslib.js:167:62)
+2025-11-09 22:43:03.935 ERROR 67002 Error: listen EADDRINUSE: address already in use :::7001
+    at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+    at listenInCluster (node:net:1965:12)
+    at Server.listen (node:net:2067:7)
+    at /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:222:37
+    at new Promise (<anonymous>)
+    at MidwayWebFramework.run (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:214:21)
+    at MidwayFrameworkService.runFramework (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/frameworkService.js:164:17)
+    at MidwayLifeCycleService.init (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/lifeCycleService.js:67:9)
+    at ObjectCreator.doInitAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/definitions/objectCreator.js:111:17)
+    at ManagedResolverFactory.createAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/managedResolverFactory.js:258:9) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 7001,
+  name: 'unhandledExceptionError'
+}
+2025-11-09 22:43:03.935 ERROR 67002 Error: listen EADDRINUSE: address already in use :::7001
+    at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+    at listenInCluster (node:net:1965:12)
+    at Server.listen (node:net:2067:7)
+    at /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:222:37
+    at new Promise (<anonymous>)
+    at MidwayWebFramework.run (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:214:21)
+    at MidwayFrameworkService.runFramework (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/frameworkService.js:164:17)
+    at MidwayLifeCycleService.init (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/lifeCycleService.js:67:9)
+    at ObjectCreator.doInitAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/definitions/objectCreator.js:111:17)
+    at ManagedResolverFactory.createAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/managedResolverFactory.js:258:9) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 7001,
+  name: 'unhandledExceptionError'
+}
+2025-11-09 22:43:24.545 ERROR 67367 Error: listen EADDRINUSE: address already in use :::7001
+    at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+    at listenInCluster (node:net:1965:12)
+    at Server.listen (node:net:2067:7)
+    at /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:222:37
+    at new Promise (<anonymous>)
+    at MidwayWebFramework.run (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:214:21)
+    at MidwayFrameworkService.runFramework (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/frameworkService.js:164:17)
+    at MidwayLifeCycleService.init (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/lifeCycleService.js:67:9)
+    at ObjectCreator.doInitAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/definitions/objectCreator.js:111:17)
+    at ManagedResolverFactory.createAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/managedResolverFactory.js:258:9) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 7001,
+  name: 'unhandledExceptionError'
+}
+2025-11-09 22:43:24.545 ERROR 67367 Error: listen EADDRINUSE: address already in use :::7001
+    at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+    at listenInCluster (node:net:1965:12)
+    at Server.listen (node:net:2067:7)
+    at /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:222:37
+    at new Promise (<anonymous>)
+    at MidwayWebFramework.run (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:214:21)
+    at MidwayFrameworkService.runFramework (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/frameworkService.js:164:17)
+    at MidwayLifeCycleService.init (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/lifeCycleService.js:67:9)
+    at ObjectCreator.doInitAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/definitions/objectCreator.js:111:17)
+    at ManagedResolverFactory.createAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/managedResolverFactory.js:258:9) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 7001,
+  name: 'unhandledExceptionError'
+}
+2025-11-09 22:43:54.553 ERROR 67367 Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at spawn (node:child_process:762:9)
+    at childrenOfPid (/Users/guyumac/Documents/my-midway/midway-project/node_modules/ps-tree/index.js:47:21)
+    at killChildren (/Users/guyumac/Documents/my-midway/midway-project/node_modules/graceful/index.js:122:3)
+    at Timeout._onTimeout (/Users/guyumac/Documents/my-midway/midway-project/node_modules/graceful/index.js:67:9)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errno: -1,
+  code: 'EPERM',
+  syscall: 'spawn',
+  name: 'unhandledExceptionError'
+}
+2025-11-09 22:43:54.553 ERROR 67367 Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at spawn (node:child_process:762:9)
+    at childrenOfPid (/Users/guyumac/Documents/my-midway/midway-project/node_modules/ps-tree/index.js:47:21)
+    at killChildren (/Users/guyumac/Documents/my-midway/midway-project/node_modules/graceful/index.js:122:3)
+    at Timeout._onTimeout (/Users/guyumac/Documents/my-midway/midway-project/node_modules/graceful/index.js:67:9)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errno: -1,
+  code: 'EPERM',
+  syscall: 'spawn',
+  name: 'unhandledExceptionError'
+}
+2025-11-09 22:47:16.102 ERROR 71936 Error: listen EADDRINUSE: address already in use :::7001
+    at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+    at listenInCluster (node:net:1965:12)
+    at Server.listen (node:net:2067:7)
+    at /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:222:37
+    at new Promise (<anonymous>)
+    at MidwayWebFramework.run (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:214:21)
+    at MidwayFrameworkService.runFramework (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/frameworkService.js:164:17)
+    at MidwayLifeCycleService.init (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/lifeCycleService.js:67:9)
+    at ObjectCreator.doInitAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/definitions/objectCreator.js:111:17)
+    at ManagedResolverFactory.createAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/managedResolverFactory.js:258:9) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 7001,
+  name: 'unhandledExceptionError'
+}
+2025-11-09 22:47:16.103 ERROR 71936 Error: listen EADDRINUSE: address already in use :::7001
+    at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+    at listenInCluster (node:net:1965:12)
+    at Server.listen (node:net:2067:7)
+    at /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:222:37
+    at new Promise (<anonymous>)
+    at MidwayWebFramework.run (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:214:21)
+    at MidwayFrameworkService.runFramework (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/frameworkService.js:164:17)
+    at MidwayLifeCycleService.init (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/lifeCycleService.js:67:9)
+    at ObjectCreator.doInitAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/definitions/objectCreator.js:111:17)
+    at ManagedResolverFactory.createAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/managedResolverFactory.js:258:9) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 7001,
+  name: 'unhandledExceptionError'
+}
+2025-11-09 22:59:32.822 ERROR 84736 Error: listen EADDRINUSE: address already in use :::7001
+    at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+    at listenInCluster (node:net:1965:12)
+    at Server.listen (node:net:2067:7)
+    at /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:222:37
+    at new Promise (<anonymous>)
+    at MidwayWebFramework.run (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:214:21)
+    at MidwayFrameworkService.runFramework (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/frameworkService.js:164:17)
+    at MidwayLifeCycleService.init (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/lifeCycleService.js:67:9)
+    at ObjectCreator.doInitAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/definitions/objectCreator.js:111:17)
+    at ManagedResolverFactory.createAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/managedResolverFactory.js:258:9) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 7001,
+  name: 'unhandledExceptionError'
+}
+2025-11-09 22:59:32.822 ERROR 84736 Error: listen EADDRINUSE: address already in use :::7001
+    at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+    at listenInCluster (node:net:1965:12)
+    at Server.listen (node:net:2067:7)
+    at /Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:222:37
+    at new Promise (<anonymous>)
+    at MidwayWebFramework.run (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/web/dist/framework/web.js:214:21)
+    at MidwayFrameworkService.runFramework (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/frameworkService.js:164:17)
+    at MidwayLifeCycleService.init (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/service/lifeCycleService.js:67:9)
+    at ObjectCreator.doInitAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/definitions/objectCreator.js:111:17)
+    at ManagedResolverFactory.createAsync (/Users/guyumac/Documents/my-midway/midway-project/node_modules/@midwayjs/core/dist/context/managedResolverFactory.js:258:9) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 7001,
+  name: 'unhandledExceptionError'
+}
+2025-11-09 23:00:36.264 ERROR 85798 [-/127.0.0.1/-/54ms POST /api/v1/guyutest/user] 创建 GuyuInfo 失败: Unknown column 'create_date' in 'field list' QueryFailedError: Unknown column 'create_date' in 'field list'
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?)',
+  parameters: [
+    '11F0BD7CD8F8BE209FD92731085C54DB',
+    'Active',
+    2025-11-09T15:00:36.226Z,
+    null,
+    '宋苗',
+    '顾宇的对象',
+    28,
+    '15631111111'
+  ],
+  driverError: Error: Unknown column 'create_date' in 'field list'
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_BAD_FIELD_ERROR',
+    errno: 1054,
+    sqlState: '42S22',
+    sqlMessage: "Unknown column 'create_date' in 'field list'",
+    sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (DEFAULT, '11F0BD7CD8F8BE209FD92731085C54DB', 'Active', 1, '2025-11-09 23:00:36.226', DEFAULT, NULL, '宋苗', '顾宇的对象', 28, '15631111111')"
+  },
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'create_date' in 'field list'",
+  sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (DEFAULT, '11F0BD7CD8F8BE209FD92731085C54DB', 'Active', 1, '2025-11-09 23:00:36.226', DEFAULT, NULL, '宋苗', '顾宇的对象', 28, '15631111111')"
+}
+2025-11-09 23:02:24.637 ERROR 85798 [-/127.0.0.1/-/11ms POST /api/v1/guyutest/user] 创建 GuyuInfo 失败: Unknown column 'update_date' in 'field list' QueryFailedError: Unknown column 'update_date' in 'field list'
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?)',
+  parameters: [
+    '11F0BD7D19962F809FD92731085C54DB',
+    'Active',
+    2025-11-09T15:02:24.632Z,
+    null,
+    '宋苗',
+    '顾宇的对象',
+    28,
+    '15632131111'
+  ],
+  driverError: Error: Unknown column 'update_date' in 'field list'
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_BAD_FIELD_ERROR',
+    errno: 1054,
+    sqlState: '42S22',
+    sqlMessage: "Unknown column 'update_date' in 'field list'",
+    sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (DEFAULT, '11F0BD7D19962F809FD92731085C54DB', 'Active', 1, '2025-11-09 23:02:24.632', DEFAULT, NULL, '宋苗', '顾宇的对象', 28, '15632131111')"
+  },
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'update_date' in 'field list'",
+  sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (DEFAULT, '11F0BD7D19962F809FD92731085C54DB', 'Active', 1, '2025-11-09 23:02:24.632', DEFAULT, NULL, '宋苗', '顾宇的对象', 28, '15632131111')"
+}
+2025-11-09 23:03:06.974 ERROR 85798 [-/127.0.0.1/-/6ms POST /api/v1/guyutest/user] 创建 GuyuInfo 失败: Data truncated for column 'id' at row 1 QueryFailedError: Data truncated for column 'id' at row 1
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (DEFAULT, ?, ?, 1, ?, DEFAULT, ?, ?, ?, ?, ?)',
+  parameters: [
+    '11F0BD7D32D24C909FD92731085C54DB',
+    'Active',
+    2025-11-09T15:03:06.969Z,
+    null,
+    '宋苗',
+    '顾宇的对象',
+    28,
+    '15632131111'
+  ],
+  driverError: Error: Data truncated for column 'id' at row 1
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'WARN_DATA_TRUNCATED',
+    errno: 1265,
+    sqlState: '01000',
+    sqlMessage: "Data truncated for column 'id' at row 1",
+    sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (DEFAULT, '11F0BD7D32D24C909FD92731085C54DB', 'Active', 1, '2025-11-09 23:03:06.969', DEFAULT, NULL, '宋苗', '顾宇的对象', 28, '15632131111')"
+  },
+  code: 'WARN_DATA_TRUNCATED',
+  errno: 1265,
+  sqlState: '01000',
+  sqlMessage: "Data truncated for column 'id' at row 1",
+  sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (DEFAULT, '11F0BD7D32D24C909FD92731085C54DB', 'Active', 1, '2025-11-09 23:03:06.969', DEFAULT, NULL, '宋苗', '顾宇的对象', 28, '15632131111')"
+}
+2025-11-09 23:23:14.653 ERROR 85798 [-/127.0.0.1/-/28ms PUT /api/v1/guyutest/user/11F0BD7D7AE895709FD92731085C54DB] 更新 GuyuInfo 失败: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY' QueryFailedError: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+  parameters: [
+    null,
+    '11F0BD7D7AE895709FD92731085C54DB',
+    'Active',
+    '1',
+    2025-11-09T15:05:08.000Z,
+    null,
+    null,
+    '李狗子',
+    '一个李狗子',
+    22,
+    '11111111'
+  ],
+  driverError: Error: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'",
+    sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (NULL, '11F0BD7D7AE895709FD92731085C54DB', 'Active', '1', '2025-11-09 23:05:08.000', NULL, NULL, '李狗子', '一个李狗子', 22, '11111111')"
+  },
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlState: '23000',
+  sqlMessage: "Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'",
+  sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (NULL, '11F0BD7D7AE895709FD92731085C54DB', 'Active', '1', '2025-11-09 23:05:08.000', NULL, NULL, '李狗子', '一个李狗子', 22, '11111111')"
+}
+2025-11-09 23:33:45.352 ERROR 18128 [-/127.0.0.1/-/41ms POST /api/v1/guyutest/user/update] 更新 GuyuInfo 失败: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY' QueryFailedError: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+  parameters: [
+    null,
+    '11F0BD7D7AE895709FD92731085C54DB',
+    'Active',
+    '1',
+    2025-11-09T15:05:08.000Z,
+    null,
+    null,
+    '李狗子',
+    '一只李狗子',
+    18,
+    '17632321111'
+  ],
+  driverError: Error: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'",
+    sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (NULL, '11F0BD7D7AE895709FD92731085C54DB', 'Active', '1', '2025-11-09 23:05:08.000', NULL, NULL, '李狗子', '一只李狗子', 18, '17632321111')"
+  },
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlState: '23000',
+  sqlMessage: "Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'",
+  sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (NULL, '11F0BD7D7AE895709FD92731085C54DB', 'Active', '1', '2025-11-09 23:05:08.000', NULL, NULL, '李狗子', '一只李狗子', 18, '17632321111')"
+}
+2025-11-09 23:45:09.714 ERROR 29621 [-/127.0.0.1/-/67ms POST /api/v1/guyutest/user/update] 更新 GuyuInfo 失败: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY' QueryFailedError: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+  parameters: [
+    null,
+    '11F0BD7D7AE895709FD92731085C54DB',
+    'Active',
+    '2',
+    2025-11-09T15:05:08.000Z,
+    2025-11-09T15:38:20.000Z,
+    null,
+    '李狗子1',
+    '一只李狗子',
+    18,
+    '17632321111'
+  ],
+  driverError: Error: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'",
+    sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (NULL, '11F0BD7D7AE895709FD92731085C54DB', 'Active', '2', '2025-11-09 23:05:08.000', '2025-11-09 23:38:20.000', NULL, '李狗子1', '一只李狗子', 18, '17632321111')"
+  },
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlState: '23000',
+  sqlMessage: "Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'",
+  sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (NULL, '11F0BD7D7AE895709FD92731085C54DB', 'Active', '2', '2025-11-09 23:05:08.000', '2025-11-09 23:38:20.000', NULL, '李狗子1', '一只李狗子', 18, '17632321111')"
+}
+2025-11-09 23:51:35.233 ERROR 29621 [-/127.0.0.1/-/18ms POST /api/v1/guyutest/user/update] 更新 GuyuInfo 失败: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY' QueryFailedError: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+  parameters: [
+    null,
+    '11F0BD7D7AE895709FD92731085C54DB',
+    'Active',
+    '2',
+    2025-11-09T15:05:08.000Z,
+    2025-11-09T15:38:20.000Z,
+    null,
+    '李狗子1',
+    '一只李狗子',
+    18,
+    '17632321111'
+  ],
+  driverError: Error: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'",
+    sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (NULL, '11F0BD7D7AE895709FD92731085C54DB', 'Active', '2', '2025-11-09 23:05:08.000', '2025-11-09 23:38:20.000', NULL, '李狗子1', '一只李狗子', 18, '17632321111')"
+  },
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlState: '23000',
+  sqlMessage: "Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'",
+  sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (NULL, '11F0BD7D7AE895709FD92731085C54DB', 'Active', '2', '2025-11-09 23:05:08.000', '2025-11-09 23:38:20.000', NULL, '李狗子1', '一只李狗子', 18, '17632321111')"
+}
+2025-11-09 23:53:28.860 ERROR 38642 [-/127.0.0.1/-/59ms POST /api/v1/guyutest/user/update] 更新 GuyuInfo 失败: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY' QueryFailedError: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'
+    at QueryFailedError.TypeORMError [as constructor] (/Users/guyumac/Documents/my-midway/midway-project/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/guyumac/Documents/my-midway/midway-project/src/error/QueryFailedError.ts:9:9)
+    at Query.onResult (/Users/guyumac/Documents/my-midway/midway-project/src/driver/mysql/MysqlQueryRunner.ts:196:37)
+    at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:36:14)
+    at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+    at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  query: 'INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+  parameters: [
+    null,
+    '11F0BD7D7AE895709FD92731085C54DB',
+    'Active',
+    '2',
+    2025-11-09T15:05:08.000Z,
+    2025-11-09T15:38:20.000Z,
+    null,
+    '11',
+    '22',
+    0,
+    '33'
+  ],
+  driverError: Error: Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'
+      at Packet.asError (/Users/guyumac/node_modules/mysql2/lib/packets/packet.js:740:17)
+      at Query.execute (/Users/guyumac/node_modules/mysql2/lib/commands/command.js:29:26)
+      at PoolConnection.handlePacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:477:34)
+      at PacketParser.onPacket (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/guyumac/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'",
+    sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (NULL, '11F0BD7D7AE895709FD92731085C54DB', 'Active', '2', '2025-11-09 23:05:08.000', '2025-11-09 23:38:20.000', NULL, '11', '22', 0, '33')"
+  },
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlState: '23000',
+  sqlMessage: "Duplicate entry '11F0BD7D7AE895709FD92731085C54DB' for key 'guyu_info.PRIMARY'",
+  sql: "INSERT INTO `guyu_info`(`db_id`, `id`, `status`, `version`, `create_date`, `update_date`, `removed_date`, `name`, `description`, `age`, `phone`) VALUES (NULL, '11F0BD7D7AE895709FD92731085C54DB', 'Active', '2', '2025-11-09 23:05:08.000', '2025-11-09 23:38:20.000', NULL, '11', '22', 0, '33')"
+}
