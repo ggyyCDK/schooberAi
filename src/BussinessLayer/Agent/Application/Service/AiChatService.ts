@@ -74,6 +74,7 @@ export class AiChatService {
                         command?.onMessage && command?.onMessage(parseResult)
                         console.log('parseResult', parseResult)
                         if (parseResult.eventType === EventType.Complete) {
+                           
                             command?.onCompleted && command?.onCompleted(parseResult)
                         }
                         if (parseResult.eventType === EventType.Message) {

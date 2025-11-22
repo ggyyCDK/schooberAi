@@ -6,11 +6,6 @@
   "auditLog": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/.audit/.90ad4a7361c58787522f8c60618e78f62ccae98e-audit.json",
   "files": [
     {
-      "date": 1763223877927,
-      "name": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/midway-core.log.2025-11-16",
-      "hash": "794eeb0dc386bddccea83bea5bb063f6"
-    },
-    {
       "date": 1763530235341,
       "name": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/midway-core.log.2025-11-19",
       "hash": "e02821a775bed3f8eb3825a9d2c51809"
@@ -29,6 +24,11 @@
       "date": 1763780526450,
       "name": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/midway-core.log.2025-11-22",
       "hash": "df75eb3be48591c632b444a9e3d243b7"
+    },
+    {
+      "date": 1763831970416,
+      "name": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/midway-core.log.2025-11-23",
+      "hash": "6d3ae238b3d732d374224592fcb25943"
     }
   ],
   "hashType": "md5"
