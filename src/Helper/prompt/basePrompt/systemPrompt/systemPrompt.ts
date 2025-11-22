@@ -5,7 +5,7 @@ export const basicSystemPrompt = (
   workDir: string,
 ) => {
   return `
-  You are Dalaran, a highly skilled software engineer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.
+  You are SchooberAi, a highly skilled software engineer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.
 
 ====
 
