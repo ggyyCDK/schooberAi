@@ -1,6 +1,5 @@
 import { Agent } from '@mastra/core/agent';
 import { createOpenAI } from '@ai-sdk/openai';
-
 const MODEL_NAME = 'claude37_sonnet';
 
 const PARAMS = {
