@@ -16,3 +16,21 @@
   syscall: 'connect',
   fatal: true
 }
+2025-11-23 01:47:26.660 ERROR 97741 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-23 01:47:26.660 ERROR 97741 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}

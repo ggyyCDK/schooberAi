@@ -11,9 +11,30 @@
       "hash": "e02821a775bed3f8eb3825a9d2c51809"
     },
     {
+<<<<<<< HEAD
       "date": 1763833329337,
       "name": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/midway-core.log.2025-11-23",
       "hash": "f8fcc55ed9a6e246bd79b7d3322a0fbd"
+=======
+      "date": 1763614794175,
+      "name": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/midway-core.log.2025-11-20",
+      "hash": "8d86f680b0bd82538a79cecac49ac78a"
+    },
+    {
+      "date": 1763693604662,
+      "name": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/midway-core.log.2025-11-21",
+      "hash": "44c62feed11960de673ac52700f2877d"
+    },
+    {
+      "date": 1763780526450,
+      "name": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/midway-core.log.2025-11-22",
+      "hash": "df75eb3be48591c632b444a9e3d243b7"
+    },
+    {
+      "date": 1763831970416,
+      "name": "/Users/guyumac/Documents/schooberAi/logs/my-midway-project/midway-core.log.2025-11-23",
+      "hash": "6d3ae238b3d732d374224592fcb25943"
+>>>>>>> ed54cfea85e040e2f35b2508eca442376f306762
     }
   ],
   "hashType": "md5"

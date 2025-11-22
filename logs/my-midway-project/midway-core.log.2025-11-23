@@ -55,3 +55,34 @@
   syscall: 'connect',
   fatal: true
 }
+2025-11-23 01:47:16.566 INFO 97741 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-23 01:47:16.566 INFO 97741 [egg:core] dump config after load, 2ms
+2025-11-23 01:47:16.578 INFO 97741 [egg:core] dump config after ready, 2ms
+2025-11-23 01:47:16.583 INFO 97741 [egg:logger] init all loggers with options: {"default":{"fileLogName":"midway-app.log","errorLogName":"common-error.log","dir":"/Users/guyumac/Documents/schooberAi/logs/my-midway-project","auditFileDir":".audit","transports":{"console":{"autoColors":true},"file":{"bufferWrite":false},"error":{"bufferWrite":false}},"level":"info"},"clients":{"coreLogger":{"fileLogName":"midway-core.log","level":"info"},"appLogger":{"fileLogName":"midway-web.log","aliasName":"logger"},"agentLogger":{"fileLogName":"midway-agent.log"}}}
+2025-11-23 01:47:16.583 INFO 97741 [egg:core] dump config after load, 1ms
+2025-11-23 01:47:16.627 WARN 97741 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2025-11-23 01:47:16.627 INFO 97741 [egg-security] use methodnoallow middleware
+2025-11-23 01:47:16.627 INFO 97741 [egg-security] use noopen middleware
+2025-11-23 01:47:16.628 INFO 97741 [egg-security] use nosniff middleware
+2025-11-23 01:47:16.628 INFO 97741 [egg-security] use xssProtection middleware
+2025-11-23 01:47:16.629 INFO 97741 [egg-security] use dta middleware
+2025-11-23 01:47:16.629 INFO 97741 [egg-security] compose 5 middlewares into one security middleware
+2025-11-23 01:47:16.655 INFO 97741 [egg:core] dump config after ready, 1ms
+2025-11-23 01:47:26.657 ERROR 97741 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+2025-11-23 01:47:26.660 ERROR 97741 Error [unhandledRejectionError]: connect ETIMEDOUT
+    at PoolConnection._handleTimeoutError (/Users/guyumac/node_modules/mysql2/lib/base/connection.js:200:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
