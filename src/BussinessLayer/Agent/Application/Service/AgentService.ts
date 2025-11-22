@@ -123,7 +123,7 @@ export class AgentService {
         let responseContent = '';
 
         await this.aiChatService.aiChatWithStream({
-            model: 'claude_sonnet4',
+            model: LLMConfigParam.model ?? 'claude_sonnet4',
             messages: finalPromptList,
             ak,
             ApiUrl,
