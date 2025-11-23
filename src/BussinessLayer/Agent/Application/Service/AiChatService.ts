@@ -71,20 +71,29 @@ export class AiChatService {
                 getMessages(
                     msg => {
                         const parseResult = parseSreamResponse(msg);
-                        if (parseResult.eventType !== EventType.Null && parseResult.eventType !== EventType.Usage) {
+                        if (parseResult) {
                             command?.onMessage && command?.onMessage(parseResult)
+                            if (parseResult.eventType === EventType.Complete) {
+                                command?.onCompleted && command?.onCompleted(parseResult)
+                            }
+                            if (parseResult.eventType === EventType.Usage) {
+                                command?.onUsage && command?.onUsage(parseResult)
+                            }
                         }
-                        console.log('parseResult', parseResult)
-                        if (parseResult.eventType === EventType.Complete) {
+                        // if (parseResult.eventType !== EventType.Null && parseResult.eventType !== EventType.Usage) {
+                        //     command?.onMessage && command?.onMessage(parseResult)
+                        // }
+                        // console.log('parseResult', parseResult)
+                        // if (parseResult.eventType === EventType.Complete) {
 
-                            command?.onCompleted && command?.onCompleted(parseResult)
-                        }
-                        if (parseResult.eventType === EventType.Message) {
-                            // command?.onMessage && command?.onMessage(parseResult)
-                        }
-                        if (parseResult.eventType === EventType.Usage) {
-                            command?.onUsage && command?.onUsage(parseResult)
-                        }
+                        //     command?.onCompleted && command?.onCompleted(parseResult)
+                        // }
+                        // if (parseResult.eventType === EventType.Message) {
+                        //     // command?.onMessage && command?.onMessage(parseResult)
+                        // }
+                        // if (parseResult.eventType === EventType.Usage) {
+                        //     command?.onUsage && command?.onUsage(parseResult)
+                        // }
                     }
                 )
             )
