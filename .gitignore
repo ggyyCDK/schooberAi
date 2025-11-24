@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 node_modules/
 dist/
 build/
@@ -9,7 +8,6 @@ npm-debug.log*
 run/
 logs/
 *.log
-=======
 # Dependencies
 node_modules/
 
@@ -44,4 +42,3 @@ coverage/
 # Misc
 *.tsbuildinfo
 run/
->>>>>>> 9cc9cbb3cff49a1f60697f17feb9339625ac7618
