@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules/
 dist/
 build/
@@ -8,3 +9,39 @@ npm-debug.log*
 run/
 logs/
 *.log
+=======
+# Dependencies
+node_modules/
+
+# Builds
+/dist/
+/build/
+/out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Testing
+coverage/
+.junit/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS / Editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Misc
+*.tsbuildinfo
+run/
+>>>>>>> 9cc9cbb3cff49a1f60697f17feb9339625ac7618

@@ -38,6 +38,7 @@ export class AiChatService {
       )}`
     );
 
+<<<<<<< HEAD
     let ak: string = command.ak ?? "";
     const ApiUrl: string = command.ApiUrl ?? "";
     if (!ak) {
@@ -45,10 +46,26 @@ export class AiChatService {
     }
     //构建请求参数
     const requestParams = this.buildRequestParam(command);
+=======
+    //流式调用接口
+    async aiChatWithStream(command: AiStreamChatInputCommand): Promise<void> {
+        this.ctx.logger.info(
+            `开始调用AI服务, model: ${command.model}, messages: ${JSON.stringify(command.messages)}`
+        )
+
+        let ak: string = command.ak ?? '';
+        const ApiUrl: string = command.ApiUrl ?? '';
+        if (!ak) {
+            throw new Error('ak is required');
+        }
+        //构建请求参数
+        const requestParams = this.buildRequestParam(command);
+>>>>>>> 9cc9cbb3cff49a1f60697f17feb9339625ac7618
 
     //记录模型开始时间
     // const startTime = Date.now()
 
+<<<<<<< HEAD
     //大模型输出构建
     let response;
     try {
@@ -85,6 +102,63 @@ export class AiChatService {
           }
         })
       );
+=======
+        //大模型输出构建
+        let response;
+        try {
+            response = await axios.post(
+                ApiUrl,
+                requestParams, {
+                timeout: command.timeout ?? 5 * 60 * 1000,
+                headers: {
+                    Authorization: `Bearer ${ak}`
+                },
+                responseType: 'stream'
+            }
+            ).catch(err => {
+                throw new Error(`失败原因:${err}`)
+            })
+        } catch (error) {
+            throw new Error(`大模型流式调用失败:${error}`)
+        }
+        const stream = response.data;
+
+        for await (const chunk of stream) {
+            console.log('response is', chunk.toString())
+            const onChunk = getLines(
+                getMessages(
+                    msg => {
+                        const parseResult = parseSreamResponse(msg);
+                        if (parseResult) {
+                            // console.log('parseResult is:', parseResult)
+                            if (parseResult.eventType !== EventType.Null) {
+                                command?.onMessage && command?.onMessage(parseResult, parseResult.eventType)
+                            }
+                            if (parseResult.eventType === EventType.Complete) {
+                                command?.onCompleted && command?.onCompleted(parseResult)
+                            }
+                            // if (parseResult.eventType === EventType.Usage) {
+                            //     command?.onUsage && command?.onUsage(parseResult)
+                            // }
+                        }
+                        // if (parseResult.eventType !== EventType.Null && parseResult.eventType !== EventType.Usage) {
+                        //     command?.onMessage && command?.onMessage(parseResult)
+                        // }
+                        // console.log('parseResult', parseResult)
+                        // if (parseResult.eventType === EventType.Complete) {
+
+                        //     command?.onCompleted && command?.onCompleted(parseResult)
+                        // }
+                        // if (parseResult.eventType === EventType.Message) {
+                        //     // command?.onMessage && command?.onMessage(parseResult)
+                        // }
+                        // if (parseResult.eventType === EventType.Usage) {
+                        //     command?.onUsage && command?.onUsage(parseResult)
+                        // }
+                    }
+                )
+            )
+>>>>>>> 9cc9cbb3cff49a1f60697f17feb9339625ac7618
 
       onChunk(chunk);
     }

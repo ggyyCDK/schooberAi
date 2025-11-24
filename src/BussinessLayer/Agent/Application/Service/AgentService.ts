@@ -6,6 +6,7 @@ import { AiMessageService } from "./AiMessageService";
 import { AiChatService } from "./AiChatService";
 import { AiSessionModel } from "../../Domain/Agent/AiSession";
 import { AiMessageModel } from "../../Domain/Agent/AiMessage";
+import { EventType } from "@/Helper/Types/parseResult";
 import { basicSystemPrompt } from '@/Helper/prompt/basePrompt/systemPrompt/systemPrompt'
 @Provide()
 export class AgentService {
@@ -123,15 +124,17 @@ export class AgentService {
         let responseContent = '';
 
         await this.aiChatService.aiChatWithStream({
-            model: 'claude_sonnet4',
+            model: LLMConfigParam.model ?? 'claude_sonnet4_5',
             messages: finalPromptList,
             ak,
             ApiUrl,
             // timeout: LLMConfigParam.timeout,
             stream: true,
-            onMessage: message => {
-                responseContent += message.content
+            onMessage: (message, type) => {
                 this.ctx.res.write(JSON.stringify(message) + '\n\n');
+                if (message.eventType === EventType.Message) {
+                    responseContent += message.content
+                }
             },
             onCompleted: message => {
                 //完成时，记录ai完整回复
@@ -198,7 +201,7 @@ export class AgentService {
 
         //step 4 （构建回复内容）
         let responseContent = '';
-        let talkUsage: any = null
+        // let talkUsage: any = null
 
         //step 5 （先保存用户输入信息）
         await this.aiMessageService.createAiMessage({
@@ -211,19 +214,19 @@ export class AgentService {
 
         //step 6 （调用Ai服务进行流式对话）
         await this.aiChatService.aiChatWithStream({
-            model: LLMConfigParam.model ?? 'claude_sonnet4',
+            model: LLMConfigParam.model ?? 'claude_sonnet4_5',
             messages: finalPromptList,
             ak,
             ApiUrl,
             timeout: LLMConfigParam.timeout,
             stream: true,
-            onMessage: message => {
-                responseContent += message.content
+            onMessage: (message, type) => {
                 this.ctx.res.write(JSON.stringify(message) + '\n\n');
+                if (message.eventType === EventType.Message) {
+                    responseContent += message.content
+                }
+
             },
-            onUsage: (usage => {
-                talkUsage = usage.content;
-            }),
             onCompleted: message => {
                 //完成时，记录ai完整回复
                 if (sessionId) {
@@ -232,7 +235,7 @@ export class AgentService {
                         fromType: AimessageType.LLMResponse,
                         messageContent: [{ role: 'assistant', content: responseContent }],
                         workerId: 'guyu',
-                        llmConfig: { ApiUrl, cwdFormatted, talkUsage }
+                        llmConfig: { ApiUrl, cwdFormatted }
                     })
                 }
             }
