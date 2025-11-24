@@ -67,18 +67,22 @@ export class AiChatService {
         const stream = response.data;
 
         for await (const chunk of stream) {
+            console.log('response is', chunk.toString())
             const onChunk = getLines(
                 getMessages(
                     msg => {
                         const parseResult = parseSreamResponse(msg);
                         if (parseResult) {
-                            command?.onMessage && command?.onMessage(parseResult)
+                            // console.log('parseResult is:', parseResult)
+                            if (parseResult.eventType !== EventType.Null) {
+                                command?.onMessage && command?.onMessage(parseResult, parseResult.eventType)
+                            }
                             if (parseResult.eventType === EventType.Complete) {
                                 command?.onCompleted && command?.onCompleted(parseResult)
                             }
-                            if (parseResult.eventType === EventType.Usage) {
-                                command?.onUsage && command?.onUsage(parseResult)
-                            }
+                            // if (parseResult.eventType === EventType.Usage) {
+                            //     command?.onUsage && command?.onUsage(parseResult)
+                            // }
                         }
                         // if (parseResult.eventType !== EventType.Null && parseResult.eventType !== EventType.Usage) {
                         //     command?.onMessage && command?.onMessage(parseResult)
