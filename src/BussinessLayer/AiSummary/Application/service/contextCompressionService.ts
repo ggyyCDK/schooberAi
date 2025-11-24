@@ -18,36 +18,65 @@ export class ContextCompressionService {
     aiMessageRepository: IAiMessageRepository;
 
     /**
-     * 压缩会话上下文
+     * 压缩会话上下文（完整流程）
      * @param sessionId 会话ID
-     * @param conversationHistory 对话历史（JSON字符串）
      * @returns 压缩后的内容
      */
-    async compressSessionContext(sessionId: string, conversationHistory: string) {
+    async compressSessionContext(sessionId: string) {
         try {
-            // 1. 创建压缩 Agent
+            this.ctx.logger.info(`开始压缩会话上下文，sessionId: ${sessionId}`);
+
+            // 1. 从数据库查询消息列表
+            const messages = await this.aiMessageRepository.listBySessionId(sessionId);
+
+            if (!messages || messages.length === 0) {
+                throw new Error('该会话没有消息记录');
+            }
+
+            // 2. 过滤并格式化消息（提取system消息和非system消息）
+            const { filteredMessages, systemMessages } = this.filterAndFormatMessages(messages);
+
+            if (filteredMessages.length === 0) {
+                throw new Error('过滤system消息后，没有可压缩的消息');
+            }
+
+            const conversationHistory = JSON.stringify(filteredMessages);
+
+            this.ctx.logger.info(`查询到 ${messages.length} 条消息，过滤后 ${filteredMessages.length} 条，system消息 ${systemMessages.length} 条，开始压缩`);
+
+            // 3. 创建压缩 Agent
             const compressionAgent = await contextCompressionAgentFactory();
 
-            // 2. 构建用户提示
+            // 4. 构建用户提示
             const userPrompt = CONTEXT_COMPRESSION_USER_PROMPT(conversationHistory);
 
-            // 3. 执行压缩
-            const lastMessage = await this.getLastMessage(sessionId);
+            // 5. 执行压缩
+            const lastMessage = messages && messages.length > 0 ? messages[messages.length - 1] : null;
 
             const result = await compressionAgent.generate(userPrompt, {
                 maxSteps: 5,
                 maxRetries: 2,
             });
 
-            const compressedContent = result.text || '';
+            let compressedContent = result.text || '';
 
-            // 4. 保存压缩结果
+            // 6. 将system消息拼接到压缩内容的最前面
+            if (systemMessages.length > 0) {
+                const systemMessagesStr = JSON.stringify(systemMessages);
+                compressedContent = `[System Messages]\n${systemMessagesStr}\n\n[Compressed Conversation]\n${compressedContent}`;
+            }
+
+            // 7. 保存压缩结果
             await this.saveSummary(sessionId, compressedContent, lastMessage?.id);
+
+            this.ctx.logger.info(`会话上下文压缩完成，sessionId: ${sessionId}`);
 
             return {
                 sessionId,
                 compressedContent,
-                originalMessageCount: await this.getMessageCount(sessionId),
+                originalMessageCount: messages.length,
+                filteredMessageCount: filteredMessages.length,
+                systemMessageCount: systemMessages.length,
                 lastMessageId: lastMessage?.id
             };
         } catch (error) {
@@ -56,21 +85,42 @@ export class ContextCompressionService {
         }
     }
 
-    /**
-     * 获取最后一条消息
-     */
-    private async getLastMessage(sessionId: string) {
-        const messages = await this.aiMessageRepository.listBySessionId(sessionId);
-        return messages && messages.length > 0 ? messages[messages.length - 1] : null;
-    }
 
     /**
-     * 获取消息数量
+     * 过滤并格式化消息（排除system角色的消息）
+     * @returns { filteredMessages, systemMessages } 过滤后的消息和system消息
      */
-    private async getMessageCount(sessionId: string): Promise<number> {
-        const messages = await this.aiMessageRepository.listBySessionId(sessionId);
-        return messages ? messages.length : 0;
+    private filterAndFormatMessages(messages: any[]) {
+        const systemMessages: any[] = [];
+        const filteredMessages: any[] = [];
+
+        messages.forEach(msg => {
+            if (Array.isArray(msg.messageContent)) {
+                // 提取system消息
+                const systemItems = msg.messageContent.filter(item => item.role === 'system');
+                if (systemItems.length > 0) {
+                    systemMessages.push(...systemItems);
+                }
+
+                // 过滤掉system消息
+                const filtered = msg.messageContent.filter(item => item.role !== 'system');
+                if (filtered.length > 0) {
+                    filteredMessages.push({
+                        role: msg.fromType,
+                        content: filtered
+                    });
+                }
+            } else {
+                filteredMessages.push({
+                    role: msg.fromType,
+                    content: msg.messageContent
+                });
+            }
+        });
+
+        return { filteredMessages, systemMessages };
     }
+
 
     /**
      * 保存压缩摘要

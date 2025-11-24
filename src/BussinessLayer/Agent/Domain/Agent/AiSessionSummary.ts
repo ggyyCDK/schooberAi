@@ -28,7 +28,7 @@ export class AiSessionSummaryModel extends AggregateRoot {
     @Column({
         name: 'name',
         type: 'varchar',
-        length: 50,
+        length: 255,
         nullable: true,
         comment: '会话摘要名称'
     })
@@ -72,9 +72,9 @@ export class AiSessionSummaryModel extends AggregateRoot {
 
     @Column({
         name: 'summary_content',
-        type: 'text',
+        type: 'longtext',
         nullable: true,
-        comment: '摘要内容'
+        comment: '摘要内容（JSON格式）'
     })
     summaryContent?: string;
 
