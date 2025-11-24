@@ -2,7 +2,7 @@ import { Inject, Controller, Post, Body } from '@midwayjs/core';
 import { Context } from '@midwayjs/web';
 import { ApiTags, ApiOperation, ApiResponse } from '@midwayjs/swagger';
 import { CodeReviewDto } from './RequestDTO/codeReviewRequestDTO';
-import { CodeReviewAgentService } from '@/BussinessLayer/CodeReview/Application/service/codeReviewAgentService';
+import { CodeReviewAgentService } from '@/BussinessLayer/AiSummary/Application/service/codeReviewAgentService';
 
 
 @ApiTags(['代码审查'])

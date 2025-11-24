@@ -1,6 +1,6 @@
 import { Provide, Inject } from '@midwayjs/core';
 import { Context } from '@midwayjs/web';
-import { codeReviewAgentFactory } from '@/BussinessLayer/CodeReview/Mastra/agents/codeReviewAgents';
+import { codeReviewAgentFactory } from '@/BussinessLayer/AiSummary/Mastra/agents/codeReviewAgents';
 @Provide()
 export class CodeReviewAgentService {
     @Inject()

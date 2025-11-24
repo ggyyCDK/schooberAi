@@ -10,6 +10,7 @@ export class AiSessionSummaryModel extends AggregateRoot {
         workerId?: string;
         lastMsgId?: string;
         sessionId?: string;
+        summaryContent?: string;
         ext?: any;
     }) {
         super();
@@ -19,6 +20,7 @@ export class AiSessionSummaryModel extends AggregateRoot {
             if (options.workerId) this.workerId = options.workerId;
             if (options.lastMsgId) this.lastMsgId = options.lastMsgId;
             if (options.sessionId) this.sessionId = options.sessionId;
+            if (options.summaryContent) this.summaryContent = options.summaryContent;
             if (options.ext) this.ext = options.ext;
         }
     }
@@ -67,6 +69,14 @@ export class AiSessionSummaryModel extends AggregateRoot {
         comment: '关联的会话 ID'
     })
     sessionId?: string;
+
+    @Column({
+        name: 'summary_content',
+        type: 'text',
+        nullable: true,
+        comment: '摘要内容'
+    })
+    summaryContent?: string;
 
     @Column({
         name: 'ext',
