@@ -126,7 +126,7 @@
       "private": true,
       "scripts": {
         "start": "NODE_ENV=production node ./bootstrap.js",
-        "dev": "cross-env NODE_ENV=local mwtsc --watch --run @midwayjs/mock/app.js",
+        "dev": "npm run build & cross-env NODE_ENV=local mwtsc --watch --run @midwayjs/mock/app.js",
         "test": "cross-env NODE_ENV=unittest jest",
         "cov": "jest --coverage",
         "lint": "mwts check",
@@ -558,7 +558,7 @@
       "private": true,
       "scripts": {
         "start": "NODE_ENV=production node ./bootstrap.js",
-        "dev": "cross-env NODE_ENV=local mwtsc --watch --run @midwayjs/mock/app.js",
+        "dev": "npm run build & cross-env NODE_ENV=local mwtsc --watch --run @midwayjs/mock/app.js",
         "test": "cross-env NODE_ENV=unittest jest",
         "cov": "jest --coverage",
         "lint": "mwts check",
