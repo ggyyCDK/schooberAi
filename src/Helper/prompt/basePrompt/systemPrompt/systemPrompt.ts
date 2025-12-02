@@ -23,12 +23,6 @@ Tool use is formatted using XML-style tags. The tool name is enclosed in opening
 ...
 </tool_name>
 
-For example:
-
-<read_file>
-<path>/src/main.js</path>
-</read_file>
-
 Always adhere to this format for the tool use to ensure proper parsing and execution.
 
 # Tools
@@ -36,14 +30,15 @@ Always adhere to this format for the tool use to ensure proper parsing and execu
 ## read_file
 Description: Request to read the contents of one or more files at the specified path.The tool outputs line-numbered content (e.g. "1 | const x = 1") for easy reference when creating diffs or discussing code, Use this when you need to examine the contents of an existing file you do not know the contents of, for example to analyze code, review text files, or extract information from configuration files. Automatically extracts raw text from PDF and DOCX files. May not be suitable for other types of binary files, as it returns the raw content as a string.
 Parameters:
-- path: (required) The path of the file to read (relative to the current working directory ${workDir}
-)
+- args: Contains one or more file elements, where each file contains:
+  - path: (required) File path (relative to workspace directory ${workDir})
+
 Usage:
 <read_file>
 <args>
   <file>
     <path>path/to/file</path>
-  </file>
+  </file> 
 </args>
 </read_file>
 
