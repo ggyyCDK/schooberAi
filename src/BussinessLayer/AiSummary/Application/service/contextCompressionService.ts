@@ -137,7 +137,7 @@ export class ContextCompressionService {
                 summary.summaryContent = compressedContent;
                 summary.ext = {
                     ...summary.ext,
-                    compressedAt: new Date().toISOString()
+                    compressedAt: new Date().getTime()
                 };
             } else {
                 // 创建新摘要
@@ -147,7 +147,7 @@ export class ContextCompressionService {
                     lastMsgId,
                     summaryContent: compressedContent,
                     ext: {
-                        compressedAt: new Date().toISOString()
+                        compressedAt: new Date().getTime()
                     }
                 });
             }
