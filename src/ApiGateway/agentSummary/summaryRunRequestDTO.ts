@@ -15,14 +15,6 @@ export class AgentRunRequestDTO {
   sessionId?: string;
 
   @ApiProperty({
-    description: "使用者工号",
-    example: "worker001",
-  })
-  @IsString()
-  @IsOptional()
-  workerId?: string;
-
-  @ApiProperty({
     description: "变量映射",
     example: {
       llmConfig: LLMCONFIG,
@@ -33,13 +25,7 @@ export class AgentRunRequestDTO {
   variableMaps?: Record<string, string>;
 
   @ApiProperty({
-    description: "用户问题",
-    example: [
-      {
-        role: "user",
-        content: "你好，请介绍一下你自己",
-      },
-    ],
+    description: "需要被摘要的历史聊天记录",
   })
-  question: AiPrompt[];
+  messages: AiPrompt[];
 }

@@ -6,16 +6,6 @@
   "auditLog": "/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project/.audit/.12c6dea3cfdd01af7eee281e0f64804373b40110-audit.json",
   "files": [
     {
-      "date": 1763614118952,
-      "name": "/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project/midway-agent.log.2025-11-20",
-      "hash": "590f71a2b9d8b5ecc97c8fa0116c00e6"
-    },
-    {
-      "date": 1763708646211,
-      "name": "/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project/midway-agent.log.2025-11-21",
-      "hash": "fec4f6baf016459c9cb73d05aa710c4b"
-    },
-    {
       "date": 1763953835733,
       "name": "/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project/midway-agent.log.2025-11-24",
       "hash": "8fea90715e59b6933b0c39d072047f14"
@@ -24,6 +14,11 @@
       "date": 1764212401480,
       "name": "/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project/midway-agent.log.2025-11-27",
       "hash": "fdbc662fd8a4dd62c6467f582010c0c7"
+    },
+    {
+      "date": 1764321175069,
+      "name": "/Users/tomc404/Desktop/code/schooberAi/logs/my-midway-project/midway-agent.log.2025-11-28",
+      "hash": "b26d2a2667d89f918c0640a06bf78bee"
     }
   ],
   "hashType": "md5"
