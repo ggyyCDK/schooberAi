@@ -26,7 +26,7 @@ export default {
   httpProxy: {
     enable: true,
     default: {
-      target: 'https://idealab.alibaba-inc.com/api/openai/v1/$1',
+      target: 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions/v1/$1',
       ingoreHeaders: {
         origin: true,
         Origin: true

@@ -12,7 +12,7 @@ const PARAMS = {
 
 export const contextCompressionAgentFactory = () => {
     const openai = createOpenAI({
-        baseURL: 'https://idealab.alibaba-inc.com/api/openai/v1',
+        baseURL: 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions/v1',
         apiKey: 'qqq',
         name: 'idealab',
     });

@@ -50,7 +50,7 @@ export class AiChatService {
         let response;
         try {
             response = await axios.post(
-                'https://idealab.alibaba-inc.com/api/openai/v1/chat/completions',
+                'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions/v1/chat/completions',
                 requestParams, {
                 timeout: command.timeout ?? 5 * 60 * 1000,
                 headers: {
