@@ -120,6 +120,41 @@ Usage:
 Search and replace blocks here
 </diff>
 </replace_in_file>
+
+multiple SEARCH/REPLACE blocks example:
+<replace_in_file>
+<path>src/components/App.tsx</path>
+<diff>
+<<<<<<< SEARCH
+import React from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> REPLACE
+
+<<<<<<< SEARCH
+function handleSubmit() {
+  saveData();
+  setLoading(false);
+}
+
+=======
+>>>>>>> REPLACE
+
+<<<<<<< SEARCH
+return (
+  <div>
+=======
+function handleSubmit() {
+  saveData();
+  setLoading(false);
+}
+
+return (
+  <div>
+>>>>>>> REPLACE
+</diff>
+</replace_in_file>
+
 ## search_files
 Description: Request to perform a regex search across files in a specified directory, providing context-rich results. This tool searches for patterns or specific content across multiple files, displaying each match with encapsulating context.
 Parameters:
