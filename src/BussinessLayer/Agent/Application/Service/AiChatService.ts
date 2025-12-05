@@ -45,7 +45,7 @@
 
 //         //记录模型开始时间
 //         // const startTime = Date.now()
-
+//         console.log('requestParams is', ApiUrl, requestParams)
 //         //大模型输出构建
 //         let response;
 //         try {
@@ -132,7 +132,6 @@ export class AiChatService {
         if (!ak) {
             throw new Error('ak is required');
         }
-
         const openai = new OpenAI({
             apiKey: ak,
             baseURL: ApiUrl,
@@ -153,7 +152,6 @@ export class AiChatService {
             for await (const chunk of stream) {
                 // Handle content
                 const content = chunk.choices[0]?.delta?.content;
-                console.log('content is', chunk.choices[0])
                 if (content) {
                     command?.onMessage && command?.onMessage({
                         eventType: EventType.Message,

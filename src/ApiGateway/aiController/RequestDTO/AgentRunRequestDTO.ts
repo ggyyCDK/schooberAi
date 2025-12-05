@@ -27,9 +27,9 @@ export class AgentRunRequestDTO {
         example: {
             llmConfig: {
                 cwdFormatted: '/',
-                model: 'qwen3-max',
-                ak: 'sk-20b2809807c94f208e5c5f62c71a5138',
-                ApiUrl: 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions'
+                model: 'claude-sonnet-4-5-20250929',
+                ak: '',
+                ApiUrl: ''
             }
         },
     })

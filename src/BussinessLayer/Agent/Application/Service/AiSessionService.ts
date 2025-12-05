@@ -25,7 +25,7 @@ export class AiSessionService {
     }): Promise<AiSessionModel> {
         try {
             const { sessionId, workerId, businessType, name, ext } = command;
-            
+
             // 创建新的会话实体
             const aiSession = new AiSessionModel({
                 sessionId,
@@ -63,8 +63,8 @@ export class AiSessionService {
             this.ctx.logger.info(`查询会话成功: ${id}`);
             return result;
         } catch (error) {
-            this.ctx.logger.error(`查询会话失败: ${error.message}`, error);
-            throw new Error(`查询会话失败: ${error.message}`);
+            this.ctx.logger.error(`查询会话失败: ${error.message} id:${id}`, error);
+            throw new Error(`查询会话失败: ${error.message} id:${id}`);
         }
     }
 
@@ -82,7 +82,7 @@ export class AiSessionService {
         ext?: any;
     }>): Promise<AiSessionModel | null> {
         const { id } = data;
-        
+
         try {
             // 先查询是否存在
             const existSession = await this.aiSessionRepository.findById(id!);
