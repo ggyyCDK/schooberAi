@@ -28,6 +28,8 @@ Always adhere to this format for the tool use to ensure proper parsing and execu
 
 # Tools
 
+${getUpdateTodoListDescription()}
+
 ## read_file
 Description: Request to read the contents of one or more files at the specified path.The tool outputs line-numbered content (e.g. "1 | const x = 1") for easy reference when creating diffs or discussing code, Use this when you need to examine the contents of an existing file you do not know the contents of, for example to analyze code, review text files, or extract information from configuration files. Automatically extracts raw text from PDF and DOCX files. May not be suitable for other types of binary files, as it returns the raw content as a string.
 Parameters:
@@ -191,8 +193,6 @@ Usage:
 <list_code_definition_names>
 <path>Directory path here</path>
 </list_code_definition_names>
-
-${getUpdateTodoListDescription()}
 
 ## ask_followup_question
 Description: Ask the user a question to gather additional information needed to complete the task. This tool should be used when you encounter ambiguities, need clarification, or require more details to proceed effectively. It allows for interactive problem-solving by enabling direct communication with the user. Use this tool judiciously to maintain a balance between gathering necessary information and avoiding excessive back-and-forth.
