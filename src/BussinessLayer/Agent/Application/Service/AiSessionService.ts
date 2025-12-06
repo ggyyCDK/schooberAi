@@ -63,8 +63,10 @@ export class AiSessionService {
             this.ctx.logger.info(`查询会话成功: ${id}`);
             return result;
         } catch (error) {
-            this.ctx.logger.error(`查询会话失败: ${error.message} id:${id}`, error);
-            throw new Error(`查询会话失败: ${error.message} id:${id}`);
+            // 数据库连接错误（如 ECONNRESET）时，记录错误但返回 null，允许创建新会话
+            this.ctx.logger.error(`查询会话时发生数据库错误: ${error.message} id:${id}`, error);
+            this.ctx.logger.warn(`由于数据库错误，将视为会话不存在，返回 null`);
+            return null;
         }
     }
 

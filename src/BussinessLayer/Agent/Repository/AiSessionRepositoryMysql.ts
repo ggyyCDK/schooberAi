@@ -8,7 +8,7 @@ import { Context } from "@midwayjs/web";
 export class AiSessionRepositoryMysql implements IAiSessionRepository {
     @Inject()
     ctx: Context
-    
+
     constructor() { }
 
     async findById(id: string): Promise<AiSessionModel | undefined> {
