@@ -1,4 +1,12 @@
 import { getUpdateTodoListDescription } from '../toolPrompt/update_todo_list'
+import { getSearchFilesDescription } from '../toolPrompt/search_files'
+import { getReadFileDescription } from '../toolPrompt/read_file'
+import { getWriteToFileDescription } from '../toolPrompt/write_to_file'
+import { getReplaceInFileDescription } from '../toolPrompt/replace_in_file'
+import { getListFilesDescription } from '../toolPrompt/list_files'
+import { getListCodeDefinitionNamesDescription } from '../toolPrompt/list_code_definition_names'
+import { getAskFollowupQuestionDescription } from '../toolPrompt/ask_followup_question'
+import { getAttemptCompletionDescription } from '../toolPrompt/attempt_completion'
 /**
  * Use all standard prompt values to construct prompt
  */
@@ -30,191 +38,20 @@ Always adhere to this format for the tool use to ensure proper parsing and execu
 
 ${getUpdateTodoListDescription()}
 
-## read_file
-Description: Request to read the contents of one or more files at the specified path.The tool outputs line-numbered content (e.g. "1 | const x = 1") for easy reference when creating diffs or discussing code, Use this when you need to examine the contents of an existing file you do not know the contents of, for example to analyze code, review text files, or extract information from configuration files. Automatically extracts raw text from PDF and DOCX files. May not be suitable for other types of binary files, as it returns the raw content as a string.
-Parameters:
-- args: Contains one or more file elements, where each file contains:
-  - path: (required) File path (relative to workspace directory ${workDir})
+${getReadFileDescription(workDir)}
 
-Usage:
-<read_file>
-<args>
-  <file>
-    <path>path/to/file</path>
-  </file> 
-</args>
-</read_file>
+${getWriteToFileDescription(workDir)}
 
-Examples:
+${getReplaceInFileDescription(workDir)}
 
-1. Reading a single file:
-<read_file>
-<args>
-  <file>
-    <path>src/app.ts</path>
-  </file>
-</args>
-</read_file>
+${getSearchFilesDescription(workDir)}
 
-2. Reading multiple files
-<read_file>
-<args>
-  <file>
-    <path>src/app.ts</path>
-  </file>
-  <file>
-    <path>src/utils.ts</path>
-  </file>
-</args>
-</read_file>
+${getListFilesDescription(workDir)}
 
-IMPORTANT: You MUST use this Efficient Reading Strategy:
-- You MUST read all related files and implementations together in a single operation (up to 5 files at once)
-- You MUST obtain all necessary context before proceeding with changes
-- When you need to read more than 5 files, prioritize the most critical files first, then use subsequent read_file requests for additional files
+${getListCodeDefinitionNamesDescription(workDir)}
 
-
-## write_to_file
-Description: Request to write content to a file at the specified path. If the file exists, it will be overwritten with the provided content. If the file doesn't exist, it will be created. This tool will automatically create any directories needed to write the file.
-Parameters:
-- path: (required) The path of the file to write to (relative to the current working directory ${workDir}
-)
-- content: (required) The content to write to the file. ALWAYS provide the COMPLETE intended content of the file, without any truncation or omissions. You MUST include ALL parts of the file, even if they haven't been modified.
-Usage:
-<write_to_file>
-<path>File path here</path>
-<content>
-Your file content here
-</content>
-</write_to_file>
-
-## replace_in_file
-Description: Request to replace sections of content in an existing file using SEARCH/REPLACE blocks that define exact changes to specific parts of the file. This tool should be used when you need to make targeted changes to specific parts of a file.
-Parameters:
-- path: (required) The path of the file to modify (relative to the current working directory ${workDir}
-)
-- diff: (required) One or more SEARCH/REPLACE blocks following this exact format:
-  '''
-  <<<<<<< SEARCH
-  [exact content to find]
-  =======
-  [new content to replace with]
-  >>>>>>> REPLACE
-  '''
-  Critical rules:
-  1. SEARCH content must match the associated file section to find EXACTLY:
-     * Match character-for-character including whitespace, indentation, line endings
-     * Include all comments, docstrings, etc.
-  2. SEARCH/REPLACE blocks will ONLY replace the first match occurrence.
-     * Including multiple unique SEARCH/REPLACE blocks if you need to make multiple changes.
-     * Include *just* enough lines in each SEARCH section to uniquely match each set of lines that need to change.
-  3. Keep SEARCH/REPLACE blocks concise:
-     * Break large SEARCH/REPLACE blocks into a series of smaller blocks that each change a small portion of the file.
-     * Include just the changing lines, and a few surrounding lines if needed for uniqueness.
-     * Do not include long runs of unchanging lines in SEARCH/REPLACE blocks.
-     * Each line must be complete. Never truncate lines mid-way through as this can cause matching failures.
-  4. Special operations:
-     * To move code: Use two SEARCH/REPLACE blocks (one to delete from original + one to insert at new location)
-     * To delete code: Use empty REPLACE section
-Usage:
-<replace_in_file>
-<path>File path here</path>
-<diff>
-Search and replace blocks here
-</diff>
-</replace_in_file>
-
-multiple SEARCH/REPLACE blocks example:
-<replace_in_file>
-<path>src/components/App.tsx</path>
-<diff>
-<<<<<<< SEARCH
-import React from 'react';
-=======
-import React, { useState } from 'react';
->>>>>>> REPLACE
-
-<<<<<<< SEARCH
-function handleSubmit() {
-  saveData();
-  setLoading(false);
-}
-
-=======
->>>>>>> REPLACE
-
-<<<<<<< SEARCH
-return (
-  <div>
-=======
-function handleSubmit() {
-  saveData();
-  setLoading(false);
-}
-
-return (
-  <div>
->>>>>>> REPLACE
-</diff>
-</replace_in_file>
-
-## search_files
-Description: Request to perform a regex search across files in a specified directory, providing context-rich results. This tool searches for patterns or specific content across multiple files, displaying each match with encapsulating context.
-Parameters:
-- path: (required) The path of the directory to search in (relative to the current working directory ${workDir}
-). This directory will be recursively searched.
-- regex: (required) The regular expression pattern to search for. Uses Rust regex syntax.
-- file_pattern: (optional) Glob pattern to filter files (e.g., '*.ts' for TypeScript files). If not provided, it will search all files (*).
-Usage:
-<search_files>
-<path>Directory path here</path>
-<regex>Your regex pattern here</regex>
-<file_pattern>file pattern here (optional)</file_pattern>
-</search_files>
-
-## list_files
-Description: Request to list files and directories within the specified directory. If recursive is true, it will list all files and directories recursively. If recursive is false or not provided, it will only list the top-level contents. Do not use this tool to confirm the existence of files you may have created, as the user will let you know if the files were created successfully or not.
-Parameters:
-- path: (required) The path of the directory to list contents for (relative to the current working directory ${workDir}
-)
-- recursive: (optional) Whether to list files recursively. Use true for recursive listing, false or omit for top-level only.
-Usage:
-<list_files>
-<path>Directory path here</path>
-<recursive>true or false (optional)</recursive>
-</list_files>
-
-## list_code_definition_names
-Description: Request to list definition names (classes, functions, methods, etc.) used in source code files at the top level of the specified directory. This tool provides insights into the codebase structure and important constructs, encapsulating high-level concepts and relationships that are crucial for understanding the overall architecture.
-Parameters:
-- path: (required) The path of the directory (relative to the current working directory ${workDir}
-) to list top level source code definitions for.
-Usage:
-<list_code_definition_names>
-<path>Directory path here</path>
-</list_code_definition_names>
-
-## ask_followup_question
-Description: Ask the user a question to gather additional information needed to complete the task. This tool should be used when you encounter ambiguities, need clarification, or require more details to proceed effectively. It allows for interactive problem-solving by enabling direct communication with the user. Use this tool judiciously to maintain a balance between gathering necessary information and avoiding excessive back-and-forth.
-Parameters:
-- question: (required) The question to ask the user. This should be a clear, specific question that addresses the information you need.
-Usage:
-<ask_followup_question>
-<question>Your question here</question>
-</ask_followup_question>
-## attempt_completion
-Description: After each tool use, the user will respond with the result of that tool use, i.e. if it succeeded or failed, along with any reasons for failure. Once you've received the results of tool uses and can confirm that the task is complete, use this tool to present the result of your work to the user. Optionally you may provide a CLI command to showcase the result of your work. The user may respond with feedback if they are not satisfied with the result, which you can use to make improvements and try again.
-IMPORTANT NOTE: This tool CANNOT be used until you've confirmed from the user that any previous tool uses were successful. Failure to do so will result in code corruption and system failure. Before using this tool, you must ask yourself in <thinking></thinking> tags if you've confirmed from the user that any previous tool uses were successful. If not, then DO NOT use this tool.
-Parameters:
-- result: (required) The result of the task. Formulate this result in a way that is final and does not require further input from the user. Don't end your result with questions or offers for further assistance.
-- command: (optional) A CLI command to execute to show a live demo of the result to the user. For example, use 'open index.html' to display a created html website, or 'open localhost:3000' to display a locally running development server. But DO NOT use commands like 'echo' or 'cat' that merely print text. This command should be valid for the current operating system. Ensure the command is properly formatted and does not contain any harmful instructions.
-Usage:
-<attempt_completion>
-<result>
-Your final result description here
-</result>
-<command>Command to demonstrate result (optional)</command>
-</attempt_completion>
+${getAskFollowupQuestionDescription()}
+${getAttemptCompletionDescription()}
 
 # Tool Use Examples
 
