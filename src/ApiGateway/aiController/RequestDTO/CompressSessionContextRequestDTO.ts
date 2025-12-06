@@ -13,4 +13,12 @@ export class CompressSessionContextRequestDTO {
     @IsString()
     @IsNotEmpty()
     sessionId: string;
+
+    @ApiProperty({
+        description: 'API Key',
+        example: 'sk-xxxxxxxx',
+        required: false,
+    })
+    @IsString()
+    apiKey?: string;
 }

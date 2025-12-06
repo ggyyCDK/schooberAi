@@ -1,7 +1,7 @@
 import { Provide, Inject } from '@midwayjs/core';
 import { Context } from '@midwayjs/web';
 import { contextCompressionAgentFactory } from '@/BussinessLayer/AiSummary/Mastra/agents/contextCompressionAgent';
-import { CONTEXT_COMPRESSION_USER_PROMPT } from '@/BussinessLayer/AiSummary/Mastra/prompts/contextCompressionPrompt';
+import { CONTEXT_COMPRESSION_USER_PROMPT, SYSTEM_PROMPT_TOKENS } from '@/BussinessLayer/AiSummary/Mastra/prompts/contextCompressionPrompt';
 import { AI_SESSION_SUMMARY, IAiSessionSummaryRepository } from '@/BussinessLayer/Agent/Domain/Agent/AiSessionSummaryRepository';
 import { AI_MESSAGE, IAiMessageRepository } from '@/BussinessLayer/Agent/Domain/Agent/AiMessageRepository';
 import { AiSessionSummaryModel } from '@/BussinessLayer/Agent/Domain/Agent/AiSessionSummary';
@@ -22,7 +22,7 @@ export class ContextCompressionService {
      * @param sessionId 会话ID
      * @returns 压缩后的内容
      */
-    async compressSessionContext(sessionId: string) {
+    async compressSessionContext(sessionId: string, apiKey?: string) {
         try {
             this.ctx.logger.info(`开始压缩会话上下文，sessionId: ${sessionId}`);
 
@@ -45,7 +45,7 @@ export class ContextCompressionService {
             this.ctx.logger.info(`查询到 ${messages.length} 条消息，过滤后 ${filteredMessages.length} 条，system消息 ${systemMessages.length} 条，开始压缩`);
 
             // 3. 创建压缩 Agent
-            const compressionAgent = await contextCompressionAgentFactory();
+            const compressionAgent = await contextCompressionAgentFactory(apiKey);
 
             // 4. 构建用户提示
             const userPrompt = CONTEXT_COMPRESSION_USER_PROMPT(conversationHistory);
@@ -57,9 +57,8 @@ export class ContextCompressionService {
                 maxSteps: 5,
                 maxRetries: 2,
             });
-
             let compressedContent = result.text || '';
-
+            let compressedUsage = result.usage.completionTokens + SYSTEM_PROMPT_TOKENS || {}
             // 6. 将system消息拼接到压缩内容的最前面
             if (systemMessages.length > 0) {
                 const systemMessagesStr = JSON.stringify(systemMessages);
@@ -73,11 +72,8 @@ export class ContextCompressionService {
 
             return {
                 sessionId,
-                compressedContent,
-                originalMessageCount: messages.length,
-                filteredMessageCount: filteredMessages.length,
-                systemMessageCount: systemMessages.length,
-                lastMessageId: lastMessage?.id
+                lastMessageId: lastMessage?.id,
+                compressedUsage
             };
         } catch (error) {
             this.ctx.logger.error(`压缩会话上下文失败: ${error.message}`, error);

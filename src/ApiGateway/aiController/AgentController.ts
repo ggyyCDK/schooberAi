@@ -65,10 +65,10 @@ export class AgentController {
   @Post('/compress-context')
   async compressContext(@Body() body: CompressSessionContextRequestDTO) {
     try {
-      const { sessionId } = body;
+      const { sessionId, apiKey } = body;
 
-      const result = await this.contextCompressionService.compressSessionContext(sessionId);
-
+      const result = await this.contextCompressionService.compressSessionContext(sessionId, apiKey);
+      console.log('压缩完毕：', result)
       return {
         success: true,
         data: result,

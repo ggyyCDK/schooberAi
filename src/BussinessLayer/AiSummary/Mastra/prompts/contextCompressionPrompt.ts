@@ -65,3 +65,5 @@ ${conversationHistory}
 
 请按照系统提示中的格式输出压缩后的内容。
 `;
+
+export const SYSTEM_PROMPT_TOKENS = 7500 
