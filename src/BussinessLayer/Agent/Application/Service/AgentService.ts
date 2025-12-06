@@ -6,6 +6,7 @@ import { AiMessageService } from "./AiMessageService";
 import { AiChatService } from "./AiChatService";
 import { AiSessionModel } from "../../Domain/Agent/AiSession";
 import { AiMessageModel } from "../../Domain/Agent/AiMessage";
+import { AI_SESSION_SUMMARY, IAiSessionSummaryRepository } from "../../Domain/Agent/AiSessionSummaryRepository";
 import { EventType } from "@/Helper/Types/parseResult";
 import { basicSystemPrompt } from '@/Helper/prompt/basePrompt/systemPrompt/systemPrompt'
 @Provide()
@@ -21,6 +22,9 @@ export class AgentService {
 
     @Inject()
     aiChatService: AiChatService;
+
+    @Inject(AI_SESSION_SUMMARY)
+    aiSessionSummaryRepository: IAiSessionSummaryRepository;
 
     /**
      * 运行 AI Agent
@@ -188,13 +192,52 @@ export class AgentService {
         }
 
         //step 2 （构建完整的对话历史）
-        let finalPromptList: AiPrompt[] = [];
-        //按创建时间顺序添加历史消息
-        historyMessages.sort((a, b) => a.createDate.getTime() - b.createDate.getTime()).forEach(message => {
-            if (Array.isArray(message.messageContent)) {
-                finalPromptList.push(...message.messageContent)
+        //构建系统提示词
+        const systemPrompt = basicSystemPrompt(cwdFormatted)
+        let finalPromptList: AiPrompt[] = [{ role: 'system', content: systemPrompt }]
+
+        // 尝试获取会话摘要
+        const summary = await this.aiSessionSummaryRepository.findBySessionId(sessionId);
+
+        //按创建时间顺序排序
+        historyMessages.sort((a, b) => a.createDate.getTime() - b.createDate.getTime());
+
+        if (summary && summary.summaryContent && summary.lastMsgId) {
+            this.ctx.logger.info(`找到会话摘要, lastMsgId: ${summary.lastMsgId}`);
+            // 添加摘要信息
+            finalPromptList.push({
+                role: 'system',
+                content: `前文摘要：${summary.summaryContent}`
+            });
+
+            // 找出 lastMsgId 的位置
+            const lastMsgIndex = historyMessages.findIndex(m => m.id === summary.lastMsgId);
+
+            if (lastMsgIndex !== -1) {
+                // 拼接从 lastMsgId 之后的消息
+                // 注意：这里假设 lastMsgId 是已经被总结的最后一条消息，所以取它之后的消息
+                const messagesToAdd = historyMessages.slice(lastMsgIndex + 1);
+                messagesToAdd.forEach(message => {
+                    if (Array.isArray(message.messageContent)) {
+                        finalPromptList.push(...message.messageContent.filter(m => m.role !== 'system'))
+                    }
+                });
+            } else {
+                this.ctx.logger.warn(`摘要中的 lastMsgId ${summary.lastMsgId} 在历史消息中未找到，将使用全部历史消息`);
+                historyMessages.forEach(message => {
+                    if (Array.isArray(message.messageContent)) {
+                        finalPromptList.push(...message.messageContent.filter(m => m.role !== 'system'))
+                    }
+                });
             }
-        })
+        } else {
+            // 没有摘要，走原来的逻辑
+            historyMessages.forEach(message => {
+                if (Array.isArray(message.messageContent)) {
+                    finalPromptList.push(...message.messageContent.filter(m => m.role !== 'system'))
+                }
+            })
+        }
 
         //step 3 （添加新的消息）
         finalPromptList.push(...messages);

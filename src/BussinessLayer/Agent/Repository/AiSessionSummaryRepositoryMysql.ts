@@ -24,6 +24,9 @@ export class AiSessionSummaryRepositoryMysql implements IAiSessionSummaryReposit
         const result = await repo.findOne({
             where: {
                 sessionId
+            },
+            order: {
+                updatedAt: "DESC"
             }
         });
         return result ?? null;

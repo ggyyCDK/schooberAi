@@ -59,11 +59,8 @@ export class ContextCompressionService {
             });
             let compressedContent = result.text || '';
             let compressedUsage = result.usage.completionTokens + SYSTEM_PROMPT_TOKENS || {}
-            // 6. 将system消息拼接到压缩内容的最前面
-            if (systemMessages.length > 0) {
-                const systemMessagesStr = JSON.stringify(systemMessages);
-                compressedContent = `[System Messages]\n${systemMessagesStr}\n\n[Compressed Conversation]\n${compressedContent}`;
-            }
+            // 6. system消息不参与压缩
+            compressedContent = `[Compressed Conversation]\n${compressedContent}`;
 
             // 7. 保存压缩结果
             await this.saveSummary(sessionId, compressedContent, lastMessage?.id);
