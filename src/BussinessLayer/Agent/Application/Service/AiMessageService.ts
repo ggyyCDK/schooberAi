@@ -136,25 +136,47 @@ export class AiMessageService {
     /**
      * 保存多轮对话消息
      */
-    async saveChatMessages(sessionId: string, chatMessages: any[]): Promise<void> {
+    async saveChatMessage(sessionId: string, chatMessages: any): Promise<void> {
         try {
-            // 遍历保存消息
-            for (const msg of chatMessages) {
-                const messageModel = new AiMultiRoundMessageModel({
-                    conversationId: sessionId,
-                    type: msg.type || 'text', // 默认类型
-                    content: msg.content,
-                    sender: msg.sender,
-                    msgStatus: msg.msgStatus || 'sent',
-                    workerId: msg.workerId,
-                    ext: msg.ext
-                });
-                await this.aiMultiRoundMessageRepository.save(messageModel);
-            }
+            const messageModel = new AiMultiRoundMessageModel({
+                conversationId: sessionId,
+                type: chatMessages.type || "Text", // 默认类型
+                content: chatMessages.content,
+                sender: chatMessages.sender,
+                msgStatus: chatMessages.status || "complete",
+                workerId: chatMessages?.workerId || 'guyu',
+                ext: chatMessages.ext
+            });
+            await this.aiMultiRoundMessageRepository.save(messageModel);
+
             this.ctx.logger.info(`保存会话 ${sessionId} 的消息成功，共 ${chatMessages.length} 条`);
         } catch (error) {
             this.ctx.logger.error(`保存会话消息失败: ${error.message}`, error);
             throw new Error(`保存会话消息失败: ${error.message}`);
+        }
+    }
+
+    /**
+     * 获取多轮对话消息列表
+     */
+    async getChatMessages(sessionId: string): Promise<any[]> {
+        try {
+            const messages = await this.aiMultiRoundMessageRepository.listByConversationId(sessionId);
+
+            return messages.map(msg => ({
+                conversationId: msg.conversationId,
+                msgId: msg.id,
+                sender: msg.sender,
+                sendTime: msg.createDate ? new Date(msg.createDate).getTime() : 0,
+                status: msg.msgStatus,
+                type: msg.type,
+                content: msg.content,
+                workerId: msg.workerId,
+                ext: msg.ext
+            }));
+        } catch (error) {
+            this.ctx.logger.error(`获取会话消息列表失败: ${error.message}`, error);
+            throw new Error(`获取会话消息列表失败: ${error.message}`);
         }
     }
 }

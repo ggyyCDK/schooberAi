@@ -1,9 +1,10 @@
-import { Inject, Controller, Post, Body } from '@midwayjs/core';
+import { Inject, Controller, Post, Get, Body, Query } from '@midwayjs/core';
 import { Context } from '@midwayjs/web';
 import { ApiTags, ApiOperation, ApiResponse } from '@midwayjs/swagger';
 import { AgentRunRequestDTO } from './RequestDTO/AgentRunRequestDTO';
 import { CompressSessionContextRequestDTO } from './RequestDTO/CompressSessionContextRequestDTO';
 import { SaveChatMessagesRequestDTO } from './RequestDTO/SaveChatMessagesRequestDTO';
+import { GetChatMessagesRequestDTO } from './RequestDTO/GetChatMessagesRequestDTO';
 import { GetSessionListByPwdRequestDTO } from './RequestDTO/GetSessionListByPwdRequestDTO';
 import { AgentService } from '@/BussinessLayer/Agent/Application/Service/AgentService';
 import { AiMessageService } from '@/BussinessLayer/Agent/Application/Service/AiMessageService';
@@ -97,8 +98,9 @@ export class AgentController {
   @Post('/save-chatmessages')
   async saveChatMessages(@Body() body: SaveChatMessagesRequestDTO) {
     try {
-      const { sessionId, chatMessages } = body;
-      await this.aiMessageService.saveChatMessages(sessionId, chatMessages);
+      const { sessionId, chatMessage } = body;
+      console.log('sessionId, chatMessage is', sessionId, chatMessage)
+      await this.aiMessageService.saveChatMessage(sessionId, chatMessage);
       return {
         success: true,
         data: null,
@@ -110,6 +112,31 @@ export class AgentController {
         success: false,
         data: null,
         message: `保存失败: ${error.message}`
+      };
+    }
+  }
+
+  @ApiOperation({ summary: '获取会话消息列表', description: '根据会话ID获取消息列表' })
+  @ApiResponse({
+    status: 200,
+    description: '获取成功',
+  })
+  @Get('/get-chatmessages')
+  async getChatMessages(@Query() query: GetChatMessagesRequestDTO) {
+    try {
+      const { sessionId } = query;
+      const result = await this.aiMessageService.getChatMessages(sessionId);
+      return {
+        success: true,
+        data: result,
+        message: '获取会话消息列表成功'
+      };
+    } catch (error) {
+      this.ctx.logger.error(`获取会话消息列表失败: ${error.message}`, error);
+      return {
+        success: false,
+        data: null,
+        message: `获取失败: ${error.message}`
       };
     }
   }

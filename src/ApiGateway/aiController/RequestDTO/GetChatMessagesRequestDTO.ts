@@ -1,9 +1,6 @@
 import { ApiProperty } from '@midwayjs/swagger';
 
-export class SaveChatMessagesRequestDTO {
+export class GetChatMessagesRequestDTO {
     @ApiProperty({ description: '会话ID' })
     sessionId: string;
-
-    @ApiProperty({ description: '消息列表' })
-    chatMessage: any;
 }
