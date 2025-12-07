@@ -19,6 +19,16 @@ export class AiMultiRoundMessageRepositoryMysql implements IAiMultiRoundMessageR
         return result ?? null;
     }
 
+    async findByMsgId(msgId: string): Promise<AiMultiRoundMessageModel | null> {
+        const repo = getRepository(AiMultiRoundMessageModel);
+        const result = await repo.findOne({
+            where: {
+                msgId
+            }
+        });
+        return result ?? null;
+    }
+
     async listByConversationId(conversationId: string): Promise<AiMultiRoundMessageModel[]> {
         const repo = getRepository(AiMultiRoundMessageModel);
         return await repo.find({

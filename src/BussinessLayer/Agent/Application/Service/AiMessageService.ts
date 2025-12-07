@@ -138,8 +138,17 @@ export class AiMessageService {
      */
     async saveChatMessage(sessionId: string, chatMessages: any): Promise<void> {
         try {
+            // 检查 msgId 是否已存在
+            const existingMessage = await this.aiMultiRoundMessageRepository.findByMsgId(chatMessages.msgId);
+            
+            if (existingMessage) {
+                this.ctx.logger.info(`消息 ${chatMessages.msgId} 已存在，跳过保存`);
+                return;
+            }
+
             const messageModel = new AiMultiRoundMessageModel({
                 conversationId: sessionId,
+                msgId: chatMessages.msgId,
                 type: chatMessages.type || "Text", // 默认类型
                 content: chatMessages.content,
                 sender: chatMessages.sender,
@@ -149,7 +158,7 @@ export class AiMessageService {
             });
             await this.aiMultiRoundMessageRepository.save(messageModel);
 
-            this.ctx.logger.info(`保存会话 ${sessionId} 的消息成功，共 ${chatMessages.length} 条`);
+            this.ctx.logger.info(`保存会话 ${sessionId} 的消息成功，msgId: ${chatMessages.msgId}`);
         } catch (error) {
             this.ctx.logger.error(`保存会话消息失败: ${error.message}`, error);
             throw new Error(`保存会话消息失败: ${error.message}`);

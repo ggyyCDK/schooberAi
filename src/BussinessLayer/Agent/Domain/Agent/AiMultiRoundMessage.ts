@@ -6,6 +6,7 @@ export class AiMultiRoundMessageModel extends AggregateRoot {
 
     constructor(options?: {
         conversationId?: string;
+        msgId?: string;
         type?: string;
         content?: any;
         sender?: any;
@@ -16,6 +17,7 @@ export class AiMultiRoundMessageModel extends AggregateRoot {
         super();
         if (options) {
             if (options.conversationId) this.conversationId = options.conversationId;
+            if (options.msgId) this.msgId = options.msgId
             if (options.type) this.type = options.type;
             if (options.content) this.content = options.content;
             if (options.sender) this.sender = options.sender;
@@ -33,6 +35,15 @@ export class AiMultiRoundMessageModel extends AggregateRoot {
         comment: '所属会话id'
     })
     conversationId?: string;
+
+    @Column({
+        name: 'msg_id',
+        type: 'char',
+        length: 40,
+        nullable: false,
+        comment: '消息id'
+    })
+    msgId?: string;
 
     @Column({
         name: 'type',
