@@ -21,6 +21,16 @@ export class AiSessionRepositoryMysql implements IAiSessionRepository {
         return result
     }
 
+    async findByCurPwd(curPwd: string): Promise<AiSessionModel | undefined> {
+        const repo = getRepository(AiSessionModel)
+        const result: AiSessionModel = await repo.findOne({
+            where: {
+                curPwd
+            }
+        })
+        return result
+    }
+
     async save(info: AiSessionModel): Promise<AiSessionModel | undefined> {
         return await getConnection().transaction(async TransactionManager => {
             const repository = TransactionManager.getRepository(AiSessionModel)

@@ -88,17 +88,6 @@ export class AgentController {
   @ApiResponse({
     status: 200,
     description: '保存成功',
-    schema: {
-      type: 'object',
-      properties: {
-        sessionId: { type: 'string', description: '会话ID' },
-        compressedContent: { type: 'string', description: '压缩后的内容（包含system消息）' },
-        originalMessageCount: { type: 'number', description: '原始消息数量' },
-        filteredMessageCount: { type: 'number', description: '过滤后的消息数量' },
-        systemMessageCount: { type: 'number', description: 'System消息数量' },
-        lastMessageId: { type: 'string', description: '最后一条消息ID' }
-      }
-    }
   })
   @Post('/save-chatmessages')
   async saveChatMessages(@Body() body: SaveChatMessagesRequestDTO) {
