@@ -33,6 +33,7 @@ export class AgentService {
      */
     async run(command: {
         sessionId?: string;
+        sessionTitle?: string;
         // promptId: string;
         workerId: string;
         businessType?: string;
@@ -40,7 +41,7 @@ export class AgentService {
         question: AiPrompt[]
 
     }): Promise<void> {
-        const { sessionId, workerId, businessType, variableMaps, question } = command;
+        const { sessionId, workerId, businessType, variableMaps, question, sessionTitle } = command;
         const LLMConfigParam = variableMaps.llmConfig ?? {} //获取大模型配置
         const { ak, ApiUrl, cwdFormatted } = LLMConfigParam
         let isHistory = false; // 是否有历史记录，及是否是记忆模式
@@ -70,7 +71,7 @@ export class AgentService {
                     sessionId: sessionId,
                     workerId: workerId,
                     businessType: businessType,
-                    name: `会话_${new Date().getTime()}`,
+                    name: sessionTitle || `会话_${new Date().getTime()}`,
                     curPwd: variableMaps?.llmConfig?.cwdFormatted,
                     ext: {
                         promptId: '',

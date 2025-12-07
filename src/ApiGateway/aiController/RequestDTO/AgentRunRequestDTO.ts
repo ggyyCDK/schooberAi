@@ -13,6 +13,14 @@ export class AgentRunRequestDTO {
     @IsOptional()
     sessionId?: string;
 
+    @ApiProperty({
+        description: '会话标题',
+        example: '会话标题',
+    })
+    @IsString()
+    @IsOptional()
+    sessionTitle?: string;
+
 
     @ApiProperty({
         description: '使用者工号',
