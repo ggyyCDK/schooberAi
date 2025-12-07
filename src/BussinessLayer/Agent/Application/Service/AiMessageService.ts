@@ -3,6 +3,8 @@ import { Context } from "@midwayjs/web";
 import { AiMessageModel } from "../../Domain/Agent/AiMessage";
 import { AI_MESSAGE, IAiMessageRepository } from "../../Domain/Agent/AiMessageRepository";
 import { AiPrompt } from "@/Helper/Types/agent";
+import { AI_MULTI_ROUND_MESSAGE, IAiMultiRoundMessageRepository } from "../../Domain/Agent/AiMultiRoundMessageRepository";
+import { AiMultiRoundMessageModel } from "../../Domain/Agent/AiMultiRoundMessage";
 
 @Provide()
 export class AiMessageService {
@@ -11,6 +13,9 @@ export class AiMessageService {
 
     @Inject(AI_MESSAGE)
     aiMessageRepository: IAiMessageRepository;
+
+    @Inject(AI_MULTI_ROUND_MESSAGE)
+    aiMultiRoundMessageRepository: IAiMultiRoundMessageRepository;
 
     /**
      * 创建消息
@@ -125,6 +130,31 @@ export class AiMessageService {
         } catch (error) {
             this.ctx.logger.error(`删除消息失败: ${error.message}`, error);
             throw new Error(`删除消息失败: ${error.message}`);
+        }
+    }
+
+    /**
+     * 保存多轮对话消息
+     */
+    async saveChatMessages(sessionId: string, chatMessages: any[]): Promise<void> {
+        try {
+            // 遍历保存消息
+            for (const msg of chatMessages) {
+                const messageModel = new AiMultiRoundMessageModel({
+                    conversationId: sessionId,
+                    type: msg.type || 'text', // 默认类型
+                    content: msg.content,
+                    sender: msg.sender,
+                    msgStatus: msg.msgStatus || 'sent',
+                    workerId: msg.workerId,
+                    ext: msg.ext
+                });
+                await this.aiMultiRoundMessageRepository.save(messageModel);
+            }
+            this.ctx.logger.info(`保存会话 ${sessionId} 的消息成功，共 ${chatMessages.length} 条`);
+        } catch (error) {
+            this.ctx.logger.error(`保存会话消息失败: ${error.message}`, error);
+            throw new Error(`保存会话消息失败: ${error.message}`);
         }
     }
 }

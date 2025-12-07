@@ -3,6 +3,7 @@ import { Context } from '@midwayjs/web';
 import { ApiTags, ApiOperation, ApiResponse } from '@midwayjs/swagger';
 import { AgentRunRequestDTO } from './RequestDTO/AgentRunRequestDTO';
 import { CompressSessionContextRequestDTO } from './RequestDTO/CompressSessionContextRequestDTO';
+import { SaveChatMessagesRequestDTO } from './RequestDTO/SaveChatMessagesRequestDTO';
 import { AgentService } from '@/BussinessLayer/Agent/Application/Service/AgentService';
 import { AiMessageService } from '@/BussinessLayer/Agent/Application/Service/AiMessageService';
 import { ContextCompressionService } from '@/BussinessLayer/AiSummary/Application/service/contextCompressionService';
@@ -80,6 +81,41 @@ export class AgentController {
         success: false,
         data: null,
         message: `压缩失败: ${error.message}`
+      };
+    }
+  }
+  @ApiOperation({ summary: '保存历史对话chatmessages', description: '保存历史对话chatmessages' })
+  @ApiResponse({
+    status: 200,
+    description: '保存成功',
+    schema: {
+      type: 'object',
+      properties: {
+        sessionId: { type: 'string', description: '会话ID' },
+        compressedContent: { type: 'string', description: '压缩后的内容（包含system消息）' },
+        originalMessageCount: { type: 'number', description: '原始消息数量' },
+        filteredMessageCount: { type: 'number', description: '过滤后的消息数量' },
+        systemMessageCount: { type: 'number', description: 'System消息数量' },
+        lastMessageId: { type: 'string', description: '最后一条消息ID' }
+      }
+    }
+  })
+  @Post('/save-chatmessages')
+  async saveChatMessages(@Body() body: SaveChatMessagesRequestDTO) {
+    try {
+      const { sessionId, chatMessages } = body;
+      await this.aiMessageService.saveChatMessages(sessionId, chatMessages);
+      return {
+        success: true,
+        data: null,
+        message: '历史对话chatmessages保存成功'
+      };
+    } catch (error) {
+      this.ctx.logger.error(`保存历史对话chatmessages失败: ${error.message}`, error);
+      return {
+        success: false,
+        data: null,
+        message: `保存失败: ${error.message}`
       };
     }
   }
