@@ -9,6 +9,7 @@ export class AiSessionModel extends AggregateRoot {
         workerId: string;
         businessType?: string;
         name?: string;
+        curPwd?: string;
         ext?: any
     }) {
         super();
@@ -17,6 +18,7 @@ export class AiSessionModel extends AggregateRoot {
             this.workerId = options.workerId;
             if (options.businessType) this.businessType = options.businessType;
             if (options.name) this.name = options.name;
+            if (options.curPwd) this.curPwd = options.curPwd;
             if (options.ext) this.ext = options.ext;
         }
     }
@@ -48,6 +50,15 @@ export class AiSessionModel extends AggregateRoot {
         comment: '会话名称'
     })
     name?: string;
+
+    @Column({
+        name: 'cur_pwd',
+        type: 'varchar',
+        length: 255,
+        nullable: true,
+        comment: '当前路径'
+    })
+    curPwd?: string;
 
     @Column({
         name: 'ext',

@@ -71,6 +71,7 @@ export class AgentService {
                     workerId: workerId,
                     businessType: businessType,
                     name: `会话_${new Date().getTime()}`,
+                    curPwd: variableMaps?.llmConfig?.cwdFormatted,
                     ext: {
                         promptId: '',
                         variableMaps: variableMaps

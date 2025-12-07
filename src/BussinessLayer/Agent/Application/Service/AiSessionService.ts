@@ -21,10 +21,11 @@ export class AiSessionService {
         workerId: string;
         businessType?: string;
         name?: string;
+        curPwd?: string;
         ext?: any;
     }): Promise<AiSessionModel> {
         try {
-            const { sessionId, workerId, businessType, name, ext } = command;
+            const { sessionId, workerId, businessType, curPwd, name, ext } = command;
 
             // 创建新的会话实体
             const aiSession = new AiSessionModel({
@@ -32,6 +33,7 @@ export class AiSessionService {
                 workerId,
                 businessType,
                 name,
+                curPwd,
                 ext,
             });
 
