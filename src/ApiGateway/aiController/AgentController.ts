@@ -4,8 +4,10 @@ import { ApiTags, ApiOperation, ApiResponse } from '@midwayjs/swagger';
 import { AgentRunRequestDTO } from './RequestDTO/AgentRunRequestDTO';
 import { CompressSessionContextRequestDTO } from './RequestDTO/CompressSessionContextRequestDTO';
 import { SaveChatMessagesRequestDTO } from './RequestDTO/SaveChatMessagesRequestDTO';
+import { GetSessionListByPwdRequestDTO } from './RequestDTO/GetSessionListByPwdRequestDTO';
 import { AgentService } from '@/BussinessLayer/Agent/Application/Service/AgentService';
 import { AiMessageService } from '@/BussinessLayer/Agent/Application/Service/AiMessageService';
+import { AiSessionService } from '@/BussinessLayer/Agent/Application/Service/AiSessionService';
 import { ContextCompressionService } from '@/BussinessLayer/AiSummary/Application/service/contextCompressionService';
 
 @ApiTags(['Agent服务'])
@@ -20,6 +22,9 @@ export class AgentController {
 
   @Inject()
   aiMessageService: AiMessageService;
+
+  @Inject()
+  aiSessionService: AiSessionService;
 
   @Inject()
   contextCompressionService: ContextCompressionService;
@@ -105,6 +110,31 @@ export class AgentController {
         success: false,
         data: null,
         message: `保存失败: ${error.message}`
+      };
+    }
+  }
+
+  @ApiOperation({ summary: '根据pwd获取会话列表', description: '根据pwd获取会话列表' })
+  @ApiResponse({
+    status: 200,
+    description: '获取成功',
+  })
+  @Post('/get-session-list-by-pwd')
+  async getSessionListByPwd(@Body() body: GetSessionListByPwdRequestDTO) {
+    try {
+      const { pwd } = body;
+      const result = await this.aiSessionService.listByCurPwd(pwd);
+      return {
+        success: true,
+        data: result,
+        message: '获取会话列表成功'
+      };
+    } catch (error) {
+      this.ctx.logger.error(`获取会话列表失败: ${error.message}`, error);
+      return {
+        success: false,
+        data: null,
+        message: `获取失败: ${error.message}`
       };
     }
   }

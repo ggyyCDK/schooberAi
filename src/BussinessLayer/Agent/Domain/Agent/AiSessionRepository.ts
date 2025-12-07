@@ -6,6 +6,7 @@ export const AI_SESSION = `AI_SESSION`;
 export interface IAiSessionRepository extends Repository<AiSessionModel> {
     findById(id: string): Promise<AiSessionModel | null>;
     findByCurPwd(curPwd: string): Promise<AiSessionModel | null>;
+    listByCurPwd(curPwd: string): Promise<AiSessionModel[]>;
     save(aggregator: AiSessionModel): Promise<AiSessionModel | undefined>;
 }
 

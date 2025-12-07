@@ -31,6 +31,19 @@ export class AiSessionRepositoryMysql implements IAiSessionRepository {
         return result
     }
 
+    async listByCurPwd(curPwd: string): Promise<AiSessionModel[]> {
+        const repo = getRepository(AiSessionModel)
+        const result = await repo.find({
+            where: {
+                curPwd
+            },
+            order: {
+                createDate: 'DESC'
+            }
+        })
+        return result
+    }
+
     async save(info: AiSessionModel): Promise<AiSessionModel | undefined> {
         return await getConnection().transaction(async TransactionManager => {
             const repository = TransactionManager.getRepository(AiSessionModel)

@@ -73,6 +73,22 @@ export class AiSessionService {
     }
 
     /**
+     * 根据 curPwd 查询会话列表
+     * @param curPwd 当前工作目录
+     * @returns 会话列表
+     */
+    async listByCurPwd(curPwd: string): Promise<AiSessionModel[]> {
+        try {
+            const result = await this.aiSessionRepository.listByCurPwd(curPwd);
+            this.ctx.logger.info(`查询 curPwd 为 ${curPwd} 的会话，共 ${result.length} 条`);
+            return result;
+        } catch (error) {
+            this.ctx.logger.error(`查询会话列表失败: ${error.message}`, curPwd);
+            throw new Error(`查询会话列表失败: ${error.message}`);
+        }
+    }
+
+    /**
      * 更新会话信息
      * @param data 更新数据
      * @returns 更新后的会话
