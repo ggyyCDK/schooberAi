@@ -140,7 +140,7 @@ export class AiMessageService {
         try {
             // 检查 msgId 是否已存在
             const existingMessage = await this.aiMultiRoundMessageRepository.findByMsgId(chatMessages.msgId);
-            
+
             if (existingMessage) {
                 this.ctx.logger.info(`消息 ${chatMessages.msgId} 已存在，跳过保存`);
                 return;
@@ -174,12 +174,12 @@ export class AiMessageService {
 
             return messages.map(msg => ({
                 conversationId: msg.conversationId,
-                msgId: msg.id,
+                msgId: msg.msgId,
                 sender: msg.sender,
                 sendTime: msg.createDate ? new Date(msg.createDate).getTime() : 0,
                 status: msg.msgStatus,
                 type: msg.type,
-                content: msg.content,
+                content: msg.type === 'Text' ? msg.content.text : msg.content,
                 workerId: msg.workerId,
                 ext: msg.ext
             }));
