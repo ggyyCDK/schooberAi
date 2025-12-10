@@ -39,9 +39,10 @@ export class AgentService {
         businessType?: string;
         variableMaps: Record<string, any>,
         question: AiPrompt[]
-
+        mcpHub: boolean;
+        mcpHubDataInfo?: any;
     }): Promise<void> {
-        const { sessionId, workerId, businessType, variableMaps, question, sessionTitle } = command;
+        const { sessionId, workerId, businessType, variableMaps, mcpHub, mcpHubDataInfo, question, sessionTitle } = command;
         const LLMConfigParam = variableMaps.llmConfig ?? {} //获取大模型配置
         const { ak, ApiUrl, cwdFormatted } = LLMConfigParam
         let isHistory = false; // 是否有历史记录，及是否是记忆模式
@@ -91,7 +92,7 @@ export class AgentService {
         }
         //下面都为首轮对话逻辑
         //构建系统提示词
-        const systemPrompt = basicSystemPrompt(cwdFormatted)
+        const systemPrompt = basicSystemPrompt({ workDir: cwdFormatted, mcpHub, mcpHubDataInfo })
 
         let finalPromptList: AiPrompt[] = [{ role: 'system', content: systemPrompt }]
         //格式兼容
@@ -109,7 +110,9 @@ export class AgentService {
                     workerId,
                     messages: question,
                     historyMessages,
-                    variableMaps
+                    variableMaps,
+                    mcpHub,
+                    mcpHubDataInfo
                 })
                 return
             }
@@ -173,9 +176,11 @@ export class AgentService {
         workerId: string;
         messages: AiPrompt[];
         historyMessages: AiMessageModel[];
-        variableMaps: Record<string, any>
+        variableMaps: Record<string, any>;
+        mcpHub: boolean;
+        mcpHubDataInfo: any;
     }): Promise<void> {
-        const { sessionId, workerId = 'guyu', messages, variableMaps } = command;
+        const { sessionId, workerId = 'guyu', mcpHub, messages, variableMaps, mcpHubDataInfo } = command;
         const LLMConfigParam = variableMaps.llmConfig ?? {} //获取大模型配置
         const { ak, ApiUrl, cwdFormatted } = LLMConfigParam
         //首先查找session,因为进到这里的肯定是有历史会话的，肯定有session，没有则抛出错误
@@ -195,7 +200,7 @@ export class AgentService {
 
         //step 2 （构建完整的对话历史）
         //构建系统提示词
-        const systemPrompt = basicSystemPrompt(cwdFormatted)
+        const systemPrompt = basicSystemPrompt({ workDir: cwdFormatted, mcpHub, mcpHubDataInfo })
         let finalPromptList: AiPrompt[] = [{ role: 'system', content: systemPrompt }]
 
         // 尝试获取会话摘要

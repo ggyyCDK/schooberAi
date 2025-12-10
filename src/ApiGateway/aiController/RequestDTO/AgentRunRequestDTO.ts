@@ -1,10 +1,26 @@
 import { AiPrompt } from '@/Helper/Types/agent';
 import { ApiProperty } from '@midwayjs/swagger';
-import { IsObject, IsOptional, IsString } from 'class-validator'
+import { IsBoolean, IsObject, IsOptional, IsString, IsArray } from 'class-validator'
 /**
  * 变量映射对象
  */
 export class AgentRunRequestDTO {
+    @ApiProperty({
+        description: '是否启用MCP Hub',
+        example: false,
+    })
+    @IsBoolean()
+    @IsOptional()
+    mcpHub?: boolean;
+
+    @ApiProperty({
+        description: 'MCP Hub数据信息',
+        example: [],
+    })
+    @IsArray()
+    @IsOptional()
+    mcpHubDataInfo?: any[];
+
     @ApiProperty({
         description: '会话ID',
         example: 'GUYUTEST1',

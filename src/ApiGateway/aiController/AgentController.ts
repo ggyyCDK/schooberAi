@@ -38,7 +38,7 @@ export class AgentController {
   @Post('/run')
   async run(@Body() body: AgentRunRequestDTO) {
 
-    const { variableMaps, sessionId, question, workerId, sessionTitle } = body;
+    const { variableMaps, sessionId, question, workerId, sessionTitle, mcpHub, mcpHubDataInfo } = body;
     const { res } = this.ctx;
     // 设置SSE响应头
     res.writeHead(200, {
@@ -49,7 +49,7 @@ export class AgentController {
     });
     res.flushHeaders();
     await this.agentService.run({
-      variableMaps, sessionId, question, workerId, sessionTitle
+      variableMaps, sessionId, question, workerId, sessionTitle, mcpHub, mcpHubDataInfo
     })
   }
 

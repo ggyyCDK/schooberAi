@@ -7,12 +7,19 @@ import { getListFilesDescription } from '../toolPrompt/list_files'
 import { getListCodeDefinitionNamesDescription } from '../toolPrompt/list_code_definition_names'
 import { getAskFollowupQuestionDescription } from '../toolPrompt/ask_followup_question'
 import { getAttemptCompletionDescription } from '../toolPrompt/attempt_completion'
+import { getUseMcpToolDescription } from '../toolPrompt/use_mcp_tool'
+import { getAccessMcpResourceDescription } from '../toolPrompt/access_mcp_resource'
+import { getMcpServersSection } from '../../sectionPrompt/getMcpServersSection'
 /**
  * Use all standard prompt values to construct prompt
  */
-export const basicSystemPrompt = (
+export const basicSystemPrompt = (command: {
   workDir: string,
+  mcpHub: boolean,
+  mcpHubDataInfo: any
+}
 ) => {
+  const { workDir, mcpHub, mcpHubDataInfo } = command;
   return `
   You are SchooberAi, a highly skilled software engineer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.
 
@@ -53,6 +60,9 @@ ${getListCodeDefinitionNamesDescription(workDir)}
 ${getAskFollowupQuestionDescription()}
 ${getAttemptCompletionDescription()}
 
+${getUseMcpToolDescription(mcpHub)}
+
+${getAccessMcpResourceDescription(mcpHub)}
 # Tool Use Examples
 
 ## Example 1: Requesting to create a new file
@@ -132,6 +142,8 @@ It is crucial to proceed step-by-step, waiting for the user's message after each
 By waiting for and carefully considering the user's response after each tool use, you can react accordingly and make informed decisions about how to proceed with the task. This iterative process helps ensure the overall success and accuracy of your work.
 
 ====
+
+${getMcpServersSection(mcpHubDataInfo, mcpHub)}
 
 EDITING FILES
 
