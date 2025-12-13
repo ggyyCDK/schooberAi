@@ -3,6 +3,7 @@ import { Context } from '@midwayjs/web';
 import { ApiTags, ApiOperation, ApiResponse } from '@midwayjs/swagger';
 import { RagInsertRequestDTO } from './RequestDTO/RagInsertRequestDTO';
 import { RagQueryRequestDTO } from './RequestDTO/RagQueryRequestDTO';
+import { RagUpdateRequestDTO } from './RequestDTO/RagUpdateRequestDTO';
 import { RagService } from '@/BussinessLayer/Rag/Application/service/RagService';
 
 @ApiTags(['向量RAG服务'])
@@ -32,7 +33,7 @@ export class RagController {
 
             this.ctx.logger.info(`开始处理RAG查询: text长度=${text.length}, topk=${topk}`);
 
-            const result = await this.ragService.queryVector(
+            const result = await this.ragService.queryVector({
                 text,
                 dashvectorApiKey,
                 dashscopeApiKey,
@@ -40,7 +41,7 @@ export class RagController {
                 includeVector,
                 dashvectorEndpoint,
                 dashscopeURL
-            );
+            });
 
             return {
                 success: true,
@@ -75,14 +76,14 @@ export class RagController {
 
             this.ctx.logger.info(`开始处理RAG数据插入: text长度=${text.length}, docId=${docId}`);
 
-            const result = await this.ragService.insertVector(
+            const result = await this.ragService.insertVector({
                 text,
                 dashvectorApiKey,
                 dashscopeApiKey,
                 docId,
                 dashvectorEndpoint,
                 dashscopeURL
-            );
+            });
 
             return {
                 success: true,
@@ -95,6 +96,48 @@ export class RagController {
                 success: false,
                 data: null,
                 message: `插入失败: ${error.message}`
+            };
+        }
+    }
+
+    @ApiOperation({ summary: 'RAG更新数据', description: '根据ID更新向量数据，如果ID不存在则插入新数据' })
+    @ApiResponse({
+        status: 200,
+        description: 'RAG数据更新成功',
+    })
+    @Post('/update')
+    async update(@Body() body: RagUpdateRequestDTO) {
+        try {
+            const { docId, text } = body;
+
+            // 从环境变量读取 API Keys
+            const dashvectorApiKey = process.env.DASHVECTOR_API_KEY;
+            const dashscopeApiKey = process.env.DASHSCOPE_API_KEY; // 阿里云百炼 API Key
+            const dashscopeURL = process.env.DASHSCOPE_EMBEDDING_URL; // 可选，默认使用百炼嵌入接口
+            const dashvectorEndpoint = process.env.DASHVECTOR_UPSERT_ENDPOINT; // 可选
+
+            this.ctx.logger.info(`开始处理RAG数据更新: docId=${docId}, text长度=${text.length}`);
+
+            const result = await this.ragService.updateVector({
+                docId,
+                text,
+                dashvectorApiKey,
+                dashscopeApiKey,
+                dashvectorEndpoint,
+                dashscopeURL
+            });
+
+            return {
+                success: true,
+                data: result,
+                message: 'RAG数据更新成功'
+            };
+        } catch (error) {
+            this.ctx.logger.error(`RAG数据更新失败: ${error.message}`, error);
+            return {
+                success: false,
+                data: null,
+                message: `更新失败: ${error.message}`
             };
         }
     }

@@ -50,18 +50,20 @@ export class RagService {
     /**
      * 向 DashVector 插入向量数据
      */
-    async insertVector(
-        text: string,
-        dashvectorApiKey: string,
-        openaiApiKey: string,
-        docId?: string,
-        dashvectorEndpoint?: string,
-        openaiBaseURL?: string
-    ): Promise<any> {
+    async insertVector(command: {
+        text: string;
+        dashvectorApiKey: string;
+        dashscopeApiKey: string;
+        docId?: string;
+        dashvectorEndpoint?: string;
+        dashscopeURL?: string;
+    }): Promise<any> {
         try {
+            const { text, dashvectorApiKey, dashscopeApiKey, docId, dashvectorEndpoint, dashscopeURL } = command;
+            
             // 1. 将文本转换为向量
             this.ctx.logger.info(`开始向量化文本: ${text.substring(0, 100)}...`);
-            const vector = await this.textToVector(text, openaiApiKey, openaiBaseURL);
+            const vector = await this.textToVector(text, dashscopeApiKey, dashscopeURL);
 
             // 2. 生成文档ID（如果未提供）
             const id = docId || uuidv4();
@@ -117,17 +119,28 @@ export class RagService {
     /**
      * 查询相似向量
      */
-    async queryVector(
-        text: string,
-        dashvectorApiKey: string,
-        dashscopeApiKey: string,
-        topk: number = 10,
-        includeVector: boolean = false,
-        dashvectorEndpoint?: string,
-        dashscopeURL?: string,
-        collectionName: string = 'Schoober_Doc_Collection'
-    ): Promise<any> {
+    async queryVector(command: {
+        text: string;
+        dashvectorApiKey: string;
+        dashscopeApiKey: string;
+        topk?: number;
+        includeVector?: boolean;
+        dashvectorEndpoint?: string;
+        dashscopeURL?: string;
+        collectionName?: string;
+    }): Promise<any> {
         try {
+            const { 
+                text, 
+                dashvectorApiKey, 
+                dashscopeApiKey, 
+                topk = 10, 
+                includeVector = false, 
+                dashvectorEndpoint, 
+                dashscopeURL,
+                collectionName = 'Schoober_Doc_Collection'
+            } = command;
+            
             // 1. 将查询文本转换为向量
             this.ctx.logger.info(`开始向量化查询文本: ${text.substring(0, 100)}...`);
             const vector = await this.textToVector(text, dashscopeApiKey, dashscopeURL);
@@ -171,6 +184,81 @@ export class RagService {
                 this.ctx.logger.error(`DashVector API 响应: ${JSON.stringify(error.response?.data)}`);
             }
             throw new Error(`向量查询失败: ${error.message}`);
+        }
+    }
+
+    /**
+     * 更新或插入向量数据 (Upsert)
+     */
+    async updateVector(command: {
+        docId: string;
+        text: string;
+        dashvectorApiKey: string;
+        dashscopeApiKey: string;
+        dashvectorEndpoint?: string;
+        dashscopeURL?: string;
+        collectionName?: string;
+    }): Promise<any> {
+        try {
+            const { 
+                docId, 
+                text, 
+                dashvectorApiKey, 
+                dashscopeApiKey, 
+                dashvectorEndpoint, 
+                dashscopeURL,
+                collectionName = 'Schoober_Doc_Collection'
+            } = command;
+            
+            // 1. 将文本转换为向量
+            this.ctx.logger.info(`开始向量化文本: ${text.substring(0, 100)}...`);
+            const vector = await this.textToVector(text, dashscopeApiKey, dashscopeURL);
+
+            // 2. 构造请求数据
+            const requestData = {
+                docs: [
+                    {
+                        id: docId,
+                        vector: vector,
+                        fields: {
+                            document: text
+                        }
+                    }
+                ]
+            };
+
+            // 3. 调用 DashVector Upsert API
+            const endpoint = dashvectorEndpoint ||
+                `https://vrs-cn-1wy4kbz6a00011.dashvector.cn-hangzhou.aliyuncs.com/v1/collections/${collectionName}/docs/upsert`;
+
+            this.ctx.logger.info(`开始更新向量到 DashVector: endpoint=${endpoint}, docId=${docId}`);
+
+            const response = await axios.post(
+                endpoint,
+                requestData,
+                {
+                    headers: {
+                        'dashvector-auth-token': dashvectorApiKey,
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+
+            this.ctx.logger.info(`向量更新成功: docId=${docId}, vectorDimension=${vector.length}`);
+
+            return {
+                docId: docId,
+                vectorDimension: vector.length,
+                text: text,
+                timestamp: new Date().toISOString(),
+                dashvectorResponse: response.data,
+            };
+        } catch (error) {
+            this.ctx.logger.error(`向量更新失败: ${error.message}`, error);
+            if (axios.isAxiosError(error)) {
+                this.ctx.logger.error(`DashVector API 响应: ${JSON.stringify(error.response?.data)}`);
+            }
+            throw new Error(`向量更新失败: ${error.message}`);
         }
     }
 }
