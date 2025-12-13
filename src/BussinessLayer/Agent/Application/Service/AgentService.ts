@@ -93,7 +93,7 @@ export class AgentService {
         //下面都为首轮对话逻辑
         //构建系统提示词
         const systemPrompt = basicSystemPrompt({ workDir: cwdFormatted, mcpHub, mcpHubDataInfo })
-
+        console.log('current prompt is', systemPrompt)
         let finalPromptList: AiPrompt[] = [{ role: 'system', content: systemPrompt }]
         //格式兼容
         if (Array.isArray(question)) {

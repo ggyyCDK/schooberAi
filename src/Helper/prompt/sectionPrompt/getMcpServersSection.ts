@@ -1,7 +1,7 @@
-export async function getMcpServersSection(
+export function getMcpServersSection(
     mcpHubDataInfo: any,
     mcpHub?: boolean
-): Promise<string> {
+) {
     if (!mcpHub) {
         return ""
     }

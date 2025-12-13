@@ -1,5 +1,5 @@
 export function getAccessMcpResourceDescription(mcpHub: boolean): string | undefined {
-    if (mcpHub) {
+    if (!mcpHub) {
         return undefined
     }
     return `## access_mcp_resource

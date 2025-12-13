@@ -32,9 +32,9 @@ export class AiChatService {
 
     //流式调用接口
     async aiChatWithStream(command: AiStreamChatInputCommand): Promise<void> {
-        this.ctx.logger.info(
-            `开始调用AI服务, model: ${command.model}, messages: ${JSON.stringify(command.messages)}`
-        )
+        // this.ctx.logger.info(
+        //     `开始调用AI服务, model: ${command.model}, messages: ${JSON.stringify(command.messages)}`
+        // )
 
         let ak: string = command.ak ?? '';
         if (!ak) {

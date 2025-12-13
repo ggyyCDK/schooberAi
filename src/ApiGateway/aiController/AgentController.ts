@@ -39,6 +39,7 @@ export class AgentController {
   async run(@Body() body: AgentRunRequestDTO) {
 
     const { variableMaps, sessionId, question, workerId, sessionTitle, mcpHub, mcpHubDataInfo } = body;
+    console.log('mcpHub, mcpHubDataInfo is', mcpHub, mcpHubDataInfo)
     const { res } = this.ctx;
     // 设置SSE响应头
     res.writeHead(200, {

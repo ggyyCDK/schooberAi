@@ -20,6 +20,7 @@ export const basicSystemPrompt = (command: {
 }
 ) => {
   const { workDir, mcpHub, mcpHubDataInfo } = command;
+  console.log('mcpHub in basicSystemPrompt is', mcpHub, mcpHubDataInfo)
   return `
   You are SchooberAi, a highly skilled software engineer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.
 
