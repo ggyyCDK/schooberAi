@@ -123,9 +123,9 @@ export class AiChatService {
 
     //流式调用接口
     async aiChatWithStream(command: AiStreamChatInputCommand): Promise<void> {
-        // this.ctx.logger.info(
-        //     `开始调用AI服务, model: ${command.model}, messages: ${JSON.stringify(command.messages)}`
-        // )
+        this.ctx.logger.info(
+            `开始调用AI服务, model: ${command.model}, messages: ${JSON.stringify(command.messages)}`
+        )
 
         const ak: string = command.ak ?? '';
         const ApiUrl: string = command.ApiUrl ?? '';
