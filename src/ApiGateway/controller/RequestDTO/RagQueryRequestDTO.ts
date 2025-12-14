@@ -28,4 +28,23 @@ export class RagQueryRequestDTO {
   @IsBoolean()
   @IsOptional()
   includeVector?: boolean;
+
+  @ApiProperty({
+    description: '是否启用 Rerank 重新排序',
+    example: false,
+    required: false,
+    default: false
+  })
+  @IsBoolean()
+  @IsOptional()
+  useRerank?: boolean;
+
+  @ApiProperty({
+    description: 'Rerank 返回的Top N结果数量',
+    example: 5,
+    required: false
+  })
+  @IsNumber()
+  @IsOptional()
+  rerankTopN?: number;
 }
