@@ -27,8 +27,8 @@ export class RagController {
             const { text, topk = 10, includeVector = false, useRerank = false, rerankTopN } = body;
 
             // 从环境变量读取 API Keys
-            const dashvectorApiKey = '';
-            const dashscopeApiKey = ''; // 阿里云百炼 API Key
+            const dashvectorApiKey = process.env.DASHVECTOR_API_KEY;
+            const dashscopeApiKey = process.env.DASHSCOPE_API_KEY; // 阿里云百炼 API Key
             const dashscopeURL = process.env.DASHSCOPE_EMBEDDING_URL; // 可选，默认使用百炼嵌入接口
             const dashvectorEndpoint = process.env.DASHVECTOR_QUERY_ENDPOINT; // 可选
 

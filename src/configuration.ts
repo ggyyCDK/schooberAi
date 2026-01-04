@@ -1,3 +1,7 @@
+// 加载环境变量
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import { Configuration, App, IMidwayApplication } from '@midwayjs/core';
 import * as egg from '@midwayjs/web';
 import { join } from 'path';
