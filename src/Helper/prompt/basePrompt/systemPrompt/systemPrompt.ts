@@ -10,20 +10,23 @@ import { getAttemptCompletionDescription } from '../toolPrompt/attempt_completio
 import { getUseMcpToolDescription } from '../toolPrompt/use_mcp_tool'
 import { getAccessMcpResourceDescription } from '../toolPrompt/access_mcp_resource'
 import { getMcpServersSection } from '../../sectionPrompt/getMcpServersSection'
+import { getSkillsSection } from '../../sectionPrompt/getSkillsSection'
+import { markdownFormattingSection } from '../../sectionPrompt/markdown-formatting'
 /**
  * Use all standard prompt values to construct prompt
  */
 export const basicSystemPrompt = (command: {
   workDir: string,
   mcpHub: boolean,
-  mcpHubDataInfo: any
+  mcpHubDataInfo: any,
+  skills: any
 }
 ) => {
-  const { workDir, mcpHub, mcpHubDataInfo } = command;
-  console.log('mcpHub in basicSystemPrompt is', mcpHub, mcpHubDataInfo)
+  const { workDir, mcpHub, mcpHubDataInfo, skills } = command;
+  console.log('skills in basicSystemPrompt is', skills)
   return `
   You are SchooberAi, a highly skilled software engineer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.
-
+${markdownFormattingSection()}
 ====
 
 TOOL USE
@@ -145,6 +148,8 @@ By waiting for and carefully considering the user's response after each tool use
 ====
 
 ${getMcpServersSection(mcpHubDataInfo, mcpHub)}
+
+${skills.length > 0 ? getSkillsSection(skills) : ""}
 
 EDITING FILES
 

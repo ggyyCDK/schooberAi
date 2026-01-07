@@ -38,8 +38,8 @@ export class AgentController {
   @Post('/run')
   async run(@Body() body: AgentRunRequestDTO) {
 
-    const { variableMaps, sessionId, question, workerId, sessionTitle, mcpHub, mcpHubDataInfo } = body;
-    console.log('mcpHub, mcpHubDataInfo is', mcpHub, mcpHubDataInfo)
+    const { variableMaps, sessionId, question, workerId, sessionTitle, mcpHub, mcpHubDataInfo, skills } = body;
+    console.log('mcpHub, mcpHubDataInfo, skills is', mcpHub, mcpHubDataInfo, skills)
     const { res } = this.ctx;
     // 设置SSE响应头
     res.writeHead(200, {
@@ -50,7 +50,7 @@ export class AgentController {
     });
     res.flushHeaders();
     await this.agentService.run({
-      variableMaps, sessionId, question, workerId, sessionTitle, mcpHub, mcpHubDataInfo
+      variableMaps, sessionId, question, workerId, sessionTitle, mcpHub, mcpHubDataInfo, skills
     })
   }
 

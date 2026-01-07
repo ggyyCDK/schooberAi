@@ -9,6 +9,7 @@ import { AiMessageModel } from "../../Domain/Agent/AiMessage";
 import { AI_SESSION_SUMMARY, IAiSessionSummaryRepository } from "../../Domain/Agent/AiSessionSummaryRepository";
 import { EventType } from "@/Helper/Types/parseResult";
 import { basicSystemPrompt } from '@/Helper/prompt/basePrompt/systemPrompt/systemPrompt'
+import { SkillMetadata } from '@/Helper/prompt/sectionPrompt/getSkillsSection'
 @Provide()
 export class AgentService {
     @Inject()
@@ -41,14 +42,15 @@ export class AgentService {
         question: AiPrompt[]
         mcpHub: boolean;
         mcpHubDataInfo?: any;
+        skills?: SkillMetadata[];
     }): Promise<void> {
-        const { sessionId, workerId, businessType, variableMaps, mcpHub, mcpHubDataInfo, question, sessionTitle } = command;
+        const { sessionId, workerId, businessType, variableMaps, mcpHub, mcpHubDataInfo, question, sessionTitle, skills = [] } = command;
         const LLMConfigParam = variableMaps.llmConfig ?? {} //获取大模型配置
         const { ak, ApiUrl, cwdFormatted } = LLMConfigParam
         let isHistory = false; // 是否有历史记录，及是否是记忆模式
         let isFirstRound = false; // 是否是第一次对话
         let currentSession: AiSessionModel | null = null;
-
+        console.log('skills prompt is', skills)
         try {
             // 如果传入了 sessionId，尝试查找现有会话
             if (sessionId) {
@@ -92,8 +94,8 @@ export class AgentService {
         }
         //下面都为首轮对话逻辑
         //构建系统提示词
-        const systemPrompt = basicSystemPrompt({ workDir: cwdFormatted, mcpHub, mcpHubDataInfo })
-        console.log('current prompt is', systemPrompt)
+        const systemPrompt = basicSystemPrompt({ workDir: cwdFormatted, mcpHub, mcpHubDataInfo, skills })
+
         let finalPromptList: AiPrompt[] = [{ role: 'system', content: systemPrompt }]
         //格式兼容
         if (Array.isArray(question)) {
@@ -112,7 +114,8 @@ export class AgentService {
                     historyMessages,
                     variableMaps,
                     mcpHub,
-                    mcpHubDataInfo
+                    mcpHubDataInfo,
+                    skills
                 })
                 return
             }
@@ -179,8 +182,9 @@ export class AgentService {
         variableMaps: Record<string, any>;
         mcpHub: boolean;
         mcpHubDataInfo: any;
+        skills?: SkillMetadata[];
     }): Promise<void> {
-        const { sessionId, workerId = 'guyu', mcpHub, messages, variableMaps, mcpHubDataInfo } = command;
+        const { sessionId, workerId = 'guyu', mcpHub, messages, variableMaps, mcpHubDataInfo, skills = [] } = command;
         const LLMConfigParam = variableMaps.llmConfig ?? {} //获取大模型配置
         const { ak, ApiUrl, cwdFormatted } = LLMConfigParam
         //首先查找session,因为进到这里的肯定是有历史会话的，肯定有session，没有则抛出错误
@@ -200,7 +204,7 @@ export class AgentService {
 
         //step 2 （构建完整的对话历史）
         //构建系统提示词
-        const systemPrompt = basicSystemPrompt({ workDir: cwdFormatted, mcpHub, mcpHubDataInfo })
+        const systemPrompt = basicSystemPrompt({ workDir: cwdFormatted, mcpHub, mcpHubDataInfo, skills })
         let finalPromptList: AiPrompt[] = [{ role: 'system', content: systemPrompt }]
 
         // 尝试获取会话摘要

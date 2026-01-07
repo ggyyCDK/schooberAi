@@ -22,6 +22,14 @@ export class AgentRunRequestDTO {
     mcpHubDataInfo?: any[];
 
     @ApiProperty({
+        description: '技能信息',
+        example: [],
+    })
+    @IsArray()
+    @IsOptional()
+    skills?: any[];
+
+    @ApiProperty({
         description: '会话ID',
         example: 'GUYUTEST1',
     })
