@@ -100,7 +100,6 @@ export class AgentController {
   async saveChatMessages(@Body() body: SaveChatMessagesRequestDTO) {
     try {
       const { sessionId, chatMessage } = body;
-      console.log('sessionId, chatMessage is', sessionId, chatMessage)
       await this.aiMessageService.saveChatMessage(sessionId, chatMessage);
       return {
         success: true,

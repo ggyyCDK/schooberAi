@@ -50,7 +50,6 @@ export class AgentService {
         let isHistory = false; // 是否有历史记录，及是否是记忆模式
         let isFirstRound = false; // 是否是第一次对话
         let currentSession: AiSessionModel | null = null;
-        console.log('skills prompt is', skills)
         try {
             // 如果传入了 sessionId，尝试查找现有会话
             if (sessionId) {
