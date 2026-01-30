@@ -11,6 +11,7 @@ import { getUseMcpToolDescription } from '../toolPrompt/use_mcp_tool'
 import { getAccessMcpResourceDescription } from '../toolPrompt/access_mcp_resource'
 import { getMcpServersSection } from '../../sectionPrompt/getMcpServersSection'
 import { getSkillsSection } from '../../sectionPrompt/getSkillsSection'
+import { getApplyDiffDescription } from '../toolPrompt/apply_diff'
 import { markdownFormattingSection } from '../../sectionPrompt/markdown-formatting'
 import { getExecuteCommandDescription } from '../toolPrompt/execute_command'
 /**
@@ -54,6 +55,8 @@ ${getReadFileDescription(workDir)}
 ${getWriteToFileDescription(workDir)}
 
 ${getReplaceInFileDescription(workDir)}
+
+${getApplyDiffDescription(workDir)}
 
 ${getSearchFilesDescription(workDir)}
 
