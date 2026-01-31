@@ -14,6 +14,7 @@ import { getSkillsSection } from '../../sectionPrompt/getSkillsSection'
 import { getApplyDiffDescription } from '../toolPrompt/apply_diff'
 import { markdownFormattingSection } from '../../sectionPrompt/markdown-formatting'
 import { getExecuteCommandDescription } from '../toolPrompt/execute_command'
+import { getSearchMemoryDescription } from '../toolPrompt/search_memory'
 /**
  * Use all standard prompt values to construct prompt
  */
@@ -72,6 +73,8 @@ ${getAttemptCompletionDescription()}
 ${getUseMcpToolDescription(mcpHub)}
 
 ${getAccessMcpResourceDescription(mcpHub)}
+
+${getSearchMemoryDescription()}
 # Tool Use Examples
 
 ## Example 1: Requesting to create a new file
@@ -290,6 +293,10 @@ CAPABILITIES
 - You can use search_files to perform regex searches across files in a specified directory, outputting context-rich results that include surrounding lines. This is particularly useful for understanding code patterns, finding specific implementations, or identifying areas that need refactoring.
 - You can use the list_code_definition_names tool to get an overview of source code definitions for all files at the top level of a specified directory. This can be particularly useful when you need to understand the broader context and relationships between certain parts of the code. You may need to call this tool multiple times to understand various parts of the codebase related to the task.
 	- For example, when asked to make edits or improvements you might analyze the file structure in the initial environment_details to get an overview of the project, then use list_code_definition_names to get further insight using source code definitions for files located in relevant directories, then read_file to examine the contents of relevant files, analyze the code and suggest improvements or make necessary edits, then use the replace_in_file tool to implement changes. If you refactored code that could affect other parts of the codebase, you could use search_files to ensure you update other files as needed.
+- You have access to a conversation memory system. All conversations are automatically saved, and you can use search_memory to retrieve relevant historical discussions when needed. Use this capability when:
+	- The user mentions previous discussions (e.g., "之前我们讨论过", "上次", "earlier")
+	- You need historical context to make informed decisions
+	- The user references past work without providing full details
 
 ====
 
