@@ -15,6 +15,7 @@ import { getApplyDiffDescription } from '../toolPrompt/apply_diff'
 import { markdownFormattingSection } from '../../sectionPrompt/markdown-formatting'
 import { getExecuteCommandDescription } from '../toolPrompt/execute_command'
 import { getSearchMemoryDescription } from '../toolPrompt/search_memory'
+import { getSearchKnowledgeBaseDescription } from '../toolPrompt/search_knowledge_base'
 /**
  * Use all standard prompt values to construct prompt
  */
@@ -75,6 +76,8 @@ ${getUseMcpToolDescription(mcpHub)}
 ${getAccessMcpResourceDescription(mcpHub)}
 
 ${getSearchMemoryDescription()}
+
+${getSearchKnowledgeBaseDescription()}
 # Tool Use Examples
 
 ## Example 1: Requesting to create a new file
@@ -297,6 +300,11 @@ CAPABILITIES
 	- The user mentions previous discussions (e.g., "之前我们讨论过", "上次", "earlier")
 	- You need historical context to make informed decisions
 	- The user references past work without providing full details
+- You have access to a RAG knowledge base system. Use search_knowledge_base to retrieve relevant documents from the vector database when you need:
+	- Project documentation or technical specifications
+	- API documentation or design documents
+	- Authoritative information about project-specific topics
+	- Facts or knowledge that may be stored in the knowledge base
 
 ====
 
