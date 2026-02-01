@@ -136,6 +136,7 @@
       "@midwayjs/logger": "/Users/guyumac/Documents/schooberAi/node_modules/egg/config/config.default.js",
       "@midwayjs/swagger": "/Users/guyumac/Documents/schooberAi/node_modules/egg/config/config.default.js",
       "@midwayjs/web": "/Users/guyumac/Documents/schooberAi/node_modules/egg/config/config.default.js",
+      "@qdrant/js-client-rest": "/Users/guyumac/Documents/schooberAi/node_modules/egg/config/config.default.js",
       "@sevenryze/ruid": "/Users/guyumac/Documents/schooberAi/node_modules/egg/config/config.default.js",
       "@types/string-similarity": "/Users/guyumac/Documents/schooberAi/node_modules/egg/config/config.default.js",
       "ali-oss": "/Users/guyumac/Documents/schooberAi/node_modules/egg/config/config.default.js",
