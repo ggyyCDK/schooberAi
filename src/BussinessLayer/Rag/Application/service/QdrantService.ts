@@ -220,25 +220,31 @@ export class QdrantService {
             this.ctx.logger.info(`[2/${useRerank ? '3' : '2'}] 开始查询 Qdrant: collection=${collection}, topk=${topk}`);
             const queryStartTime = Date.now();
 
-            const searchParams: any = {
-                vector: vector,
+            const queryParams: any = {
+                query: {
+                    nearest: vector,
+                    mmr:{
+                        diversity: 0.6,
+                        candidates_limit: 100
+                    }
+                },
                 limit: topk,
                 with_payload: true,
             };
 
             if (filter) {
-                searchParams.filter = filter;
+                queryParams.filter = filter;
             }
 
             if (scoreThreshold !== undefined) {
-                searchParams.score_threshold = scoreThreshold;
+                queryParams.score_threshold = scoreThreshold;
             }
 
-            const searchResult = await client.search(collection, searchParams);
+            const queryResult = await client.query(collection, queryParams);
             const queryDuration = Date.now() - queryStartTime;
-            this.ctx.logger.info(`查询完成 (耗时: ${queryDuration}ms, 结果数: ${searchResult.length})`);
+            this.ctx.logger.info(`查询完成 (耗时: ${queryDuration}ms, 结果数: ${queryResult.points.length})`);
 
-            let results = searchResult.map(item => ({
+            let results = queryResult.points.map(item => ({
                 id: item.id,
                 score: item.score,
                 payload: item.payload,

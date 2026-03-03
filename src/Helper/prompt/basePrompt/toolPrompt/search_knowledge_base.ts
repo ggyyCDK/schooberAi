@@ -10,41 +10,58 @@ Parameters:
 - query: (required) The search query text describing what you want to find. Use clear, descriptive keywords.
 - collection: (optional) The name of the knowledge base collection to search. Uses the configured default if not specified.
 - topk: (optional) Number of results to return. Default is 5, range 1-20.
-- score_threshold: (optional) Minimum similarity score (0-1) for results. Only returns documents with scores above this threshold.
-- use_rerank: (optional) Set to "true" to enable reranking for better relevance. Default is "false".
+- score_threshold: (required) Minimum similarity score. MUST be set to "0.4" or higher to ensure quality results.
+- filter: (required) A JSON string specifying the filter criteria. You MUST analyze the user's question and set the appropriate category filter based on the content.
+- use_rerank: (optional) Set to "true" to enable reranking for better relevance. Default is "true".
 - rerank_top_n: (optional) Number of results to keep after reranking.
+
+IMPORTANT - Filter Category Rules:
+You MUST determine the correct category based on the user's question:
+| User Question Topic | category value |
+|---------------------|----------------|
+| 羽毛球拍、球拍推荐、球拍参数、拍子选购 | "racket" |
+| React、前端框架、组件开发、hooks | "react" |
+| 羽毛球技术、打法、步伐、训练方法 | "tech" |
+
+Filter Format:
+The filter parameter must be a valid JSON string with the following structure:
+{"must":[{"key":"category","match":{"value":"<category_value>"}}]}
 
 Usage:
 <search_knowledge_base>
 <query>Your search query here</query>
-<collection>collection_name (optional)</collection>
-<topk>number of results (optional)</topk>
-<score_threshold>0.7 (optional)</score_threshold>
-<use_rerank>true/false (optional)</use_rerank>
-<rerank_top_n>3 (optional)</rerank_top_n>
-</search_knowledge_base>
-
-Example 1: Search for authentication implementation details
-<search_knowledge_base>
-<query>用户认证 JWT Token 实现方式</query>
+<score_threshold>0.4</score_threshold>
+<filter>{"must":[{"key":"category","match":{"value":"<category_value>"}}]}</filter>
 <topk>5</topk>
 </search_knowledge_base>
 
-Example 2: Search with reranking for better accuracy
+Example 1: User asks about badminton racket recommendations (羽毛球拍)
 <search_knowledge_base>
-<query>database connection configuration</query>
-<collection>project_docs</collection>
-<use_rerank>true</use_rerank>
-<rerank_top_n>3</rerank_top_n>
+<query>羽毛球拍推荐 进攻型</query>
+<score_threshold>0.4</score_threshold>
+<filter>{"must":[{"key":"category","match":{"value":"racket"}}]}</filter>
+<topk>5</topk>
 </search_knowledge_base>
 
-Example 3: Search with score threshold
+Example 2: User asks about React hooks usage
 <search_knowledge_base>
-<query>API接口文档 错误处理</query>
-<score_threshold>0.6</score_threshold>
+<query>React useEffect 最佳实践</query>
+<score_threshold>0.4</score_threshold>
+<filter>{"must":[{"key":"category","match":{"value":"react"}}]}</filter>
+<topk>5</topk>
+</search_knowledge_base>
+
+Example 3: User asks about badminton technique (羽毛球技术)
+<search_knowledge_base>
+<query>羽毛球高远球技术要点</query>
+<score_threshold>0.4</score_threshold>
+<filter>{"must":[{"key":"category","match":{"value":"tech"}}]}</filter>
+<topk>5</topk>
 </search_knowledge_base>
 
 Important Notes:
+- ALWAYS include the filter parameter with the correct category based on user's question
+- ALWAYS set score_threshold to 0.4 or higher
 - Use this tool when you need factual information from the knowledge base
 - The results include document content, similarity scores, and metadata
 - Higher scores indicate more relevant results
